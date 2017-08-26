@@ -1,1 +1,38 @@
 
+ARENA
+Requirements
+
+◘ Functional Requirements (Services to be provided)
+•	Provide a role based infrastructure for operating an arena.
+► Operator
+• Create New Games
+• Create New Tournament Styles
+• Define New Expert Rating Formulas
+• Manage Users (Edit, Remove, Add, Approve/Decline Registered Users)
+►League Owner
+• Create New League
+• Manage Tournaments within a League (Edit, Remove, Add)
+• Conduct a Tournament 
+• Declare a Winner
+• Approve/ Decline applying players
+► Players 
+• Register to an arena 
+• Apply to an existing league
+• View & “play” in games they are scheduled for.
+• Drop out of Tournament they are registered for.
+► Spectators
+• View any match in progress
+• View scores & stats of past matches
+► Advertisers
+• Upload new Ads
+• Select an Ad. Scheme
+• Check Balance
+• Cancel existing Ads.
+◘ Non-Functional Requirements (Known constraints)
+• Time
+• Must use: Java
+• Must use: JavaFX
+• Must use: JavaFX Scene builder
+• Must use: MySQL
+• Must use: GitHub
+• Must have secure SQL practices
