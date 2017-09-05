@@ -3,31 +3,38 @@ ARENA
 Requirements
 
 ◘ Functional Requirements (Services to be provided)
+
 •	Provide a role based infrastructure for operating an arena.
-► Operator
+
+► Operator: A super user with administrative powers over all other users.
 • Create New Games
-• Create New Tournament Styles
+• Create New Tournament Styles:  Operatos are the soul creator of new tournaments and tournament styles.
 • Define New Expert Rating Formulas
 • Manage Users (Edit, Remove, Add, Approve/Decline Registered Users)
-►League Owner
-• Create New League
-• Manage Tournaments within a League (Edit, Remove, Add)
+
+►League Owner: Special users that have higher administrative powers than basic player users but not operator users. 
+• Create New League: Leagues are a contained subset group of multiple player users. 
+• Manage Tournaments within a League (Edit, Remove, Add): A league can have multple seperate tournaments and league owners are responsible with managing the tournaments that the league is hosting. 
 • Conduct a Tournament 
-• Declare a Winner
-• Approve/ Decline applying players
-► Players 
+• Declare a Winner: League owners can declare winners of tournaments once they are completed. 
+• Approve/ Decline applying players: If players of a league wish to participate in one of the league's tournamnets they must first apply for that specific tournament with one league owners. 
+
+► Players: A basic subscribed user. Players are personal users that use the arena service to take part and keep track of tournaments and other players. 
 • Register to an arena 
-• Apply to an existing league
+• Apply to an existing league: Players can apply to join multiple leagues.
 • View & “play” in games they are scheduled for.
 • Drop out of Tournament they are registered for.
-► Spectators
-• View any match in progress
+
+► Spectators: Spectators are non particapting users. The can be anonymous third party users or subscribed users. Any of the three groups above can be a spectator.
+• View any match in progress: Tournament matches are open for viewing by anyone.
 • View scores & stats of past matches
-► Advertisers
-• Upload new Ads
+
+► Advertisers: Advertisers are special thrid party users. They have no special administrative privileges over other users. Advertisers only have power over the adverts that they supply for display. Advertisers are completely reliant on operators or league owners if a technical or non-advert problem arises that must be resolved. 
+• Upload new Ads: Advertisers can create and upload ads for global, league, or local spaces.
 • Select an Ad. Scheme
-• Check Balance
-• Cancel existing Ads.
+• Check Balance: 
+• Cancel existing Ads: Ads can be removed at any time by the ad owner.
+
 ◘ Non-Functional Requirements (Known constraints)
 • Time
 • Must use: Java
