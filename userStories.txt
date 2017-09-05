@@ -1,8 +1,164 @@
-As an Operator, I want to create new game (Game Category?), so that tournaments can be organized under a specific category and so users can join, view, and access tournaments under the game that they want.
-As an Operator, I want to create new tournament types, so that users can choose the perfect tournament style for thier game.
-As an operator, I want to define tournament rating formulas, so that point based tournaments are fair and corrupt free.
-As an operator, I want to manage users, so that if any user problem arise I would be able to deal with it quickly and under my own discreation.
+Roles: Operator  Brad,
+ League Owner Mary,
+ Player Kevin,
+ Spectator Bob,
+ Advertiser SanCorp. Inc. 
+Arena’s hold Leagues.  Leagues Have Tournaments. Tournaments have matches (games). 
 
-As a League ownder, I want to create new leagues, so that like minded users can gather and compete with each other.
-As a League ownder, I want to manage tournaments within my own league, so that leagues can be more organize and __________
-As a League ownser, I want to conduct tournaments, so that tournaments under my league follow the league rules and to ensure that cheating and corruption are midigated and stopped.
+As a < type of user >, I want < some goal > so that < some reason >.
+
+>>Title: Operator wants ability to create new games.
+Story Points: 
+Assigned To: 
+Description: As an Operator, I want the ability to create new games so that I create matches for players to participate in. 
+Acceptance Test(s):
+• Operator can view game list of a given tournament.
+• Operator can add game to game list of a given tournament.
+• Operator can edit details of an existing game of a given tournament.
+• Operator can remove game from game list of a given tournament.
+
+>>Title: Operator wants ability to create new Tournaments.
+Story Points: 
+Assigned To: 
+Description: As an Operator, I want the ability to create new tournament styles so that I can add variety to game types.
+Acceptance Test(s):
+• Operator can create new Tournaments.
+• Operator can view existing Tournaments.
+• Operator can choose Tournament style when creating new Tournament.
+• Operator can edit existing Tournament style.
+• Operator can remove Tournament from list of existing Tournaments. 
+
+>>Title:  Operator wants ability to modify Expert Rating Formula
+Story Points: 
+Assigned To: 
+Description: As an Operator, I want the ability to modify the Expert Rating Formula, so that I can modify the criteria for which ER Points are earned.
+Acceptance Test(s):
+• Operator can view current Expert Rating Formula
+• Operator can pick which variables are used in Expert Rating Formula
+• Operator can add new variable to list of variables for potential use in Expert Rating Formula. 
+
+>>Title: Operator wants ability to manage users.
+Story Points: 
+Assigned To: 
+Description: As an Operator, I want the ability to manage users, so that I can properly administer tournaments.
+Acceptance Test(s):
+• Operator can view list of existing users. 
+• Operator can filter view of existing user list by role
+• Operator can organize view of existing user alphabetically, ascending & descending. 
+• Operator can modify details of an existing user.
+• Operator can add user to list of existing users.
+• Operator can remove user from list of existing users.
+
+>>Title: League Owner wants ability to manage Leagues.
+Story Points: 
+Assigned To: 
+Description: As a League Owner, I want the ability to create new Leagues, so that I can create new Leagues for players to participate in.
+Acceptance Test(s):
+• League Owner can view list of existing leagues.
+• League Owner can modify details of league from list of existing leagues.
+• League Owner can remove league from list of existing leagues.
+• League Owner can add league to list of existing leagues.
+
+>>Title: League Owner wants ability to declare a League winner.
+Story Points: 
+Assigned To: 
+Description:  As a League Owner, I need to be able to declare a winner of a league, so that I can properly conduct and close leagues after they have run their course.
+Acceptance Test(s):
+• League Owner can declare winner of a League, once the League is finished. 
+• League Owner can remove player from list of players participating in that League. (Disqualification) 
+
+>>Title: League Owner wants ability to approve/disapprove players applying to Leagues.
+Story Points: 
+Assigned To: 
+Description: As a League Owner, I need to be able to approve or disapprove applying players, so that I can manage which players are in which leagues.
+Acceptance Test(s):
+• League Owner can view list of players applying to various leagues.
+• League Owner can approve applying players. Adding to the list of approved players per league.
+• League Owner can deny applying players. 
+• League Owner can remove player from list of approved players per league.
+• League Owner can edit details of existing approved player from list of approved players per league.
+
+>>Title: Player wants to able to register to existing Arenas.
+Story Points: 
+Assigned To: 
+Description: As a Player, I need to be able to register to an arena, so that I can participate in the leagues of specific Arenas.
+Acceptance Test(s):
+• Players can view list of arenas. 
+• Players can apply to participate in arena. 
+• Players can view statues of Arena application.
+
+>>Title: Player wants to be able to register to existing Leagues.
+Story Points: 
+Assigned To:
+Description: As a Player, I want to be able to apply to existing or upcoming Leagues, so that I can participate in the Tournaments of a specific league.
+Acceptance Test(s):
+• Players can view list of Leagues per Arena.
+• Players can apply to participate in League.
+• Players can view statues of League application.
+
+>>Title: Player wants to be able to view their upcoming schedule.
+Story Points: 
+Assigned To:
+Description: As a Player, I want to be able to view matches I am scheduled for, so that I can keep up with them easier.
+Acceptance Test(s):
+• Players can view list of Leagues (per Arena) they are approved for & corresponding event times.
+• Players can view list of Tournaments (per League) they are approved for & corresponding event times.
+• Player can view list of Games (per Tournament) they are approved for & corresponding event times.
+
+>> * Title: Player wants ability to compete in game.
+Story Points: 
+Assigned To:
+Description: As a Player, I want to be able to play in a match that I’m scheduled for, so that I can compete with the other players.
+Acceptance Test(s):
+• Player(s) can compete with one another. 
+
+>>Title: Player wants ability to drop out of game.
+Story Points: 
+Assigned To:
+Description: As a Player, I want the ability to drop out of an upcoming or ongoing match, so that I can forfeit or reschedule in case of an emergency. 
+Acceptance Test(s):
+• Player can drop out a match they are scheduled for (upcoming) 
+• Player can forfeit match they are partaking in currently.
+
+>>Title: Spectator wants ability to watch games.
+Story Points:
+Assigned To:
+Description: As a Spectator, I want to be able to view any match in progress, so that I can see who is winning as the match unfolds.
+Acceptance Test(s):
+• Spectator can view list of upcoming & currently-happening matches (per Arena.)
+• Spectator can view scores & stats of ongoing Match (per Arena).
+• Spectator can view scores & stats of ongoing League (per Arena).
+• Spectator can view scores & stats of ongoing Tournament (per Arena).
+
+>>Title: Spectator wants ability to view states & scores of past events.
+Story Points: 
+Assigned To:
+Description: As a Spectator, I want to be able to look up scores & stats from past matches, so that I can see which players won them. 
+Acceptance Test(s):
+• Spectator can view scores & stats of past Match(s), per Arena.
+• Spectator can view scores & stats of past League(s), per Arena.
+• Spectator can view scores & stats of past Tournament(s), per Arena.
+
+>>Title: Advertiser wants ability to upload new ads.
+Story Points:
+Assigned To:
+Description: As an Advertiser, I want to be able to upload new ads, so that I can show the audience newer, fresher adverts. 
+Acceptance Test(s):
+• Advertiser can view currently existing ads from a list.
+• Advertiser can add an ad to list of ads.
+• Advertiser can remove an ad from list of ads.
+
+>>Title: Advertiser wants ability to pick ad-scheme.
+Story Points:
+Assigned To:
+Description: As an Advertiser, I want to be able to select an ad scheme, so that I can choose the best Ad layout for the ad I’m using.
+Acceptance Test(s):
+• Advertiser can choose ad scheme from pre-existing list. 
+
+>>Title: Advertiser wants ability to check balance.
+Story Points:
+Assigned To:
+Description: As an Advertiser, I want to be able to check my existing balance, so that I can add funds if I need to.
+Acceptance Test(s):
+• Advertiser can view existing balance with Arena Company.
+• Advertiser can add funds to existing balance with Arena Company.
