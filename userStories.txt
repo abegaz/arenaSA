@@ -1,0 +1,4 @@
+As an Operator, I want to create new game (Game Category?), so that tournaments can be organized under a specific category and so users can join, view, and access tournaments under the game that they want.
+As an Operator, I want to create new tournament types, so that users can choose the perfect tournament style for thier game.
+As an operator, I want to define tournament rating formulas, so that point based tournaments are fair and corrupt free.
+As an operator, I want to manage users, so that if any user problem arise I would be able to deal with it quickly and under my own discreation.
