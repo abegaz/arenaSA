@@ -12,7 +12,7 @@ Advertiser--> SanCorp. Inc.
 >>Title: Operator wants ability to create new games.
 Story Points: 
 Assigned To: 
-Description: As an Operator, I want the ability to create new games so that I create matches for players to participate in. 
+Description: As an Operator, I want the ability to create new games so that users can participate in matches within tournaments.
 Acceptance Test(s):
 • Operator can view game list of a given tournament.
 • Operator can add game to game list of a given tournament.
@@ -22,7 +22,7 @@ Acceptance Test(s):
 >>Title: Operator wants ability to create new Tournaments.
 Story Points: 
 Assigned To: 
-Description: As an Operator, I want the ability to create new tournament styles so that I can add variety to game types.
+Description: As an Operator, I want the ability to create new tournament styles so that users can select from a broad variety of game types for there tournaments.
 Acceptance Test(s):
 • Operator can create new Tournaments.
 • Operator can view existing Tournaments.
@@ -33,7 +33,7 @@ Acceptance Test(s):
 >>Title:  Operator wants ability to modify Expert Rating Formula
 Story Points: 
 Assigned To: 
-Description: As an Operator, I want the ability to modify the Expert Rating Formula, so that I can modify the criteria for which ER Points are earned.
+Description: As an Operator, I want the ability to modify the Expert Rating Formula, so that I can modify the criteria for which ER Points are earned and to insure cheating is midigated.
 Acceptance Test(s):
 • Operator can view current Expert Rating Formula
 • Operator can pick which variables are used in Expert Rating Formula
@@ -42,7 +42,7 @@ Acceptance Test(s):
 >>Title: Operator wants ability to manage users.
 Story Points: 
 Assigned To: 
-Description: As an Operator, I want the ability to manage users, so that I can properly administer tournaments.
+Description: As an Operator, I want the ability to manage users, so that I can properly administer tournaments and deal with user releated problems.
 Acceptance Test(s):
 • Operator can view list of existing users. 
 • Operator can filter view of existing user list by role
@@ -144,7 +144,7 @@ Acceptance Test(s):
 >>Title: Advertiser wants ability to upload new ads.
 Story Points:
 Assigned To:
-Description: As an Advertiser, I want to be able to upload new ads, so that I can show the audience newer, fresher adverts. 
+Description: As an Advertiser, I want to be able to upload new ads, so that I can show the audience newer, fresher, and specific adverts. 
 Acceptance Test(s):
 • Advertiser can view currently existing ads from a list.
 • Advertiser can add an ad to list of ads.
