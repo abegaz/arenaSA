@@ -1,11 +1,13 @@
-Roles: Operator  Brad,
- League Owner Mary,
- Player Kevin,
- Spectator Bob,
- Advertiser SanCorp. Inc. 
-Arena’s hold Leagues.  Leagues Have Tournaments. Tournaments have matches (games). 
+  >>>Roles:<<<
+Operator--> Brad,
+League Owner--> Mary,
+Player--> Kevin,
+Spectator--> Bob,
+Advertiser--> SanCorp. Inc. 
+ 
+[Arena’s hold Leagues.  Leagues Have Tournaments. Tournaments have matches (games). ]
 
-As a < type of user >, I want < some goal > so that < some reason >.
+[As a < type of user >, I want < some goal > so that < some reason >.]
 
 >>Title: Operator wants ability to create new games.
 Story Points: 
@@ -105,7 +107,7 @@ Acceptance Test(s):
 • Players can view list of Tournaments (per League) they are approved for & corresponding event times.
 • Player can view list of Games (per Tournament) they are approved for & corresponding event times.
 
->> * Title: Player wants ability to compete in game.
+>> *((needs clarificatoin)) Title: Player wants ability to compete in game.
 Story Points: 
 Assigned To:
 Description: As a Player, I want to be able to play in a match that I’m scheduled for, so that I can compete with the other players.
