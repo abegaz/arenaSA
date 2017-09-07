@@ -1,4 +1,4 @@
-  >>>Roles:<<<
+﻿  >>>Roles:<<<
 Operator--> Brad,
 League Owner--> Mary,
 Player--> Kevin,
@@ -83,6 +83,15 @@ Acceptance Test(s):
 • League Owner can deny applying players. 
 • League Owner can remove player from list of approved players per league.
 • League Owner can edit details of existing approved player from list of approved players per league.
+
+>>Title: League Owner wants to manage how tournament is handle.
+Story Points: 
+Assigned To: 
+Description: As a League Owner, I need to be able to seperate tournyment into pools, so that I can handle a large amount of players.
+Acceptance Test(s):
+• League Owner can set an amount of smaller tournaments pools.
+• League Owner can set a loser pools bracket if the so want.
+• League Owner can add winners from the pools into the the final tournament bracket.
 
 >>Title: Player wants to able to register to existing Arenas.
 Story Points: 
