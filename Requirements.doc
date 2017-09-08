@@ -1,4 +1,4 @@
-
+﻿
 ARENA
 Requirements
 
@@ -39,7 +39,4 @@ Requirements
 • Time
 • Must use: Java
 • Must use: JavaFX
-• Must use: JavaFX Scene builder
-• Must use: MySQL
-• Must use: GitHub
-• Must have secure SQL practices
+
