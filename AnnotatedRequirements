@@ -1,0 +1,47 @@
+ARENA
+Requirements
+
+◘ Functional Requirements (Services to be provided)
+
+•	Provide a role based infrastructure for operating an arena.
+
+► Operator: A super user with administrative powers over all other users.
+• Create New Games – Think the creation of new games should be done by the League Owner. Presumably the League Owner has the expertise required whereas the Operator may not.
+• Create New Tournament Styles:  Operators are the soul creator of new tournaments and tournament styles. – Again, the League Owners should create new tournaments and styles. The Operator may define parameters for new tournamnets/games.
+• Define New Expert Rating Formulas
+• Manage Users (Edit, Remove, Add, Approve/Decline Registered Users)
+
+►League Owner: Special users that have higher administrative powers than basic player users but not operator users
+• Create New League: Leagues are a contained subset group of multiple player users. – Isn’t a League a subset of the arena? I would think a League Owners responsibilities are confined to their own league.
+• Manage Tournaments within a League (Edit, Remove, Add): A league can have multple separate tournaments and league owners are responsible with managing the tournaments that the league is hosting. 
+• Conduct a Tournament – after defining the tournament goals, methods, scoring etc.
+• Declare a Winner: League owners can declare winners of tournaments once they are completed. 
+• Approve/ Decline applying players: If players of a league wish to participate in one of the league's tournaments they must first apply for that specific tournament with one league owners. 
+
+► Players: A basic subscribed user. Players are personal users that use the arena service to take part and keep track of tournaments and other players. 
+• Register to an arena 
+• Apply to an existing league: Players can apply to join multiple leagues.
+• View & “play” in games they are scheduled for.
+• Drop out of Tournament they are registered for.
+
+► Spectators: Spectators are non participating users. The can be anonymous third party users or subscribed users. Any of the three groups above can be a spectator.
+• View any match in progress: Tournament matches are open for viewing by anyone.
+• View scores & stats of past matches – also current standings of players.
+
+► Advertisers: Advertisers are special third party users. They have no special administrative privileges over other users. Advertisers only have power over the adverts that they supply for display. Advertisers are completely reliant on operators or league owners if a technical or non-advert problem arises that must be resolved. 
+• Upload new Ads: Advertisers can create and upload ads for global, league, or local spaces.
+• Select an Ad. Scheme
+• Check Balance: 
+• Cancel existing Ads: Ads can be removed at any time by the ad owner.
+All new ads must be preapproved by Operator before posting.
+
+◘ Non-Functional Requirements (Known constraints)
+• Time
+• Must use: Java
+• Must use: JavaFX
+• Must use: JavaFX Scene builder
+• Must use: MySQL
+• Must use: GitHub
+• Must have secure SQL practices
+
+	Again, other than Java/JavaFX which were specified by the Client/Prof Abegaz, these are not non-functional requirements. While we as the development team may wish to use them, I don’t think the client cares.
