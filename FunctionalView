@@ -1,0 +1,50 @@
+ARENA: A Functional View
+
+ARENA is a business. As such it requires a business plan that demonstrates it objectives and plans to reach those objectives.  Ideally, in the real world, we as a development team would meet as often as necessary with ALL the stakeholders – Manager, League Owners, Players, Spectators, Advertisers and Game developers to determine their requirements. Unfortunately, we are unable to do this in our hypothetical setting so we must also act as stakeholders as well as be the development team.
+
+The all-encompassing entity is the ARENA. Within the ARENA are any numbers of Leagues. Leagues can host any number of tournaments each consisting of any number of games depending on the tournament and game style and number of participants. I think we should make a clearer distinction between the operator and the league owner. Given that this is a for-profit business the operator is the CEO/manager(Commissioner if you want to use MLB, NFL metaphor). It is his responsibility to oversee the league owners, advertisers and all financial matters. On the other hand, the league owner should be responsible for developing new games and for their administration.
+
+Title: Operator/Owner/Manager/Commissioner
+Functions: 
+•	Create Leagues (Determine optimal number and maximum number of leagues, criteria league and game acceptance)
+•	Appoint League Owners (Applicant evaluation)
+•	Oversee all financial operations (accounts receivable, accounts payable)
+•	Maintain registry of players including player profiles (admit, delete, modify)
+•	Interface with advertisers (set prices, collect revenue)
+•	Arbitrate disputes between players and player league owner
+•	Establish maximum number of concurrent games by a player.
+
+
+Title: League Owner
+Functions:
+•	Develop and deploy tournaments and games within his league
+•	Define tournament type i.e. single knockout, double knockout, round robin, ladder tournament
+•	Maintain player scores for each game and tournament
+•	Declare winners and determine ranking (ordinal, ranks – novice, ace, expert)
+
+Title: Player
+Function:
+•	Participate in tournaments/games – including joining and withdrawing
+•	Manage their profile (Avatar, contact, preferences)
+•	View their ranking compared to their competitors
+•	Rate their experience for ongoing site improvement to management.
+
+Title: Spectator
+Functions:
+•	Observe game his/her choice
+•	Access players performance records and standings.
+•	Rate their experience for ongoing site improvement to management.
+
+Title: Advertiser
+Functions:
+•	Maintain an account with Arena.
+•	Place/modify/remove ads
+
+Title: Game Developer
+Functions:
+•	Freelance game developer
+•	Demonstrate ideas with mock ups
+•	Not bound to a league
+•	Can peddle his wares to the appropriate league.
+•	Interacts with players for feedback.
+•	Interacts with League Owners for engagement.
