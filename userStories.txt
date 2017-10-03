@@ -15,6 +15,7 @@ Story Points:
 	Robert: 14 days - Operators, in this case, are the actual program developers, creating new games depends on the complexity of said game. Simple games like 			tic-tac toe are easy to make when the player can only play against a random number generator. These games are reliant on a database to store and 			retrieve player moves and gamestates. If a single game can be created, connected to a database, and that two player can successfully play and complete 			the game, then we can focus on other aspects of the arena project.
 	Bren: 	14 days  
 	Mark: 16 days I'm not really sure how this is going to work unless we have something that is a mock-up.  
+	Kyle:  14-? days
  
 Assigned To: 
 Description: As an Operator, I want the ability to create new games so that users can participate in matches within tournaments.
@@ -30,6 +31,7 @@ Story Points:
 	Bren:   7 days. This seems like it would be pretty easy to set up once we have game creation set up. Really depends on how we want to rank players and the
 		amount of variables that come with what type of game/tournament is used.
 	Mark:	11 days. 	
+	Kyle:  12-14 days
   
 Assigned To: 
 Description: As an Operator, I want the ability to create new tournament styles so that users can select from a broad variety of game types for there tournaments.
@@ -47,6 +49,7 @@ Story Points:
 	Mark:	4 days. -Should be simple enough to set up a way for the league owner to determine the number of entrants, the amount of points for each place, and having the program check the placement and add the number of points to the Database.
 Assigned To: 
 Description: As an Operator, I want the ability to modify the Expert Rating Formula, so that I can modify the criteria for which ER Points are earned and to insure cheating is mitigated.
+	Kyle:  4 days
 Acceptance Test(s):
 • Operator can view current Expert Rating Formula
 • Operator can pick which variables are used in Expert Rating Formula
@@ -57,6 +60,7 @@ Story Points:
 	Robert: 6 days - This should be as simple as accessing the database and editing the database from the program itself. This should be implement naturally as the 		project is developed. The operator having the ability to access the database should be one of, if not the first thing, that is implemented.
 	Bren:   7 days.
 	Mark:	9 days. - Mostly because I'm just now learning Databases and don't have as much skills with it
+	Kyle:  7 days
 Assigned To: 
 Description: As an Operator, I want the ability to manage users, so that I can properly administer tournaments and deal with user releated problems.
 Acceptance Test(s):
@@ -72,6 +76,7 @@ Story Points:
 	Robert Cromer: 7days
 	Bren Bailey: 7 days
 	Mark:  8 days 
+	Kyle:  7 days
 
 Assigned To:
 Description: As a League Owner, I want the ability to create new Leagues, so that I can create new Leagues for players to participate in.
@@ -86,6 +91,7 @@ Story Points:
  	Robert Cromer: 4days
 	Bren Bailey: 2 days
 	Mark: 4 days
+	Kyle: 2 days 
 Assigned To: 
 Description:  As a League Owner, I need to be able to declare a winner of a league, so that I can properly conduct and close leagues after they have run their course.
 Acceptance Test(s):
@@ -97,6 +103,7 @@ Story Points:
  	Robert Cromer: 4days
 	Bren Bailey: 7days
 	Mark: 7 days 
+	Kyle: 5 days
 Assigned To: 
 Description: As a League Owner, I need to be able to approve or disapprove applying players, so that I can manage which players are in which leagues.
 Acceptance Test(s):
@@ -106,11 +113,12 @@ Acceptance Test(s):
 • League Owner can remove player from list of approved players per league.
 • League Owner can edit details of existing approved player from list of approved players per league.
 
->>Title: League Owner wants to manage how tournament is handle.
+>>Title: League Owner wants to manage how tournament is handled.
 Story Points: 
  	Robert Cromer: 7days
 	Bren Bailey: 4 days.
 	Mark: 5 days 
+	Kyle:  5-7 days
 Assigned To: 
 Description: As a League Owner, I need to be able to seperate tournaments into pools, so that I can handle a large amount of players.
 Acceptance Test(s):
@@ -123,6 +131,7 @@ Story Points:
 	Robert Cromer: 4days
 	Bren Bailey: 4 days
 	Mark: 5 days
+	Kyle:  4 days
 Assigned To: 
 Description: As a Player, I need to be able to register to an arena, so that I can participate in the leagues of specific Arenas.
 Acceptance Test(s):
@@ -135,6 +144,7 @@ Story Points:
 	Robert Cromer: 4days
 	Bren Bailey: 4 days
 	Mark 5 days
+	Kyle:  4 days
 Assigned To:
 Description: As a Player, I want to be able to apply to existing or upcoming Leagues, so that I can participate in the Tournaments of a specific league.
 Acceptance Test(s):
@@ -147,6 +157,7 @@ Story Points:
 	Robert Cromer: 4days
 	Bren Bailey: 1 day.
 	Mark 5 days
+	Kyle:  2 days
 Assigned To:
 Description: As a Player, I want to be able to view matches I am scheduled for, so that I can keep up with them easier.
 Acceptance Test(s):
@@ -159,6 +170,7 @@ Story Points:
 	Robert Cromer: 5days
 	Bren Bailey: 7 days
 	Mark 9 days
+	Kyle:  ? days
 Assigned To:
 Description: As a Player, I want to be able to play in a match that I’m scheduled for, so that I can compete with the other players.
 Acceptance Test(s):
@@ -169,6 +181,7 @@ Story Points:
 	Robert Cromer: 5days
 	Bren Bailey: 1 day
 	Mark 3 days 
+	Kyle:  1 day
 Assigned To:
 Description: As a Player, I want the ability to drop out of an upcoming or ongoing match, so that I can forfeit or reschedule in case of an emergency. 
 Acceptance Test(s):
@@ -180,6 +193,7 @@ Story Points:
 	Robert Cromer: 4days
 	Bren Bailey: 1 day
 	Mark: 5 days
+	Kyle: 7 days
 Assigned To:
 Description: As a Spectator, I want to be able to view any match in progress, so that I can see who is winning as the match unfolds.
 Acceptance Test(s):
@@ -193,6 +207,7 @@ Story Points:
 	Robert Cromer: 4days
 	Bren Bailey:   1 day.
 	Mark 3 days
+	Kyle:  2-3 days
 Assigned To:
 Description: As a Spectator, I want to be able to look up scores & stats from past matches, so that I can see which players won them. 
 Acceptance Test(s):
@@ -207,6 +222,7 @@ Story Points:
 	Mark.  5 days.  Should be easy enough to match how much the Advertiser paid for with the banner advertisers give us.  Assuming there's not ads before the video feed plays. 
 Assigned To:
 Description: As an Advertiser, I want to be able to upload new ads, so that I can show the audience newer, fresher, and specific adverts. 
+	Kyle:  5-7 days
 Acceptance Test(s):
 • Advertiser can view currently existing ads from a list.
 • Advertiser can add an ad to list of ads.
@@ -217,6 +233,7 @@ Story Points:
 	Robert Cromer: 7days
 	Bren Bailey: 2 days
 	Mark: 4 days
+	Kyle:  2-3 days
 Assigned To:
 Description: As an Advertiser, I want to be able to select an ad scheme, so that I can choose the best Ad layout for the ad I’m using.
 Acceptance Test(s):
@@ -227,6 +244,7 @@ Story Points:
 	Robert Cromer: 6days
 	Bren Bailey: 2 days. Seems like setting up the payment system will be the hard part. Checking the balance should be easy.
 	Mark: 5 days.
+	Kyle:  5-7 days
 Assigned To:
 Description: As an Advertiser, I want to be able to check my existing balance, so that I can add funds if I need to.
 Acceptance Test(s):
