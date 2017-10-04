@@ -13,15 +13,15 @@ implementing this version.
 * Uses additional libraries:
 These must be downloaded and manually added to library in order to run the program properly in Eclipse.
  
- -- Jfoenix.jar.  [ https://github.com/jfoenixadmin/JFoenix ]
- -- mysqlConneter (Connecter/J)   [  https://dev.mysql.com/downloads/connector/j/5.1.html  ] 
+ -- Jfoenix  [ https://github.com/jfoenixadmin/JFoenix ]
+ -- mysqlConnecter (Connecter/J)   [  https://dev.mysql.com/downloads/connector/j/5.1.html  ] 
 
 To Be Done.
 -------------------
 - Remove Console Error Reporting.
 - Resolve inconsistency of Application Icon.
-- Add convince features:  • Pressing 'Enter' on loginPage presses 'Sign In' button.
-                          • Make Application Draggable.
+- Add convince features:  â€¢ Pressing 'Enter' on loginPage presses 'Sign In' button.
+                          â€¢ Make Application Draggable.
 - May contain Image Path Errors that reference earlier prototype.
 
  
