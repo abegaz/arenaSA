@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="414.0" prefWidth="839.0" style="-fx-background-color: #20120F;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="arenaPrototypeB.ControllerSupreme">
+   <children>
+      <ImageView fitHeight="414.0" fitWidth="839.0" opacity="0.09" pickOnBounds="true">
+         <image>
+            <Image url="@../../Images/domina4.gif" />
+         </image>
+      </ImageView>
+      <Label layoutX="335.0" layoutY="28.0" opacity="0.92" text="Registration" textFill="WHITE">
+         <font>
+            <Font size="32.0" />
+         </font>
+      </Label>
+      <AnchorPane layoutX="58.0" layoutY="79.0" prefHeight="272.0" prefWidth="723.0" style="-fx-background-color: #238EFF;">
+         <children>
+            <JFXTextField fx:id="regUserName" labelFloat="true" layoutX="45.0" layoutY="46.0" promptText="Enter Username" />
+            <JFXPasswordField fx:id="regPassword" labelFloat="true" layoutX="45.0" layoutY="82.0" promptText="Enter Password" />
+            <JFXTextField fx:id="regEmail" labelFloat="true" layoutX="227.0" layoutY="46.0" prefHeight="25.0" prefWidth="135.0" promptText="Enter E-Mail Address" />
+            <JFXTextField fx:id="regFName" labelFloat="true" layoutX="45.0" layoutY="130.0" promptText="First Name " />
+            <JFXTextField fx:id="regLName" labelFloat="true" layoutX="227.0" layoutY="130.0" promptText="Last Name" />
+            <JFXButton fx:id="regSignUpButton" layoutX="377.0" layoutY="229.0" onAction="#passDataSignUp" onMouseClicked="#loginAction" prefHeight="25.0" prefWidth="238.0" style="-fx-background-color: #E45652;" text="Sign Up">
+               <textFill>
+                  <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                     <stops>
+                        <Stop color="#f5f5f5" />
+                        <Stop color="#dad6d6" offset="1.0" />
+                     </stops>
+                  </RadialGradient>
+               </textFill>
+            </JFXButton>
+            <JFXButton fx:id="regGoBackButton" layoutX="112.0" layoutY="229.0" onAction="#goBackAction" prefHeight="25.0" prefWidth="238.0" style="-fx-background-color: #E45652;" text="Go Back">
+               <textFill>
+                  <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                     <stops>
+                        <Stop color="#f5f5f5" />
+                        <Stop color="#dad6d6" offset="1.0" />
+                     </stops>
+                  </RadialGradient>
+               </textFill>
+            </JFXButton>
+            <JFXRadioButton fx:id="operatorRoleChoice" layoutX="444.0" layoutY="63.0" text="Operator">
+               <toggleGroup>
+                  <ToggleGroup fx:id="roleGroup" />
+               </toggleGroup>
+            </JFXRadioButton>
+            <JFXRadioButton fx:id="leagueOwnerRoleChoice" layoutX="557.0" layoutY="63.0" text="League Owner" toggleGroup="$roleGroup" />
+            <JFXRadioButton fx:id="playerRoleChoice" layoutX="444.0" layoutY="107.0" text="Player" toggleGroup="$roleGroup" />
+            <JFXRadioButton fx:id="spectatorRoleChoice" layoutX="557.0" layoutY="107.0" selected="true" text="Spectator" toggleGroup="$roleGroup" />
+            <JFXRadioButton fx:id="advertRoleChoice" layoutX="511.0" layoutY="155.0" text="Advertiser" toggleGroup="$roleGroup" />
+            <Label layoutX="532.0" layoutY="14.0" text="Role" underline="true">
+               <font>
+                  <Font size="29.0" />
+               </font>
+            </Label>
+            <JFXPasswordField layoutX="227.0" layoutY="82.0" prefHeight="25.0" prefWidth="135.0" promptText="ReType Password" />
+            <Separator layoutX="457.0" layoutY="93.0" prefHeight="1.0" prefWidth="226.0" />
+            <Separator layoutX="457.0" layoutY="141.0" prefHeight="3.0" prefWidth="226.0" />
+            <Label layoutX="428.0" layoutY="172.0" prefHeight="43.0" prefWidth="259.0" text="Selecting this Role means you will have to wait for confirmation before being able to login." textAlignment="CENTER" wrapText="true" />
+            <BorderPane prefHeight="273.0" prefWidth="723.0" style="-fx-border-color: #FFFFFF;" />
+         </children>
+      </AnchorPane>
+      <Label layoutX="820.0" layoutY="1.0" onMouseClicked="#handleClose" text="X" textFill="#d0cccc">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <ImageView id="progress" fx:id="progress" fitHeight="79.0" fitWidth="71.0" layoutY="359.0" opacity="0.74" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../Images/loading.gif" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
