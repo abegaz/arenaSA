@@ -20,7 +20,7 @@
             <Image url="@../../Images/domina10.gif" />
          </image>
       </ImageView>
-      <Label layoutX="399.0" layoutY="28.0" opacity="0.46" text="Applications" textFill="#e1dada">
+      <Label layoutX="435.0" layoutY="29.0" opacity="0.46" text="Applications" textFill="#e1dada">
          <font>
             <Font size="36.0" />
          </font>
@@ -49,24 +49,15 @@
          <children>
             <TableView fx:id="userIdTable" layoutX="9.0" layoutY="40.0" prefHeight="329.0" prefWidth="980.0" style="-fx-background-color: #86BFFC; -fx-border-width: 2; -fx-border-color: #01184B;">
               <columns>
+                  <TableColumn fx:id="columnScreenName1" prefWidth="151.0" style="-fx-background-color: #9b4427;" text="UserID" />
                 <TableColumn fx:id="columnScreenName" prefWidth="151.0" style="-fx-background-color: #9b4427;" text="Screen Name" />
-                <TableColumn fx:id="columnEmail" minWidth="6.0" prefWidth="281.6666564941406" style="-fx-background-color: #9b4427;" text="Email" />
-                  <TableColumn fx:id="columnFName" minWidth="0.0" prefWidth="197.33334350585938" style="-fx-background-color: #9b4427;" text="First Name" />
-                  <TableColumn fx:id="columnLName" prefWidth="184.0" style="-fx-background-color: #9b4427;" text="Last Name" />
-                  <TableColumn fx:id="columnRole" prefWidth="171.0" style="-fx-background-color: #9b4427;" text="Role" />
+                <TableColumn fx:id="columnEmail" minWidth="6.0" prefWidth="184.0" style="-fx-background-color: #9b4427;" text="Email" />
+                  <TableColumn fx:id="columnFName" minWidth="0.0" prefWidth="182.0" style="-fx-background-color: #9b4427;" text="First Name" />
+                  <TableColumn fx:id="columnLName" prefWidth="173.0" style="-fx-background-color: #9b4427;" text="Last Name" />
+                  <TableColumn fx:id="columnRole" prefWidth="134.0" style="-fx-background-color: #9b4427;" text="Role" />
               </columns>
             </TableView>
-            <JFXButton fx:id="operApproveButton" layoutX="14.0" layoutY="383.0" onAction="#approveNewUser" prefHeight="25.0" prefWidth="238.0" style="-fx-background-color: #E45652;" text="Approve">
-               <textFill>
-                  <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
-                     <stops>
-                        <Stop color="#f5f5f5" />
-                        <Stop color="#dad6d6" offset="1.0" />
-                     </stops>
-                  </RadialGradient>
-               </textFill>
-            </JFXButton>
-            <JFXButton fx:id="operRemoveButton" layoutX="282.0" layoutY="383.0" onAction="#removeNewUser" prefHeight="25.0" prefWidth="238.0" style="-fx-background-color: #E45652;" text="Deny ">
+            <JFXButton fx:id="operRemoveButton" layoutX="282.0" layoutY="383.0" onAction="#removeNewUser" prefHeight="25.0" prefWidth="238.0" style="-fx-background-color: #E45652;" text="Deny">
                <textFill>
                   <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
                      <stops>
@@ -94,6 +85,16 @@
             <ScrollBar layoutX="990.0" layoutY="40.0" orientation="VERTICAL" prefHeight="329.0" prefWidth="19.0" />
             <JFXTextField layoutX="664.0" layoutY="8.0" prefHeight="25.0" prefWidth="183.0" promptText="Enter Search Query" style="-fx-background-color: #FFFFFF;" />
             <JFXButton fx:id="refreshButton1" layoutX="859.0" layoutY="8.0" onAction="#loadDateFromDatabase" prefHeight="25.0" prefWidth="113.0" style="-fx-background-color: #E45652;" text="Search">
+               <textFill>
+                  <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                     <stops>
+                        <Stop color="#f5f5f5" />
+                        <Stop color="#dad6d6" offset="1.0" />
+                     </stops>
+                  </RadialGradient>
+               </textFill>
+            </JFXButton>
+            <JFXButton fx:id="operRemoveButton1" layoutX="14.0" layoutY="382.0" onAction="#removeNewUser" prefHeight="25.0" prefWidth="238.0" style="-fx-background-color: #E45652;" text="Approve">
                <textFill>
                   <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
                      <stops>
