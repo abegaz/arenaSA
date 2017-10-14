@@ -67,7 +67,7 @@
                </textFill>
             </JFXButton>
             <JFXButton fx:id="operRemoveButton" layoutX="282.0" layoutY="383.0" onAction="#removeNewUser" prefHeight="25.0" prefWidth="238.0" style="-fx-background-color: #E45652;" text="Deny/Remove">
-               <textFill>
+               <textFill> 
                   <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
                      <stops>
                         <Stop color="#f5f5f5" />
