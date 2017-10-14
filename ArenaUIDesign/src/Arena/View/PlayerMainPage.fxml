@@ -21,7 +21,7 @@
             <Image url="@../../Images/loading.gif" />
          </image>
       </ImageView>
-      <Label layoutX="268.0" layoutY="28.0" opacity="0.46" text="Welcome Operator" textFill="#e1dada">
+      <Label layoutX="302.0" layoutY="24.0" opacity="0.46" text="Welcome Player" textFill="#e1dada">
          <font>
             <Font size="36.0" />
          </font>
@@ -39,11 +39,11 @@
                   <Stop color="#dad6d6" offset="1.0" />
                </stops>
             </RadialGradient>
-         </textFill>
+         </textFill> 
       </JFXButton>
-      <AnchorPane layoutX="68.0" layoutY="92.0" prefHeight="239.0" prefWidth="723.0" style="-fx-background-color: #238EFF;">
+      <AnchorPane layoutX="68.0" layoutY="90.0" prefHeight="239.0" prefWidth="723.0" style="-fx-background-color: #238EFF;">
          <children>
-            <JFXButton fx:id="applicationsButton" layoutX="14.0" layoutY="70.0" onAction="#goToAppsPage" prefHeight="25.0" prefWidth="202.0" style="-fx-background-color: #E45652;" text="Manage Applications">
+            <JFXButton fx:id="applicationsButton" layoutX="14.0" layoutY="61.0" onAction="#goToAppsPage" prefHeight="25.0" prefWidth="202.0" style="-fx-background-color: #E45652;" text="Join New League">
                <textFill>
                   <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
                      <stops>
@@ -53,7 +53,7 @@
                   </RadialGradient>
                </textFill>
             </JFXButton>
-            <JFXButton fx:id="operUsersManageButton" layoutX="261.0" layoutY="70.0" onAction="#goToManageUsersPage" prefHeight="25.0" prefWidth="202.0" style="-fx-background-color: #E45652;" text="Manage Users">
+            <JFXButton fx:id="operUsersManageButton" layoutX="261.0" layoutY="61.0" onAction="#goToManageUsersPage" prefHeight="25.0" prefWidth="202.0" style="-fx-background-color: #E45652;" text="Join Tournament">
                <textFill>
                   <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
                      <stops>
@@ -63,15 +63,24 @@
                   </RadialGradient>
                </textFill>
             </JFXButton>
-            <JFXButton layoutX="507.0" layoutY="70.0" prefHeight="25.0" prefWidth="202.0" style="-fx-background-color: #E45652;" text="Manage Leagues" textFill="#ddd3d3" />
-            <JFXButton layoutX="14.0" layoutY="141.0" prefHeight="25.0" prefWidth="202.0" style="-fx-background-color: #E45652;" text="Approve Game Scores" textFill="#ddd3d3" />
-            <JFXButton layoutX="261.0" layoutY="141.0" prefHeight="25.0" prefWidth="202.0" style="-fx-background-color: #E45652;" text="Apprvoe Tournament Winners" textFill="#ddd3d3" />
-            <JFXButton layoutX="507.0" layoutY="141.0" prefHeight="25.0" prefWidth="202.0" style="-fx-background-color: #E45652;" text="League Rankings Formula" textFill="#ddd3d3" />
+            <JFXButton layoutX="14.0" layoutY="151.0" prefHeight="25.0" prefWidth="202.0" style="-fx-background-color: #E45652;" text="Manage Leagues" textFill="#ddd3d3" />
+            <JFXButton layoutX="507.0" layoutY="151.0" prefHeight="25.0" prefWidth="202.0" style="-fx-background-color: #E45652;" text="Check Upcoming Games" textFill="#ddd3d3" />
+            <JFXButton layoutX="261.0" layoutY="151.0" prefHeight="25.0" prefWidth="202.0" style="-fx-background-color: #E45652;" text="Manage Tournaments" textFill="#ddd3d3" />
+            <JFXButton fx:id="applicationsButton1" layoutX="507.0" layoutY="61.0" onAction="#goToAppsPage" prefHeight="25.0" prefWidth="202.0" style="-fx-background-color: #E45652;" text="View Past Games">
+               <textFill>
+                  <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                     <stops>
+                        <Stop color="#f5f5f5" />
+                        <Stop color="#dad6d6" offset="1.0" />
+                     </stops>
+                  </RadialGradient>
+               </textFill>
+            </JFXButton>
          </children>
       </AnchorPane>
       <ImageView fitHeight="79.0" fitWidth="85.0" layoutX="115.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../Images/operatorIcon.png" />
+            <Image url="@../../Images/playerIcon.png" />
          </image>
       </ImageView>
       <Label fx:id="logInErrorText" layoutX="392.0" layoutY="358.0" opacity="0.0" text="Incorrect Username / Password" textFill="#eeff02">
