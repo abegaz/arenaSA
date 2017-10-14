@@ -39,7 +39,7 @@
                   <Stop color="#dad6d6" offset="1.0" />
                </stops>
             </RadialGradient>
-         </textFill>
+         </textFill> 
       </JFXButton>
       <AnchorPane layoutX="68.0" layoutY="90.0" prefHeight="239.0" prefWidth="723.0" style="-fx-background-color: #238EFF;">
          <children>
