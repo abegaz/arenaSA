@@ -33,7 +33,7 @@
       <ImageView id="progress" fx:id="progress" fitHeight="91.0" fitWidth="140.0" layoutX="7.0" layoutY="538.0" opacity="0.89" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../Images/loading.gif" />
-         </image>
+         </image> 
       </ImageView>
       <JFXButton fx:id="operGoBackButton" layoutX="161.0" layoutY="571.0" onAction="#goBackOperAction" prefHeight="25.0" prefWidth="238.0" style="-fx-background-color: #E45652;" text="Go Back">
          <textFill>
