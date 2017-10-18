@@ -45,7 +45,7 @@
       </JFXButton>
       <AnchorPane layoutX="23.0" layoutY="103.0" prefHeight="417.0" prefWidth="1020.0" style="-fx-background-color: #238EFF;">
          <children>
-            <JFXRadioButton layoutX="14.0" layoutY="104.0" prefHeight="17.0" prefWidth="118.0" text="League Wide">
+            <JFXRadioButton layoutX="9.0" layoutY="106.0" prefHeight="17.0" prefWidth="118.0" text="League Wide">
                <font>
                   <Font size="18.0" />
                </font></JFXRadioButton>
@@ -53,7 +53,7 @@
                <font>
                   <Font size="18.0" />
                </font></JFXRadioButton>
-            <JFXRadioButton layoutX="14.0" layoutY="74.0" prefHeight="17.0" prefWidth="118.0" text="Game Wide">
+            <JFXRadioButton layoutX="9.0" layoutY="74.0" prefHeight="17.0" prefWidth="118.0" text="Game Wide">
                <font>
                   <Font size="18.0" />
                </font>
