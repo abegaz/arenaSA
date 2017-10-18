@@ -13,12 +13,12 @@
    <children>
       <ImageView fitHeight="414.0" fitWidth="839.0" layoutY="-1.0" opacity="0.11" pickOnBounds="true">
          <image>
-            <Image url="@../../Images/domina.gif" />
+            <Image url="@../../../Images/domina.gif" />
          </image>
       </ImageView>
       <ImageView id="progress" fx:id="progress" fitHeight="72.0" fitWidth="85.0" layoutX="6.0" layoutY="347.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../Images/loading.gif" />
+            <Image url="@../../../Images/loading.gif" />
          </image>
       </ImageView>
       <Label layoutX="268.0" layoutY="28.0" opacity="0.46" text="Welcome Operator" textFill="#e1dada">
@@ -71,7 +71,7 @@
       </AnchorPane>
       <ImageView fitHeight="79.0" fitWidth="85.0" layoutX="115.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../Images/operatorIcon.png" />
+            <Image url="@../../../Images/operatorIcon.png" />
          </image>
       </ImageView>
       <Label fx:id="logInErrorText" layoutX="392.0" layoutY="358.0" opacity="0.0" text="Incorrect Username / Password" textFill="#eeff02">

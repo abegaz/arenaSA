@@ -17,7 +17,7 @@
    <children>
       <ImageView fitHeight="633.0" fitWidth="1066.0" layoutY="-1.0" opacity="0.12" pickOnBounds="true">
          <image>
-            <Image url="@../../Images/domina10.gif" />
+            <Image url="@../../../Images/domina10.gif" />
          </image>
       </ImageView>
       <Label layoutX="434.0" layoutY="29.0" opacity="0.46" text="Your Leagues" textFill="#e1dada">
@@ -32,7 +32,7 @@
       </Label>
       <ImageView id="progress" fx:id="progress" fitHeight="91.0" fitWidth="140.0" layoutX="7.0" layoutY="538.0" opacity="0.89" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../Images/loading.gif" />
+            <Image url="@../../../Images/loading.gif" />
          </image>
       </ImageView>
       <JFXButton fx:id="operGoBackButton" layoutX="161.0" layoutY="571.0" onAction="#goBackOperAction" prefHeight="25.0" prefWidth="238.0" style="-fx-background-color: #E45652;" text="Go Back">
