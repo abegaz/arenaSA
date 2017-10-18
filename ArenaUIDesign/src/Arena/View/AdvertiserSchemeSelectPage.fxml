@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="633.0" prefWidth="993.0" style="-fx-background-color: #20120F;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="arenaPrototypeB.ControllerSupreme">
+   <children>
+      <ImageView fitHeight="633.0" fitWidth="1066.0" layoutY="-1.0" opacity="0.12" pickOnBounds="true">
+         <image>
+            <Image url="@../../Images/domina10.gif" />
+         </image>
+      </ImageView>
+      <Label layoutX="394.0" layoutY="29.0" opacity="0.46" text="Advertising Schemes" textFill="#e1dada">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <Label layoutX="1040.0" layoutY="15.0" onMouseClicked="#handleClose" text="X" textFill="#d0cccc">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <ImageView id="progress" fx:id="progress" fitHeight="91.0" fitWidth="140.0" layoutX="7.0" layoutY="538.0" opacity="0.89" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../Images/loading.gif" />
+         </image>
+      </ImageView>
+      <JFXButton fx:id="operGoBackButton" layoutX="161.0" layoutY="571.0" onAction="#goBackOperAction" prefHeight="25.0" prefWidth="238.0" style="-fx-background-color: #E45652;" text="Go Back">
+         <textFill>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop color="#f5f5f5" />
+                  <Stop color="#dad6d6" offset="1.0" />
+               </stops>
+            </RadialGradient>
+         </textFill>
+      </JFXButton>
+      <AnchorPane layoutX="23.0" layoutY="103.0" prefHeight="417.0" prefWidth="1020.0" style="-fx-background-color: #238EFF;">
+         <children>
+            <JFXRadioButton layoutX="14.0" layoutY="104.0" prefHeight="17.0" prefWidth="118.0" text="League Wide">
+               <font>
+                  <Font size="18.0" />
+               </font></JFXRadioButton>
+            <JFXRadioButton layoutX="177.0" layoutY="74.0" prefHeight="17.0" prefWidth="125.0" text="Tournament Wide">
+               <font>
+                  <Font size="18.0" />
+               </font></JFXRadioButton>
+            <JFXRadioButton layoutX="14.0" layoutY="74.0" prefHeight="17.0" prefWidth="118.0" text="Game Wide">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </JFXRadioButton>
+            <JFXRadioButton layoutX="177.0" layoutY="106.0" prefHeight="17.0" prefWidth="118.0" text="Match Wide">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </JFXRadioButton>
+            <Separator layoutX="378.0" layoutY="-1.0" orientation="VERTICAL" prefHeight="428.0" prefWidth="11.0" />
+            <Label layoutX="24.0" layoutY="157.0" prefHeight="172.0" prefWidth="306.0" />
+            <Separator layoutX="729.0" layoutY="-3.0" orientation="VERTICAL" prefHeight="427.0" prefWidth="11.0" />
+            <JFXRadioButton layoutX="405.0" layoutY="60.0" prefHeight="17.0" prefWidth="118.0" text="1 Month">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </JFXRadioButton>
+            <JFXRadioButton layoutX="573.0" layoutY="60.0" prefHeight="17.0" prefWidth="118.0" text="3 Months">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </JFXRadioButton>
+            <JFXRadioButton layoutX="405.0" layoutY="88.0" prefHeight="17.0" prefWidth="118.0" text="6 Months">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </JFXRadioButton>
+            <JFXRadioButton layoutX="573.0" layoutY="88.0" prefHeight="17.0" prefWidth="118.0" text="1 Year">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </JFXRadioButton>
+            <Label layoutX="856.0" layoutY="32.0" text="Price">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="777.0" layoutY="111.0" prefHeight="17.0" prefWidth="212.0" />
+            <JFXButton fx:id="operGoBackButton1" layoutX="764.0" layoutY="368.0" onAction="#goBackOperAction" prefHeight="25.0" prefWidth="238.0" style="-fx-background-color: #E45652;" text="Submit">
+               <textFill>
+                  <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                     <stops>
+                        <Stop color="#f5f5f5" />
+                        <Stop color="#dad6d6" offset="1.0" />
+                     </stops>
+                  </RadialGradient>
+               </textFill>
+            </JFXButton>
+            <Label layoutX="777.0" layoutY="108.0" prefHeight="211.0" prefWidth="212.0" />
+            <Separator layoutX="384.0" layoutY="120.0" prefHeight="17.0" prefWidth="350.0" />
+            <JFXRadioButton layoutX="395.0" layoutY="166.0" prefHeight="17.0" prefWidth="118.0" text="Side Ads">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </JFXRadioButton>
+            <Label layoutX="155.0" layoutY="21.0" text="Title">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="510.0" layoutY="131.0" text="Layout">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="485.0" layoutY="3.0" text="Recurring Sub">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <JFXRadioButton layoutX="554.0" layoutY="166.0" prefHeight="17.0" prefWidth="118.0" text="Horizontal Ads">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </JFXRadioButton>
+            <JFXRadioButton layoutX="395.0" layoutY="200.0" prefHeight="17.0" prefWidth="118.0" text="Sides and Horizontal Ads">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </JFXRadioButton>
+            <Label layoutX="406.0" layoutY="243.0" prefHeight="172.0" prefWidth="306.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

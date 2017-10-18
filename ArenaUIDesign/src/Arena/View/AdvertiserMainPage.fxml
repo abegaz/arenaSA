@@ -21,7 +21,7 @@
             <Image url="@../../Images/loading.gif" />
          </image>
       </ImageView>
-      <Label layoutX="274.0" layoutY="24.0" opacity="0.46" text="Welcome Spectator" textFill="#e1dada">
+      <Label layoutX="274.0" layoutY="24.0" opacity="0.46" text="Welcome Advertiser" textFill="#e1dada">
          <font>
             <Font size="36.0" />
          </font>
@@ -43,8 +43,8 @@
       </JFXButton>
       <AnchorPane layoutX="68.0" layoutY="90.0" prefHeight="239.0" prefWidth="723.0" style="-fx-background-color: #238EFF;">
          <children>
-            <JFXButton layoutX="14.0" layoutY="107.0" prefHeight="25.0" prefWidth="202.0" style="-fx-background-color: #E45652;" text="Check Upcoming Games" textFill="#ddd3d3" />
-            <JFXButton fx:id="applicationsButton1" layoutX="507.0" layoutY="107.0" onAction="#goToAppsPage" prefHeight="25.0" prefWidth="202.0" style="-fx-background-color: #E45652;" text="View Past Games">
+            <JFXButton layoutX="14.0" layoutY="107.0" prefHeight="25.0" prefWidth="202.0" style="-fx-background-color: #E45652;" text="Advertising Scheme" textFill="#ddd3d3" />
+            <JFXButton fx:id="applicationsButton1" layoutX="507.0" layoutY="107.0" onAction="#goToAppsPage" prefHeight="25.0" prefWidth="202.0" style="-fx-background-color: #E45652;" text="Upload Ads">
                <textFill>
                   <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
                      <stops>
@@ -54,12 +54,12 @@
                   </RadialGradient>
                </textFill>
             </JFXButton>
-            <JFXButton layoutX="261.0" layoutY="107.0" prefHeight="25.0" prefWidth="202.0" style="-fx-background-color: #E45652;" text="View Ongoing Games" textFill="#ddd3d3" />
+            <JFXButton layoutX="261.0" layoutY="107.0" prefHeight="25.0" prefWidth="202.0" style="-fx-background-color: #E45652;" text="Check Balance" textFill="#ddd3d3" />
          </children>
       </AnchorPane>
       <ImageView fitHeight="79.0" fitWidth="85.0" layoutX="115.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../Images/spectatorIcon.png" />
+            <Image url="@../../Images/advertisorIcon.png" />
          </image>
       </ImageView>
       <Label fx:id="logInErrorText" layoutX="392.0" layoutY="358.0" opacity="0.0" text="Incorrect Username / Password" textFill="#eeff02">
