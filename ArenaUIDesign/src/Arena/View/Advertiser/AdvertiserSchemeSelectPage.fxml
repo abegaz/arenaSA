@@ -64,7 +64,7 @@
                </font>
             </JFXRadioButton>
             <Separator layoutX="378.0" layoutY="-1.0" orientation="VERTICAL" prefHeight="428.0" prefWidth="11.0" />
-            <Label layoutX="24.0" layoutY="157.0" prefHeight="172.0" prefWidth="306.0" />
+            <Label layoutX="24.0" layoutY="157.0" prefHeight="172.0" prefWidth="306.0" text="Title Description text" />
             <Separator layoutX="729.0" layoutY="-3.0" orientation="VERTICAL" prefHeight="427.0" prefWidth="11.0" />
             <JFXRadioButton layoutX="405.0" layoutY="60.0" prefHeight="17.0" prefWidth="118.0" text="1 Month">
                <font>
@@ -102,7 +102,7 @@
                   </RadialGradient>
                </textFill>
             </JFXButton>
-            <Label layoutX="777.0" layoutY="108.0" prefHeight="211.0" prefWidth="212.0" />
+            <Label layoutX="777.0" layoutY="108.0" prefHeight="211.0" prefWidth="212.0" text="Price Calculation place Holder" />
             <Separator layoutX="384.0" layoutY="120.0" prefHeight="17.0" prefWidth="350.0" />
             <JFXRadioButton layoutX="395.0" layoutY="166.0" prefHeight="17.0" prefWidth="118.0" text="Side Ads">
                <font>
@@ -134,7 +134,7 @@
                   <Font size="18.0" />
                </font>
             </JFXRadioButton>
-            <Label layoutX="406.0" layoutY="243.0" prefHeight="172.0" prefWidth="306.0" />
+            <Label layoutX="406.0" layoutY="243.0" prefHeight="172.0" prefWidth="306.0" text="Layout Description Text" />
          </children>
       </AnchorPane>
    </children>

@@ -32,7 +32,7 @@
       </Label>
       <ImageView id="progress" fx:id="progress" fitHeight="91.0" fitWidth="140.0" layoutX="7.0" layoutY="538.0" opacity="0.89" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../Images/loading.gif" />
+            <Image url="@../../../Images/loading.gif" />
          </image>
       </ImageView>
       <JFXButton fx:id="operGoBackButton" layoutX="161.0" layoutY="571.0" onAction="#goBackOperAction" prefHeight="25.0" prefWidth="238.0" style="-fx-background-color: #E45652;" text="Go Back">
@@ -45,11 +45,12 @@
             </RadialGradient>
          </textFill>
       </JFXButton>
-      <AnchorPane layoutX="25.0" layoutY="103.0" prefHeight="428.0" prefWidth="1020.0" style="-fx-background-color: #238EFF;">
+      <AnchorPane layoutX="26.0" layoutY="102.0" prefHeight="428.0" prefWidth="1020.0" style="-fx-background-color: #238EFF;">
          <children>
-            <TableView fx:id="userIdTable" layoutX="158.0" layoutY="40.0" prefHeight="323.0" prefWidth="705.0" style="-fx-background-color: #86BFFC; -fx-border-width: 2; -fx-border-color: #01184B;">
+            <TableView fx:id="userIdTable" layoutX="65.0" layoutY="40.0" prefHeight="323.0" prefWidth="832.0" style="-fx-background-color: #86BFFC; -fx-border-width: 2; -fx-border-color: #01184B;">
               <columns>
                   <TableColumn fx:id="columnScreenName2" prefWidth="131.0" style="-fx-background-color: #9b4427;" text="Tournament Name" />
+                  <TableColumn fx:id="columnScreenName21" prefWidth="131.0" style="-fx-background-color: #9b4427;" text="Tournament Type" />
                 <TableColumn fx:id="columnScreenName" prefWidth="177.0" style="-fx-background-color: #9b4427;" text="League Name" />
                   <TableColumn fx:id="columnFName" minWidth="0.0" prefWidth="130.0" style="-fx-background-color: #9b4427;" text="Game " />
                   <TableColumn fx:id="columnFName1" minWidth="0.0" prefWidth="130.0" style="-fx-background-color: #9b4427;" text="Start Date" />
@@ -81,7 +82,7 @@
                   <Font size="13.0" />
                </font>
             </Label>
-            <ScrollBar layoutX="863.0" layoutY="40.0" orientation="VERTICAL" prefHeight="323.0" prefWidth="19.0" />
+            <ScrollBar layoutX="897.0" layoutY="40.0" orientation="VERTICAL" prefHeight="323.0" prefWidth="19.0" />
             <JFXTextField layoutX="664.0" layoutY="8.0" prefHeight="25.0" prefWidth="183.0" promptText="Enter Search Query" style="-fx-background-color: #FFFFFF;" />
             <JFXButton fx:id="refreshButton1" layoutX="859.0" layoutY="8.0" onAction="#loadDateFromDatabase" prefHeight="25.0" prefWidth="113.0" style="-fx-background-color: #E45652;" text="Search">
                <textFill>
