@@ -1,5 +1,15 @@
 This is the workspace readme file
 
-The Database manipulation java project zip file holds a java project all about manipulating data within the database. It is testing ground for middleware functionality.
+This readme file will focus on the Database manipulation java project.
 
-This project's goal is to create modular functions that can be pasted into a button's functionality within the GUI. The seperate project only uses a (Text User Interface) TUI create by the developer so there is no need to have a GUI interface for testing.
+The purpose of this project is to contain and provide a work environment for the development of middleware functionality between the Arena program's GUI interface frontend and MySQL backend.
+
+This helps test new iterations of the database as well as any created and modified java functions without the need for a GUI frontend.
+
+It is my goal to create all middleware functionality within this project for other developers to use within their focused project fields.
+
+The git folder should have everything needed to get started with. It comes with not only the most recent version of the database but also the previous version in case of any unforeseen consequences. 
+
+Be wary: 
+  The program comes with my own personal database credentials as well as the UNG school campus XAMPP default credentials.
+  Please make sure to change those credentials to match your own database credentials.
