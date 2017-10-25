@@ -7,12 +7,17 @@
   
 + Create Database: Done
     Update Database with new auto-incrementing primary IDs
+      Users
+      Leagues
+      Games
+      Arena
   
 + Create Operator Functions
   - Create Manage User functions (edit, delete, create)
   - Create Arenas
   - Create Games
   - Edit Games
+  
 + League Owner Functions
   -
   
