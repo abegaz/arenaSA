@@ -19,6 +19,12 @@
   - Edit Games
   
 + League Owner Functions
+ - Create new Leagues
+ - Create New Tournaments within Leagues
+ - Conduct a Tournament
+ - Edit Score
+ - Manipulate Score Formula
+ - Declare a Winner
  
   
 + Advertiser
@@ -26,9 +32,14 @@
   -
   
 + PLayer
+- Sign up Arenas, Tournaments,
+- Play matches assigned to them
+- Drop out a match
  
   
 + Spectator
   -  Ability to signup for arenas
+  - check scores
+  - view schedule of games
 
 Create Match Schedule System
