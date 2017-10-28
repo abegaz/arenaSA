@@ -1,7 +1,14 @@
 --->> arenaBase_1.zip 
 This is the new Arena Base / Prototype. Intended for Developers.
 Before running the Prototype you will need to set up the
-associated Database. [ Find the arenabase.sql file in the arenaBase_1.zip ] 
+associated Database. [ Find the arenabase.sql file in the arenaBase_1a.zip ]
+
+Because of File Size Limitations associated with GitHub's Online Interface. This Prototype is broken into 3 zip files:
+- arenaBase_1A = Contains arenabase.sql, .classpath, .project, & build.fxbuild Files
+- arenaBase_1B = contains bin folder.
+- arenaBase_1C = contains src folder. 
+
+Put contents of all 3 .Zip files into file "arenaBase" in your Eclipse Workfolder before attempting to run. 
 
 You will also need to set up an "Operator" Role. I also advise setting up multiple users.
 This can be done through the GUI Sign Up Feature. 
