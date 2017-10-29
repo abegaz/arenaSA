@@ -25,6 +25,16 @@ User Role ID  & Corresponding Type are kept in arenadatabase.userroleType
 4 - Player
 5 - Advertiser
 
+THEY NEED TO BE NUMBERED THIS WAY IN USERROLETYPE FOR THE BUILD TO WORK
+
+Also. I recommend building out seperate controllers for your own view functionality
+for the features you choose to implement.  
+  
+Another Note. Modifications from the previous Database Build I started with: 
+This Database still needs to have Auto Increment Added to the ID columns that
+are NOT in the "user" table.
+This Database's FK's have been ripped out. & a "pending" table added. 
+
 --Ideas for Future Sprints--
 
 - Allow user to change their own User Name 
