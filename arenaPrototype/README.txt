@@ -2,6 +2,7 @@
 This is the new Arena Base / Prototype. Intended for Developers.
 Before running the Prototype you will need to set up the
 associated Database. [ Find the arenabase.sql file in the arenaBase_1a.zip ]
+*Note: The Database itself should be named "arenadatabase"
 
 Because of File Size Limitations associated with GitHub's Online Interface. This Prototype is broken into 3 zip files:
 - arenaBase_1A = Contains arenabase.sql, .classpath, .project, & build.fxbuild Files
@@ -35,12 +36,15 @@ This Database still needs to have Auto Increment Added to the ID columns that
 are NOT in the "user" table.
 This Database's FK's have been ripped out. & a "pending" table added. 
 
+This Build uses JFoenix & JDBC. You can get them here if you don't have them already
+https://drive.google.com/open?id=0B-Ti4kvfw2z8Z2t3bzZrbDVUMVU
+
 --Ideas for Future Sprints--
 
 - Allow user to change their own User Name 
 
 - Create Logged In Table. TableView to show on Spectator Page
-((siging in adds. closing programs deletes from ))/{refresh page often to make seem live? }
+((signing in adds. closing programs deletes from ))/{refresh page often to make seem live? }
 
 (( one for the Operator to 'Kick' ? ))
 
