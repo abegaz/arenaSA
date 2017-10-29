@@ -9,6 +9,9 @@ Because of File Size Limitations associated with GitHub's Online Interface. This
 - arenaBase_1B = contains bin folder.
 - arenaBase_1C = contains src folder. 
 
+You can also find this Build as a single .zip. Including the database .sql file. Here: 
+https://drive.google.com/file/d/0B-Ti4kvfw2z8WUdBdHBzRktMd2c/view?usp=sharing
+
 Put contents of all 3 .Zip files into file "arenaBase" in your Eclipse Workfolder before attempting to run. 
 
 You will also need to set up an "Operator" Role. I also advise setting up multiple users.
