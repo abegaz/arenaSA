@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="arenaClasses.Controller">
+   <children>
+      <ImageView fitHeight="416.0" fitWidth="617.0" layoutX="-9.0" layoutY="-8.0">
+         <image>
+            <Image url="@../images/domina10.gif" />
+         </image>
+      </ImageView>
+      <JFXButton fx:id="signUpPageGoBackButton" layoutX="14.0" layoutY="353.0" onAction="#goBackToSignIn" prefHeight="41.0" prefWidth="94.0" style="-fx-background-color: #f4ce42;" text="Go Back" textAlignment="CENTER">
+         <font>
+            <Font name="Book Antiqua" size="18.0" />
+         </font>
+      </JFXButton>
+      <Label fx:id="closeIcon" layoutX="581.0" layoutY="1.0" onMouseClicked="#closeApplication" text="X">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="144.0" layoutY="28.0" text="Advertisor View" textFill="#51ff5a">
+         <font>
+            <Font size="45.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
