@@ -2,6 +2,7 @@ package application;
 
 import java.sql.*;
 import java.util.Scanner;
+import application.Main;
 
 public class DatabaseConnector
 {
@@ -16,7 +17,7 @@ public class DatabaseConnector
 	private Statement statement;
 	private ResultSet resultSet;
 
-	static Main main = new Main();
+	Main main = new Main();
 	Scanner scanner = new Scanner(System.in);
 
 	// Connects to the database
@@ -34,7 +35,7 @@ public class DatabaseConnector
 			System.out.println("Error: " + ex);
 		}
 	}
-
+	//Gets roleID from UserID
 	public String getUserRoleID(String userID)
 	{
 		String getUserRoleQuery = "SELECT userRoleID FROM users WHERE userID =" + userID;
@@ -52,9 +53,30 @@ public class DatabaseConnector
 		{
 			System.out.println("Error: " + ex);
 		}
-
 		return userRoleID;
 	}
+	//Gets roleName from UserID
+	public String getUserRoleName(String userID)
+	{
+		String getUserRoleNameQuery = "SELECT userroletype1.userRoleTypeName "
+				+ "FROM users users1, userroletype userroletype1 "
+				+ "WHERE users1.userID = " + userID +" and users1.userRoleID = userroletype1.userroleTypeID";
+		String userRoleName = "";
+		try
+		{
+			resultSet = statement.executeQuery(getUserRoleNameQuery);
+			while(resultSet.next())
+			{
+				userRoleName = resultSet.getString("userRoleTypeName");
+			}
+		}
+		catch(Exception ex)
+		{
+			System.out.println("Error: " + ex);
+		}
+		return userRoleName;
+	}
+	//Creates a New User that auto assigns a spectator role type
 	public void makeNewUser()
 	{
 		String userName = null;
@@ -85,6 +107,7 @@ public class DatabaseConnector
 		}
 		main.BasicFunctionMenu();
 	}
+	//Deletes User from the Database
 	public void DeleteUser()
 	{
 		String userID = null;
@@ -104,6 +127,7 @@ public class DatabaseConnector
 		}
 		main.BasicFunctionMenu();
 	}
+
 	public void getUsersInformation(boolean ReturnToMenu)
 	{
 		//predefined query to select all entries from a specific pre-defined table
@@ -239,6 +263,20 @@ public class DatabaseConnector
 		}
 		main.BasicFunctionMenu();
 	}
+	public void makeUserPlayer(String userID)
+	{
+		try
+		{
+			String makeUserPlayerQuery = "UPDATE users SET userRoleID = 3  WHERE userID = "+ userID + " and userRoleID = 4 ";
+
+			PreparedStatement preparedStatement = connection.prepareStatement(makeUserPlayerQuery);
+			preparedStatement.execute();
+		}
+		catch(Exception ex)
+		{
+			System.out.println("Error: " + ex);
+		}
+	}
 
 	public void createExpertRatingFormula()
 	{
@@ -303,7 +341,8 @@ public class DatabaseConnector
 				String leagueOwnerName = resultSet.getString("userName");
 				String arenaName = resultSet.getString("ArenaName");
 
-				System.out.println("Arena ID: " + arenaID + "- " + arenaName + "| League ID: " + leagueId + " - " + leagueName);
+				System.out.println("League ID: " + leagueId + " - " + leagueName);
+				System.out.println("\t" + "Arena ID: " + arenaID + "- " + arenaName);
 				System.out.println("\t" + "League Owner ID: " + leagueOwnerID + " - " + leagueOwnerName);
 				System.out.println("\t" + "Expert Rating Formula: " + eRFID);
 			}
@@ -340,36 +379,129 @@ public class DatabaseConnector
 			System.out.println("Select User ID: ");
 			String userID = scanner.nextLine();
 
-			if (getUserRoleID(userID) != "1")
-			{
-				System.out.println("User is not a League Owner. Returing to Main Menu");
-				main.BasicFunctionMenu();
-			}
 
-			GetAllArenas(false);
-			System.out.println("Select Arena ID");
-			String arenaID = scanner.nextLine();
+			 int userRoleIDInt = Integer.parseInt(getUserRoleID(userID));
 
-			PreparedStatement preparedStatement = connection.prepareStatement(createLeagueQuery);
-			preparedStatement.setString (1, leagueName);
-			preparedStatement.setString (2, eRFID);
-			preparedStatement.setString (3, userID);
-			preparedStatement.setString (4, arenaID);
+			 if (userRoleIDInt == 1)
+			 {
+				GetAllArenas(false);
+				System.out.println("Select Arena ID");
+				String arenaID = scanner.nextLine();
 
+				PreparedStatement preparedStatement = connection.prepareStatement(createLeagueQuery);
+				preparedStatement.setString (1, leagueName);
+				preparedStatement.setString (2, eRFID);
+				preparedStatement.setString (3, userID);
+				preparedStatement.setString (4, arenaID);
+				preparedStatement.execute();
+
+			 }
+			 else
+			 {
+				 System.out.println("User is not a League Owner. Returing to Main Menu");
+				 main.BasicFunctionMenu();
+			 }
+		}
+		catch(Exception ex)
+		{
+			System.out.println("Error: " + ex);
+		}
+		main.BasicFunctionMenu();
+	}
+	public void deleteLeague()
+	{
+		GetAllLeagues(false);
+		try
+		{
+			System.out.println("Enter League ID to delete");
+			String leagueID = scanner.nextLine();
+			String deleteLeagueQuery = "DELETE FROM league where LeagueID = " + leagueID;
+
+			PreparedStatement preparedStatement = connection.prepareStatement(deleteLeagueQuery);
 			preparedStatement.execute();
 		}
 		catch(Exception ex)
 		{
 			System.out.println("Error: " + ex);
 		}
+		main.BasicFunctionMenu();
 	}
-	public void deleteLeague()
-	{
 
+	public void ApplyUserToLeague()
+	{
+		try
+		{
+			String applyUserToLeagueQuery = "INSERT INTO leaguemembers (League_LeagueID, MembershipStatusCode_MembershipStatusCodeID, users_userID)"
+					+ " VALUES (?, ?, ?)";
+
+			GetAllLeagues(false);
+			System.out.println("League ID: ");
+			String leagueID = scanner.nextLine();
+
+			getUsersInformation(false);
+			System.out.println("User ID");
+			String userID = scanner.nextLine();
+			int userRoleIDInt = Integer.parseInt(getUserRoleID(userID));
+
+			if (userRoleIDInt == 3)
+			{
+				PreparedStatement preparedStatement = connection.prepareStatement(applyUserToLeagueQuery);
+				preparedStatement.setString (1, leagueID);
+				preparedStatement.setString (2, "30002");
+				preparedStatement.setString (3, userID);
+				preparedStatement.execute();
+			}
+			else
+			{
+				System.out.println("User is not a Player. Returing to Main Menu");
+				 main.BasicFunctionMenu();
+			}
+		}
+		catch(Exception ex)
+		{
+			System.out.println("Error: " + ex);
+		}
+		main.BasicFunctionMenu();
 	}
-	public void ApplyToLeague()
+	public void ApplyUserToArena()
 	{
+		String applyUserToArenaQuery = "INSERT INTO arenamembers (arena_ArenaID, users_userID)"
+				+ " VALUES (?, ?)";
+		try
+		{
+			GetAllArenas(false);
+			System.out.println("Arena ID: ");
+			String arenaID = scanner.nextLine();
 
+			getUsersInformation(false);
+			System.out.println("User ID");
+			String userID = scanner.nextLine();
+
+			int userRoleIDInt = Integer.parseInt(getUserRoleID(userID));
+
+			if (userRoleIDInt == 4)
+			{
+				makeUserPlayer(userID);
+			}
+			if (userRoleIDInt == 3)
+			{
+				PreparedStatement preparedStatement = connection.prepareStatement(applyUserToArenaQuery);
+				preparedStatement.setString (1, arenaID);
+				preparedStatement.setString (2, userID);
+				preparedStatement.execute();
+			}
+			else
+			{
+				System.out.println("False");
+				System.out.println("User is not a Player. User is a " + getUserRoleName(userID) + "Returing to Main Menu");
+				main.BasicFunctionMenu();
+			}
+		}
+		catch(Exception ex)
+		{
+			System.out.println("Error: " + ex);
+		}
+		main.BasicFunctionMenu();
 	}
 
 	// Manipulation of Arenas
@@ -470,26 +602,6 @@ public class DatabaseConnector
 		}
 		main.BasicFunctionMenu();
 	}
-	public void GetALLGameScores()
-	{
-		try
-		{
-
-		}
-		catch(Exception ex)
-		{
-			System.out.println("Error: " + ex);
-		}
-	}
-	public void AddGameScores()
-	{
-
-	}
-	public void UpdateGameScores()
-	{
-
-	}
-
 	public void GetAllGames(boolean ReturnToMenu)
 	{
 		String query = "SELECT * FROM game";
@@ -536,5 +648,52 @@ public class DatabaseConnector
 		main.BasicFunctionMenu();
 	}
 
+	public void createTournament()
+	{
 
+	}
+	public void deleteTournament()
+	{
+
+	}
+	public void createMatch()
+	{
+
+	}
+	public void cancelMatch()
+	{
+
+	}
+	public void delayMatch()
+	{
+
+	}
+	public void removeUserFromLeague()
+	{
+
+	}
+	public void removeUserFromArena()
+	{
+
+	}
+	public void GetAllUsersOfArena()
+	{
+
+	}
+	public void GetAllUsersOfLeague()
+	{
+
+	}
+	public void GetALLGameScores()
+	{
+
+	}
+	public void AddGameScores()
+	{
+
+	}
+	public void UpdateGameScores()
+	{
+
+	}
 }

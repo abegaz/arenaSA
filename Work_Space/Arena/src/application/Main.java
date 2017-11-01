@@ -36,6 +36,9 @@ public class Main extends Application
 			System.out.println("15. Create New Formula");
 			System.out.println("16. Get All Leagues");
 			System.out.println("17. Create New League");
+			System.out.println("18. Delete New League");
+			System.out.println("19. Apply User to League");
+			System.out.println("20. Apply User to Arena");
 			System.out.println("Select Function from list below:");
 			int userFunctionInput = scanner.nextInt();
 			scanner.nextLine(); //Eats any whitespace in buffer
@@ -149,6 +152,24 @@ public class Main extends Application
 					databaseConnector.createNewLeague();
 					break;
 				}
+				case 18:
+				{
+					System.out.println("18. Delete New League");
+					databaseConnector.deleteLeague();
+					break;
+				}
+				case 19:
+				{
+					System.out.println("19. Apply User to League");
+					databaseConnector.ApplyUserToLeague();
+					break;
+				}
+				case 20:
+				{
+					System.out.println("20. Apply User to Arena");
+					databaseConnector.ApplyUserToArena();
+					break;
+				}
 				default:
 				{
 					System.out.println("You Should never see me.");
@@ -181,7 +202,6 @@ public class Main extends Application
 	public static void main(String[] args)
 	{
 		//launch(args);
-
 		BasicFunctionMenu();
 	}
 }
