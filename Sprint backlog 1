@@ -9,6 +9,8 @@ As a league owner I want to create Tournaments within my own leagues
 
 As a league owner I want to Manage Tournaments within my own leagues
 
+As a league owner I want to create Teams within my leagues
+
 As an operator I want to create Arenas
 
 As an operator I want to create Games.
@@ -20,6 +22,8 @@ As an operator I want to create expert Rating Formula.
 As a player I want to register to an arena
 
 As a player I want to apply to a league within the arena I registered to
+
+As a league owner I want to assign league members to teams
 
 As a player I want to play in matched assigned to me or my team within the league I applied to
 
@@ -34,6 +38,8 @@ As an operator I want to manage Games.
 As an operator I want to manage Tournament styles.
 
 As an operator I want to manage expert Rating Formula.
+
+As a league owner I want to manage Teams within my leagues
 
 As a league owner I want to conduct Tournaments within my own leagues
 
