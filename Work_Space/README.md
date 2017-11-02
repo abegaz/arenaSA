@@ -14,5 +14,4 @@ Be wary:
   The program comes with my own personal database credentials as well as the UNG school campus XAMPP default credentials.
   Please make sure to change those credentials to match your own database credentials.
 
-
-Can anyone delete the Arena Subfolder within this git folder. I originally wanted to upload every file so if I made any changes i could just delete and replace those files. I learned later doing that was a terrible idea. I cannot for the life of me get the git program to work so uploading a zip file with all of the changes is the easiest thing for me to do.
+As Development of this project continues this isolated 'System' will become more and more obsolete. I don't plan on removing anything yet but this will probably be deleted to only contain zips of isolated GUI components and the database sql file.
