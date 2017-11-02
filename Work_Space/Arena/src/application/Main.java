@@ -3,13 +3,15 @@ package application;
 import java.util.Scanner;
 
 import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 
 public class Main extends Application
 {
 	//Text User Interface
-
 	public static void BasicFunctionMenu()
 	{
 	    DatabaseConnector databaseConnector = new DatabaseConnector();
@@ -185,23 +187,25 @@ public class Main extends Application
 		    }
 		}
 	}
-
+	public static void main(String[] args)
+	{
+		launch(args);
+		//BasicFunctionMenu();
+	}
 	@Override
-	public void start(Stage primaryStage)
+	public void start(Stage primaryStage) throws Exception
 	{
 		try
 		{
+			Parent root = FXMLLoader.load(getClass().getResource("CreateTournaments.fxml"));
+			Scene scene = new Scene(root);
+
+			primaryStage.setScene(scene);
 			primaryStage.show();
 		}
 		catch(Exception e)
 		{
 			e.printStackTrace();
 		}
-	}
-
-	public static void main(String[] args)
-	{
-		//launch(args);
-		BasicFunctionMenu();
 	}
 }

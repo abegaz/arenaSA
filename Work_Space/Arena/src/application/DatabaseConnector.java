@@ -13,15 +13,15 @@ public class DatabaseConnector
 	//private String databaseUser = "root"; // Xampp Credentials
 	//private String databasePassword = ""; // Xampp Credentials
 
-	private Connection connection;
-	private Statement statement;
-	private ResultSet resultSet;
+	public Connection connection;
+	public Statement statement;
+	public ResultSet resultSet;
 
 	Main main = new Main();
 	Scanner scanner = new Scanner(System.in);
 
 	// Connects to the database
-	public DatabaseConnector()
+	public void DatabaseConnector()
 	{
 		try
 		{
@@ -35,6 +35,14 @@ public class DatabaseConnector
 			System.out.println("Error: " + ex);
 		}
 	}
+
+	public Connection getConnection() throws SQLException
+	{
+		//System.out.println("Connected to Database Successfully");
+		return DriverManager.getConnection(databaseLink, databaseUser, databasePassword);
+	}
+
+
 	//Gets roleID from UserID
 	public String getUserRoleID(String userID)
 	{
@@ -696,4 +704,5 @@ public class DatabaseConnector
 	{
 
 	}
+
 }
