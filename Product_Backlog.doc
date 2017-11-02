@@ -1,45 +1,17 @@
-+ Create Basic GUI for each class of User
-  -Operator
-  -Leauge Owner
-  -Advertiser
-  -Player 
-  -Spectator
-  
-+ Create Database: Done
-    Update Database with new auto-incrementing primary IDs
-      Users
-      Leagues
-      Games
-      Arena
-  
-+ Create Operator Functions
-  - Create Manage User functions (edit, delete, create)
-  - Create Arenas
-  - Create Games
-  - Edit Games
-  
-+ League Owner Functions
- - Create new Leagues
- - Create New Tournaments within Leagues
- - Conduct a Tournament
- - Edit Score
- - Manipulate Score Formula
- - Declare a Winner
- 
-  
-+ Advertiser
-  -Ability to upload new Advertisments 
-  -
-  
-+ PLayer
-- Sign up Arenas, Tournaments,
-- Play matches assigned to them
-- Drop out a match
- 
-  
-+ Spectator
-  -  Ability to signup for arenas
-  - check scores
-  - view schedule of games
+As an operator I want to create and manage Games.
 
-Create Match Schedule System
+As an operator I want to create and manage Tournament styles.
+
+As an operator I want create and manage expert Rating Formula.
+
+As an operator I want to manage users
+
+As an operator I want to create, own, and manage Arenas
+
+As an operator I want to ability to approve special users (League Owners and Other Operators )
+
+
+
+As a league Owner I want to create new Leagues
+
+As a league Owner I want to manage my own Leagues
