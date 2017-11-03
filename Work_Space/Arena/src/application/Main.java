@@ -197,7 +197,7 @@ public class Main extends Application
 	{
 		try
 		{
-			Parent root = FXMLLoader.load(getClass().getResource("CreateTournaments.fxml"));
+			Parent root = FXMLLoader.load(getClass().getResource("ManageTournaments.fxml"));
 			Scene scene = new Scene(root);
 
 			primaryStage.setScene(scene);

@@ -36,8 +36,9 @@ public class TournamentController
     @FXML private TextField createTournamentDescField;
     @FXML private TextField createTournamentNameField;
     @FXML private TextField createTournamentDateField;
+    @FXML private JFXButton manageTournamentsRemoveButton;
 
-    //Initialize observable list to hold database data
+   //Initialize observable list to hold database data
 
     private ObservableList<TournamentData> tournamentDataArray;
     DatabaseConnector databaseConnector = new DatabaseConnector();
@@ -133,6 +134,33 @@ public class TournamentController
 			System.out.println("Error: " + ex);
 		}
     }
+    @FXML
+    void removeTournament(ActionEvent event) throws SQLException
+    {
+    	Connection connection = databaseConnector.getConnection();
+    	TournamentData tournamentDataArray = getTournamentsTable.getSelectionModel().getSelectedItem();
+    	String selectedTournamentName = tournamentDataArray.getTournamentName();
+		System.out.println(selectedTournamentName);
+		String deleteTournamentQuery = "DELETE FROM tournament WHERE tournament.TournamentName = '" + selectedTournamentName + "'";
+		try
+		{
+			PreparedStatement preparedStmt = connection.prepareStatement(deleteTournamentQuery);
+			preparedStmt.execute();
+		}
+		catch(SQLException e)
+		{
+			e.printStackTrace();
+			System.out.println("ERROR @ Control.removeUser.First Try");
+		}
+		finally
+		{
+			connection.close();
+		}
+    }
+
+
+
+
 }
 
 
