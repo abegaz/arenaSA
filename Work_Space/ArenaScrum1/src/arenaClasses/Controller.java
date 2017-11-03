@@ -71,6 +71,8 @@ public class Controller extends Main{
 //  <<PlayerLanding Attributes>>
     @FXML
     private JFXButton JoinLeagueButton;
+    @FXML
+    private JFXButton YourLeagues;
 // << spectAppPage Attributes >>
     @FXML
     private JFXButton appOperatorButton;
@@ -810,6 +812,18 @@ static int currUserID,currRoleID,appRoleChoice;
         private void goToPlayerJoinLeague(ActionEvent event) throws Exception {
         	JoinLeagueButton.getScene().getWindow().hide();
             loader.setLocation(getClass().getResource("/arenaViews/PlayerJoinLeaguePage.fxml"));
+            scene = new Scene(loader.load());
+            stage.setScene(scene);
+            stage.initStyle(StageStyle.UNDECORATED);
+            stage.setResizable(false);
+            stage.getIcons().add(new Image(getClass().getResourceAsStream("/images/arenaIcon.png")));
+            stage.setTitle("Arena");
+            stage.show();
+}
+        @FXML
+        private void gotoYourLeaguesPlayer(ActionEvent event) throws Exception {
+        	YourLeagues.getScene().getWindow().hide();
+            loader.setLocation(getClass().getResource("/arenaViews/PlayerCurrentLeaguePage.fxml"));
             scene = new Scene(loader.load());
             stage.setScene(scene);
             stage.initStyle(StageStyle.UNDECORATED);
