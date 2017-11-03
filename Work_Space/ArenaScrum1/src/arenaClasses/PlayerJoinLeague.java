@@ -78,9 +78,9 @@ private void goBackPlayerSplash(ActionEvent event) throws Exception {
     private void loadDataFromDatabase(ActionEvent event) throws SQLException{
     	Connection myConnection = DBHandler.getConnection();
     	data = FXCollections.observableArrayList();
-    	int PlayerID = UserModels.getUserID();
+    	//int PlayerID = UserModels.getUserID();
     	try {
-    		ResultSet rs2 = myConnection.createStatement().executeQuery("SELECT LeagueID, LeagueName, LeagueDesc  FROM arenadatabase.league WHERE NOT EXISTS (SELECT * FROM  arenadatabase.leaguemembers WHERE leaguemembers.users_userID="+PlayerID+") ");
+    		ResultSet rs2 = myConnection.createStatement().executeQuery("SELECT LeagueID, LeagueName, LeagueDesc  FROM arenadatabase.league");
     		while(rs2.next()) {
     			data.add(new PlayerJoinLeagueModel(rs2.getInt("LeagueID"), rs2.getString("LeagueName"), rs2.getString("LeagueDesc")));
     		}
@@ -98,9 +98,9 @@ private void goBackPlayerSplash(ActionEvent event) throws Exception {
 	private void loadDatafromDatabaseLoading() throws SQLException{
     	Connection myConnection = DBHandler.getConnection();
     	data = FXCollections.observableArrayList();
-    	int PlayerID = UserModels.getUserID();
+    	//int PlayerID = UserModels.getUserID();
     	try {
-    		ResultSet rs2 = myConnection.createStatement().executeQuery("SELECT LeagueID, LeagueName, LeagueDesc  FROM arenadatabase.league WHERE NOT EXISTS (SELECT * FROM  arenadatabase.leaguemembers WHERE leaguemembers.users_userID="+PlayerID+") ");
+    		ResultSet rs2 = myConnection.createStatement().executeQuery("SELECT LeagueID, LeagueName, LeagueDesc  FROM arenadatabase.league");
     		while(rs2.next()) {
     			data.add(new PlayerJoinLeagueModel(rs2.getInt("LeagueID"), rs2.getString("LeagueName"), rs2.getString("LeagueDesc")));
     		}
