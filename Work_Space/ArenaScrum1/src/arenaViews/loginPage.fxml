@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="loginBGPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="459.0" prefWidth="529.0" style="-fx-background-color: BLACK;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="arenaClasses.Controller">
+   <children>
+      <ImageView fitHeight="459.0" fitWidth="531.0" layoutX="-2.0" opacity="0.43" pickOnBounds="true">
+         <image>
+            <Image url="@../images/domina3.jpg" />
+         </image>
+      </ImageView>
+      <Label alignment="CENTER" layoutX="141.0" layoutY="361.0" prefHeight="53.0" prefWidth="257.0" text="New to Arena?  Sign up today!" textFill="#ddd3d3">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="loginPageSignUpButton" layoutX="210.0" layoutY="406.0" onAction="#goToSignUp" prefHeight="41.0" prefWidth="107.0" style="-fx-background-color: #f4ce42;" text="Sign Up" textAlignment="CENTER">
+         <font>
+            <Font name="Book Antiqua" size="21.0" />
+         </font></JFXButton>
+      <ImageView fitHeight="171.0" fitWidth="162.0" layoutX="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/arenaIcon.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="85.0" layoutY="36.0" text="Welcome to the Arena" textFill="WHITE">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <Label layoutX="102.0" layoutY="89.0" text="For Players, Fans, &amp; Everyone in Between" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="loadingGif" fitHeight="68.0" fitWidth="92.0" layoutX="23.0" layoutY="372.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../images/loading.gif" />
+         </image>
+      </ImageView>
+      <AnchorPane layoutX="135.0" layoutY="137.0" prefHeight="222.0" prefWidth="268.0" style="-fx-border-color: #f4ce42; -fx-border-width: 8; -fx-background-color: BLACK;">
+         <children>
+            <JFXButton fx:id="loginPageSignInButton" layoutX="15.0" layoutY="167.0" onAction="#signIn" prefHeight="25.0" prefWidth="238.0" style="-fx-background-color: #f4ce42;" text="Sign In" textAlignment="CENTER">
+               <font>
+                  <Font name="Book Antiqua" size="21.0" />
+               </font>
+            </JFXButton>
+            <JFXTextField fx:id="loginPageUserNameTextField" focusColor="#26ae48" layoutX="42.0" layoutY="47.0" promptText="Username" unFocusColor="#f4ce42">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </JFXTextField>
+            <JFXPasswordField fx:id="loginPagePasswordField" focusColor="#26ae48" layoutX="42.0" layoutY="102.0" promptText="Password" style="-fx-background-color: BLACK;" unFocusColor="#f4ce42">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </JFXPasswordField>
+            <Label fx:id="errorLabel" layoutX="39.0" layoutY="26.0" text="Invalid Username / Password" textFill="#ff0f0f" visible="false">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <Label fx:id="closeIcon" layoutX="510.0" layoutY="1.0" onMouseClicked="#closeApplication" text="X" textFill="#d0cccc">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
