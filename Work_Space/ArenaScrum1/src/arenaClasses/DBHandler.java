@@ -4,11 +4,19 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class DBHandler{
- 
+public class DBHandler
+{
+
+	private static final String CONN_STRING = "jdbc:mysql://localhost:3306/arenadatabase";
 	private static final String USERNAME = "root";
 	private static final String PASSWORD = "";
-	private static final String CONN_STRING = "jdbc:mysql://localhost/arenadatabase";
+
+	//private static final String databaseUser = "root"; // Xampp Credentials
+	//private static final String databasePassword = ""; // Xampp Credentials
+
+	//private static final String USERNAME = "root";
+	//private static final String PASSWORD = "";
+	//private static final String CONN_STRING = "jdbc:mysql://localhost/arenadatabase";
 
 	// connection  method that connects us to the MySQL database
 	public static Connection getConnection() throws SQLException{

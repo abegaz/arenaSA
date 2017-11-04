@@ -62,7 +62,6 @@ static String currName, currUserID;
         stage.getIcons().add(new Image(getClass().getResourceAsStream("/images/arenaIcon.png")));
         stage.setTitle("Arena");
         stage.show();
-        progress.setVisible(true);
         }
     @FXML
     private void handleClose(MouseEvent event) {

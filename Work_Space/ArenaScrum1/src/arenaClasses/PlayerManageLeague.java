@@ -72,7 +72,6 @@ private void goBackPlayerSplash(ActionEvent event) throws Exception {
     stage.getIcons().add(new Image(getClass().getResourceAsStream("/images/arenaIcon.png")));
     stage.setTitle("Arena");
     stage.show();
-    progress.setVisible(true);
     }
 	@FXML
     private void loadDataFromDatabase(ActionEvent event) throws SQLException{
