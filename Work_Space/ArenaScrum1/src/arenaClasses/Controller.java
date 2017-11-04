@@ -325,6 +325,8 @@ public static int currUserID,currRoleID,appRoleChoice;
     			stage.getIcons().add(new Image(getClass().getResourceAsStream("/images/arenaIcon.png")));
     			stage.setTitle("Arena");
     			stage.show();
+            	UserModels UserID = new UserModels(currUserID);
+            	UserID.setUserID(currUserID);
     		}
     		// Role ID # = 2 (Advertiser). Lands on "advertisorLanding.fxml"
     		if((rs.first()) && roleIDCheck == 2)
