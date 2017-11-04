@@ -68,6 +68,8 @@ public class Controller extends Main{
 //  << LeagueOwnerLanding Attributes >>
     @FXML
     private JFXButton NewLeagueButton;
+    @FXML
+    private JFXButton ManageLeagueLOButton;
 //  <<PlayerLanding Attributes>>
     @FXML
     private JFXButton JoinLeagueButton;
@@ -824,6 +826,18 @@ static int currUserID,currRoleID,appRoleChoice;
         private void gotoYourLeaguesPlayer(ActionEvent event) throws Exception {
         	YourLeagues.getScene().getWindow().hide();
             loader.setLocation(getClass().getResource("/arenaViews/PlayerCurrentLeaguePage.fxml"));
+            scene = new Scene(loader.load());
+            stage.setScene(scene);
+            stage.initStyle(StageStyle.UNDECORATED);
+            stage.setResizable(false);
+            stage.getIcons().add(new Image(getClass().getResourceAsStream("/images/arenaIcon.png")));
+            stage.setTitle("Arena");
+            stage.show();
+}
+        @FXML
+        private void goToManageLeagueLO(ActionEvent event) throws Exception {
+        	ManageLeagueLOButton.getScene().getWindow().hide();
+            loader.setLocation(getClass().getResource("/arenaViews/LeagueOwnerLeagueManagementPage.fxml"));
             scene = new Scene(loader.load());
             stage.setScene(scene);
             stage.initStyle(StageStyle.UNDECORATED);

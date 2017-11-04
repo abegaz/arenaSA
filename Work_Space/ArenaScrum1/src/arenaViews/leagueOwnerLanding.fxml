@@ -30,5 +30,6 @@
          </font>
       </Label>
       <JFXButton fx:id="NewLeagueButton" layoutX="43.0" layoutY="118.0" onAction="#GoToNewLeaguePage" text="New League " />
+      <JFXButton fx:id="ManageLeagueLOButton" layoutX="51.0" layoutY="150.0" onAction="#goToManageLeagueLO" text="Manage League" />
    </children>
 </AnchorPane>
