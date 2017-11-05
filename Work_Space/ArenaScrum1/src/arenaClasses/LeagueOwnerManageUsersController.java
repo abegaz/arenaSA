@@ -70,6 +70,7 @@ public class LeagueOwnerManageUsersController extends Main{
 		Connection myConnection = DBHandler.getConnection();
 		data = FXCollections.observableArrayList();
 		int OwnerID = UserModels.getUserID();
+		data.removeAll(data);
 		try
 		{
 			ResultSet rs = myConnection.createStatement().executeQuery("SELECT userID, userName, LeagueName, MembershipStatusCodeName FROM users, leaguemembers, league, membershipstatuscode WHERE userID=users_UserID and LeagueID=League_LeagueID and MembershipStatuscodeID= MembershipStatuscode_MembershipStatuscodeID and users_userID_LeagueOwner ="+OwnerID+" ");
@@ -95,6 +96,7 @@ public class LeagueOwnerManageUsersController extends Main{
 		Connection myConnection = DBHandler.getConnection();
 		data = FXCollections.observableArrayList();
 		int OwnerID = UserModels.getUserID();
+		data.removeAll(data);
 		try
 		{
 			ResultSet rs = myConnection.createStatement().executeQuery("SELECT userID, userName, LeagueName, MembershipStatusCodeName FROM users, leaguemembers, league, membershipstatuscode WHERE userID=users_UserID and LeagueID=League_LeagueID and MembershipStatuscodeID= MembershipStatuscode_MembershipStatuscodeID and users_userID_LeagueOwner ="+OwnerID+" ");
@@ -121,24 +123,14 @@ public class LeagueOwnerManageUsersController extends Main{
 		data = FXCollections.observableArrayList();
 		LeagueOwnerManageUsersModel userData = manageUsersTable.getSelectionModel().getSelectedItem();
 		int selectedUserID = userData.getUserID();
-		int OwnerID = UserModels.getUserID();
 		String selectedLeagueName = userData.getLeagueName();
 		String sqlUpdate = "UPDATE arenadatabase.leaguemembers SET Membershipstatuscode_membershipstatuscodeID = 2 WHERE Exists (Select * FROM league WHERE users_userID =" +selectedUserID +" and League_LeagueID =LeagueID and LeagueName ='"+selectedLeagueName+"') ";
 		try
 		{
 			PreparedStatement pst = myConnection.prepareStatement(sqlUpdate);
 			pst.execute(sqlUpdate);
-			data.removeAll(data);
-			ResultSet rs = myConnection.createStatement().executeQuery("SELECT userID, userName, LeagueName, MembershipStatusCodeName FROM users, leaguemembers, league, membershipstatuscode WHERE userID=users_UserID and LeagueID=League_LeagueID and MembershipStatuscodeID= MembershipStatuscode_MembershipStatuscodeID and users_userID_LeagueOwner ="+OwnerID+" ");
-			while(rs.next())
-			{
-				data.add(new LeagueOwnerManageUsersModel(rs.getInt("userID"),rs.getString("userName"),rs.getString("LeagueName"), rs.getString("MembershipStatusCodeName")));
-			}
-			columnUserID.setCellValueFactory(new PropertyValueFactory<>("userID"));
-			columnUserName.setCellValueFactory(new PropertyValueFactory<>("userName"));
-			columnLeagueName.setCellValueFactory(new PropertyValueFactory<>("LeagueName"));
-			columnPlayerStatus.setCellValueFactory(new PropertyValueFactory<>("MembershipStatusCodeName"));
-			manageUsersTable.setItems(data);
+			JustDoManageUsersToTableView();
+			
 		}
 		catch(SQLException e)
 		{
@@ -157,24 +149,14 @@ public class LeagueOwnerManageUsersController extends Main{
 		data = FXCollections.observableArrayList();
 		LeagueOwnerManageUsersModel userData = manageUsersTable.getSelectionModel().getSelectedItem();
 		int selectedUserID = userData.getUserID();
-		int OwnerID = UserModels.getUserID();
 		String selectedLeagueName = userData.getLeagueName();
 		String sqlUpdate = "UPDATE arenadatabase.leaguemembers SET Membershipstatuscode_membershipstatuscodeID = 1 WHERE Exists (Select * FROM league WHERE users_userID =" +selectedUserID +" and League_LeagueID =LeagueID and LeagueName ='"+selectedLeagueName+"') ";
 		try
 		{
 			PreparedStatement pst = myConnection.prepareStatement(sqlUpdate);
 			pst.execute(sqlUpdate);
-			data.removeAll(data);
-			ResultSet rs = myConnection.createStatement().executeQuery("SELECT userID, userName, LeagueName, MembershipStatusCodeName FROM users, leaguemembers, league, membershipstatuscode WHERE userID=users_UserID and LeagueID=League_LeagueID and MembershipStatuscodeID= MembershipStatuscode_MembershipStatuscodeID and users_userID_LeagueOwner ="+OwnerID+" ");
-			while(rs.next())
-			{
-				data.add(new LeagueOwnerManageUsersModel(rs.getInt("userID"),rs.getString("userName"),rs.getString("LeagueName"), rs.getString("MembershipStatusCodeName")));
-			}
-			columnUserID.setCellValueFactory(new PropertyValueFactory<>("userID"));
-			columnUserName.setCellValueFactory(new PropertyValueFactory<>("userName"));
-			columnLeagueName.setCellValueFactory(new PropertyValueFactory<>("LeagueName"));
-			columnPlayerStatus.setCellValueFactory(new PropertyValueFactory<>("MembershipStatusCodeName"));
-			manageUsersTable.setItems(data);
+			JustDoManageUsersToTableView();
+			
 		}
 		catch(SQLException e)
 		{
