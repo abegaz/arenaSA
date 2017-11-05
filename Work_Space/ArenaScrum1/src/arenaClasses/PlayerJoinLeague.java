@@ -128,7 +128,7 @@ private void goBackPlayerSplash(ActionEvent event) throws Exception {
 	     
 	     try {
 
-	    int membership = 1;
+	    int membership = 0;
 	    PreparedStatement pst = myConnection.prepareStatement(sqlInsert);
 	    pst.setInt(1,selectedLeagueID);
 	    pst.setInt(2,membership);

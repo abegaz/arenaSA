@@ -135,6 +135,8 @@ public class Controller extends Main{
 // << leagueOwnerLanding Attributes >> 
     @FXML
     private JFXButton leagueOwnerGoToTeamsButton;
+    @FXML
+    private JFXButton leagueOwnerGoToManagePlayers;
  // << playerLanding Attributes >> 
     @FXML
     private JFXButton playerTeamAppButton;
@@ -1019,6 +1021,19 @@ public static int currUserID,currRoleID,appRoleChoice;
         private void goToLoAppsPage(ActionEvent event) throws Exception {
         	leagueOwnerPendingButton.getScene().getWindow().hide();
             loader.setLocation(getClass().getResource("/arenaViews/loPlayerApp.fxml"));
+            scene = new Scene(loader.load());
+            stage.setScene(scene);
+            stage.initStyle(StageStyle.UNDECORATED);
+            stage.setResizable(false);
+            stage.getIcons().add(new Image(getClass().getResourceAsStream("/images/arenaIcon.png")));
+            stage.setTitle("Arena");
+            stage.show();
+            }
+// League Owner to Manage Players
+        @FXML
+        private void goToPlayerManagement(ActionEvent event) throws Exception {
+        	leagueOwnerGoToManagePlayers.getScene().getWindow().hide();
+            loader.setLocation(getClass().getResource("/arenaViews/LeagueOwnerManageUsersPage.fxml"));
             scene = new Scene(loader.load());
             stage.setScene(scene);
             stage.initStyle(StageStyle.UNDECORATED);

@@ -139,9 +139,11 @@ private void goBackLeagueSplash(ActionEvent event) throws Exception {
 	     PlayerJoinLeagueModel LeagueData = LeaguesTable.getSelectionModel().getSelectedItem();
 	     int selectedLeagueID = LeagueData.getLeagueID();
 	     String sqlDelete ="DELETE FROM arenadatabase.League WHERE LeagueID ="+selectedLeagueID+"";
+	     String sqlDelete2 ="DELETE FROM arenadatabase.Leaguemembers WHERE League_LeagueID ="+selectedLeagueID+"";
 	     
 	     try {
-
+	    PreparedStatement pst2 = myConnection.prepareStatement(sqlDelete2);
+	    pst2.execute(sqlDelete2);
 	    PreparedStatement pst = myConnection.prepareStatement(sqlDelete);
 	    pst.execute(sqlDelete);
 	     
