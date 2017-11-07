@@ -1,0 +1,80 @@
+//Operator
+As an operator I want to create Games.
+
+As an operator I want to manage Games.
+
+As an operator I want to create Tournament styles.
+
+As an operator I want to manage Tournament styles.
+
+As an operator I want to create expert Rating Formula.
+
+As an operator I want to manage expert Rating Formula.
+
+As an operator I want to manage users
+
+As an operator I want to create Arenas
+
+As an operator I want to  manage Arenas
+
+As an operator I want to ability to approve special users (League Owners and Other Operators )
+
+
+// League Owner
+As a league Owner I want to create new Leagues
+
+As a league Owner I want to manage my own Leagues
+
+As a league owner I want to create Tournaments within my own leagues
+
+As a league owner I want to Manage Tournaments within my own leagues
+
+As a league owner I want to conduct Tournaments within my own leagues
+
+As a league owner I want to assign league members to teams
+
+As a league owner I want to create Teams within my leagues
+
+As a league owner I want to manage Teams within my leagues
+
+As a league owner I want to create matches for my Tournaments within my own leagues
+
+As a league owner I want to manage matches for my Tournaments within my own leagues
+
+As a league owner I want to declase a winner of my matches for my Tournaments within my own leagues
+
+As a league owner I want to declase a winner of my Tournaments within my own leagues
+
+
+
+// Player
+As a player I want to register to an arena
+
+As a player I want to apply to a league within the arena I registered to
+
+As a player I want to play in matched assigned to me or my team within the league I applied to
+
+As a player I want to be able to drop out of tournaments 
+
+
+
+// Spectators
+As a Spectator I want the ability to view current Matches in progress
+
+As a Spectator I want the ability to view Statistics of past matches 
+
+As a Spectator I want the ability to select players and view thier statistics
+
+As a Spectator I want to do the above without needing to signup for an arena.
+
+
+// Advertisers
+As an Advertiser I want the abililty to create new advertisements
+
+As an Advertiser I want the abililty to manage my own advertisements
+
+As an Advertiser I want the abililty to select an Advertisement scheme 
+
+As an Advertiser I want the ability to view my balance due
+
+As an Advertiser I want the ability to pay my balance due
