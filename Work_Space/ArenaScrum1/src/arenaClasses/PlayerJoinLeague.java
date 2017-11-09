@@ -32,6 +32,10 @@ public class PlayerJoinLeague extends Main{
 	@FXML
 	private Label JoinLeagueLabel;
 	@FXML
+	private Label errorJoinLeague;
+	@FXML
+	private Label JoinLabel;
+	@FXML
 	private JFXTextField SearchBar;
 	@FXML
 	private JFXButton SearchButton;
@@ -77,9 +81,9 @@ private void goBackPlayerSplash(ActionEvent event) throws Exception {
     private void loadDataFromDatabase(ActionEvent event) throws SQLException{
     	Connection myConnection = DBHandler.getConnection();
     	data = FXCollections.observableArrayList();
-    	//int PlayerID = UserModels.getUserID();
+    	data.removeAll(data);
     	try {
-    		ResultSet rs2 = myConnection.createStatement().executeQuery("SELECT LeagueID, LeagueName, LeagueDesc  FROM arenadatabase.league");
+    		ResultSet rs2 = myConnection.createStatement().executeQuery("SELECT LeagueID, LeagueName, LeagueDesc  From league");
     		while(rs2.next()) {
     			data.add(new PlayerJoinLeagueModel(rs2.getInt("LeagueID"), rs2.getString("LeagueName"), rs2.getString("LeagueDesc")));
     		}
@@ -97,9 +101,9 @@ private void goBackPlayerSplash(ActionEvent event) throws Exception {
 	private void loadDatafromDatabaseLoading() throws SQLException{
     	Connection myConnection = DBHandler.getConnection();
     	data = FXCollections.observableArrayList();
-    	//int PlayerID = UserModels.getUserID();
+    	data.removeAll(data);
     	try {
-    		ResultSet rs2 = myConnection.createStatement().executeQuery("SELECT LeagueID, LeagueName, LeagueDesc  FROM arenadatabase.league");
+    		ResultSet rs2 = myConnection.createStatement().executeQuery("SELECT LeagueID, LeagueName, LeagueDesc  From league");
     		while(rs2.next()) {
     			data.add(new PlayerJoinLeagueModel(rs2.getInt("LeagueID"), rs2.getString("LeagueName"), rs2.getString("LeagueDesc")));
     		}
@@ -122,23 +126,30 @@ private void goBackPlayerSplash(ActionEvent event) throws Exception {
 	     Connection myConnection = DBHandler.getConnection();
 	     PlayerJoinLeagueModel LeagueData = PlayerLeagueTable.getSelectionModel().getSelectedItem();
 	     int selectedLeagueID = LeagueData.getLeagueID();
+	     String selectedLeagueName = LeagueData.getLeagueName();
 	     int selectedUserID = UserModels.getUserID();
+	     errorJoinLeague.setVisible(false);
+	     JoinLabel.setVisible(false);
 	     String sqlInsert ="INSERT INTO LeagueMembers (League_LeagueID, MembershipStatusCode_MembershipStatusCodeID, users_userID) "
 			+ "VALUES (?, ?, ?)";
-	     
-	     try {
-
+	    
+	     try{
 	    int membership = 0;
 	    PreparedStatement pst = myConnection.prepareStatement(sqlInsert);
 	    pst.setInt(1,selectedLeagueID);
 	    pst.setInt(2,membership);
 	    pst.setInt(3,selectedUserID);
 	    pst.execute();
-	     
+	    JoinLabel.setText("You have Joined "+selectedLeagueName+".");
+	    JoinLabel.setVisible(true);
+	    	
 	     }
+	
 	     catch(SQLException e){
 	         e.printStackTrace();
 	         System.out.println("ERROR @ Control.JoinLeague");
+	         errorJoinLeague.setVisible(true);
+	         
 	     }
 
 	     finally {
@@ -147,7 +158,25 @@ private void goBackPlayerSplash(ActionEvent event) throws Exception {
 }
 	@FXML
 	private void executeSearch(ActionEvent event) throws SQLException {
-		
+		Connection myConnection = DBHandler.getConnection();
+    	data = FXCollections.observableArrayList();
+    	data.removeAll(data);
+    	String SearchString = SearchBar.getText();
+    	try {
+    		ResultSet rs2 = myConnection.createStatement().executeQuery("SELECT LeagueID, LeagueName, LeagueDesc  FROM arenadatabase.league  WHERE EXIST (Select league_LeagueID FROM leaguemembers Where leagueName='"+SearchString+"')");
+    		while(rs2.next()) {
+    			data.add(new PlayerJoinLeagueModel(rs2.getInt("LeagueID"), rs2.getString("LeagueName"), rs2.getString("LeagueDesc")));
+    		}
+    	}
+    	catch(SQLException e) {
+    		e.printStackTrace();
+    		System.out.println("ERROR @ Controller.PlayerLeagueTable");
+    	}
+    	loadDatafromDatabaseLoading();
+    	columnLeagueID.setCellValueFactory(new PropertyValueFactory<>("LeagueID"));
+    	columnLeagueName.setCellValueFactory(new PropertyValueFactory<>("LeagueName"));
+    	columnLeagueDescription.setCellValueFactory(new PropertyValueFactory<>("LeagueDesc"));
+    	PlayerLeagueTable.setItems(data);
 	}
 	
 }

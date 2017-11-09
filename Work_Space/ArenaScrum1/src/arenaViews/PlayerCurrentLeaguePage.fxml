@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="529.0" prefWidth="809.0" style="-fx-background-color: #20120F;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="arenaClasses.PlayerManageLeague">
+<AnchorPane prefHeight="529.0" prefWidth="809.0" style="-fx-background-color: #20120F;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="arenaClasses.PlayerManageLeague">
    <children>
       <ImageView fitHeight="539.0" fitWidth="811.0" layoutY="-1.0" opacity="0.12" pickOnBounds="true">
          <image>
@@ -33,8 +33,9 @@
             <TableView fx:id="PlayerLeagueTable" layoutX="14.0" layoutY="87.0" prefHeight="323.0" prefWidth="705.0">
               <columns>
                   <TableColumn fx:id="columnLeagueID" prefWidth="131.0" text="League ID" />
-                <TableColumn fx:id="columnLeagueName" prefWidth="240.0" text="League Name" />
-                  <TableColumn fx:id="columnLeagueDescription" prefWidth="331.0" text="League Description" />
+                <TableColumn fx:id="columnLeagueName" prefWidth="172.0" text="League Name" />
+                  <TableColumn fx:id="columnLeagueDescription" prefWidth="275.0" text="League Description" />
+                  <TableColumn fx:id="columnPlayerStatus" prefWidth="126.0" text="Status" />
               </columns>
             </TableView>
             <JFXButton fx:id="PlayerRemoveButton" layoutX="14.0" layoutY="417.0" onAction="#removeLeagueMembership" prefHeight="25.0" prefWidth="238.0" style="-fx-background-color: #f4ce42;" text="Remove">
@@ -66,5 +67,10 @@
             </Label>
          </children>
       </AnchorPane>
+      <Label fx:id="BannedLabel" layoutX="231.0" layoutY="503.0" text="Can't leave a League that you're banned from." textFill="RED" visible="false">
+         <font>
+            <Font name="Arial Black" size="14.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

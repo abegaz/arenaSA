@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="529.0" prefWidth="806.0" style="-fx-background-color: #20120F;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="arenaClasses.PlayerJoinLeague">
+<AnchorPane prefHeight="529.0" prefWidth="806.0" style="-fx-background-color: #20120F;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="arenaClasses.PlayerJoinLeague">
    <children>
       <ImageView fx:id="Background" fitHeight="530.0" fitWidth="797.0" layoutX="14.0" opacity="0.12" pickOnBounds="true">
          <image>
@@ -66,5 +66,15 @@
             </Label>
          </children>
       </AnchorPane>
+      <Label fx:id="errorJoinLeague" layoutX="167.0" layoutY="493.0" text="You have already Joined this League.  Choose another one." textFill="#ff0404" visible="false">
+         <font>
+            <Font name="Arial Black" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="JoinLabel" layoutX="293.0" layoutY="493.0" text="You have Joined __________" textFill="#09fc22" visible="false">
+         <font>
+            <Font name="Arial Black" size="14.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

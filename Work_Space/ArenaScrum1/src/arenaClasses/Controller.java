@@ -34,6 +34,7 @@ public class Controller extends Main{
     private Label closeIcon;
     @FXML
     private Label errorLabel;
+    
 // << loginPage Attributes >>
     @FXML
     private JFXButton loginPageSignUpButton;
@@ -138,6 +139,8 @@ public class Controller extends Main{
     @FXML
     private JFXButton leagueOwnerGoToManagePlayers;
  // << playerLanding Attributes >> 
+    @FXML
+    private Label BannedLabel;
     @FXML
     private JFXButton playerTeamAppButton;
     @FXML

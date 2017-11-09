@@ -70,9 +70,9 @@
          </font>
       </JFXButton>
       <TextField fx:id="SearchField" layoutX="244.0" layoutY="24.0" prefHeight="33.0" prefWidth="191.0" promptText="Search" />
-      <JFXButton fx:id="UnBanButton" layoutX="24.0" layoutY="200.0" onAction="#UnBanUser" prefHeight="46.0" prefWidth="102.0" style="-fx-background-color: #08A923;" text="Unban" textAlignment="CENTER">
+      <JFXButton fx:id="UnBanButton" layoutX="24.0" layoutY="200.0" onAction="#UnBanUser" prefHeight="46.0" prefWidth="102.0" style="-fx-background-color: #08A923;" text="Confirm/ unban" textAlignment="CENTER" wrapText="true">
          <font>
-            <Font name="Book Antiqua" size="18.0" />
+            <Font name="Book Antiqua" size="14.0" />
          </font>
       </JFXButton>
    </children>

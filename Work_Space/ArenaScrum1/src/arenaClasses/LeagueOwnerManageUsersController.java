@@ -73,7 +73,7 @@ public class LeagueOwnerManageUsersController extends Main{
 		data.removeAll(data);
 		try
 		{
-			ResultSet rs = myConnection.createStatement().executeQuery("SELECT userID, userName, LeagueName, MembershipStatusCodeName FROM users, leaguemembers, league, membershipstatuscode WHERE userID=users_UserID and LeagueID=League_LeagueID and MembershipStatuscodeID= MembershipStatuscode_MembershipStatuscodeID and users_userID_LeagueOwner ="+OwnerID+" ");
+			ResultSet rs = myConnection.createStatement().executeQuery("SELECT userID, userName, LeagueName, MembershipStatusCodeName FROM users, leaguemembers, league, membershipstatuscode WHERE userID=users_UserID and LeagueID=League_LeagueID and MembershipStatuscodeID= MembershipStatuscode_MembershipStatuscodeID and users_userID_LeagueOwner ="+OwnerID+" and MembershipStatuscode_MembershipStatuscodeID<>3 ");
 			while(rs.next())
 			{
 				data.add(new LeagueOwnerManageUsersModel(rs.getInt("userID"),rs.getString("userName"),rs.getString("LeagueName"), rs.getString("MembershipStatusCodeName")));
@@ -99,7 +99,7 @@ public class LeagueOwnerManageUsersController extends Main{
 		data.removeAll(data);
 		try
 		{
-			ResultSet rs = myConnection.createStatement().executeQuery("SELECT userID, userName, LeagueName, MembershipStatusCodeName FROM users, leaguemembers, league, membershipstatuscode WHERE userID=users_UserID and LeagueID=League_LeagueID and MembershipStatuscodeID= MembershipStatuscode_MembershipStatuscodeID and users_userID_LeagueOwner ="+OwnerID+" ");
+			ResultSet rs = myConnection.createStatement().executeQuery("SELECT userID, userName, LeagueName, MembershipStatusCodeName FROM users, leaguemembers, league, membershipstatuscode WHERE userID=users_UserID and LeagueID=League_LeagueID and MembershipStatuscodeID= MembershipStatuscode_MembershipStatuscodeID and users_userID_LeagueOwner ="+OwnerID+" and MembershipStatuscode_MembershipStatuscodeID<>3 ");
 			while(rs.next())
 			{
 				data.add(new LeagueOwnerManageUsersModel(rs.getInt("userID"),rs.getString("userName"),rs.getString("LeagueName"), rs.getString("MembershipStatusCodeName")));

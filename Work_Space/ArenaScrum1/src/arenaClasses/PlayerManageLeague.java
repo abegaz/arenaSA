@@ -9,7 +9,7 @@ import java.sql.SQLException;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
 
-import arenaModels.PlayerJoinLeagueModel;
+import arenaModels.PlayerManageLeagueModel;
 import arenaModels.UserModels;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -32,6 +32,8 @@ public class PlayerManageLeague extends Main{
 	@FXML
 	private Label YourLeagues;
 	@FXML
+	private Label BannedLabel;
+	@FXML
 	private JFXTextField SearchBar;
 	@FXML
 	private JFXButton SearchButton;
@@ -48,18 +50,21 @@ public class PlayerManageLeague extends Main{
 	@FXML
 	private ImageView Background;
 	@FXML
-	private TableView<PlayerJoinLeagueModel> PlayerLeagueTable;
+	private TableView<PlayerManageLeagueModel> PlayerLeagueTable;
 	@FXML
-	private TableColumn<PlayerJoinLeagueModel, String> columnLeagueName;
+	private TableColumn<PlayerManageLeagueModel, String> columnLeagueName;
 	@FXML
-	private TableColumn<PlayerJoinLeagueModel, String> columnLeagueDescription;
+	private TableColumn<PlayerManageLeagueModel, String> columnLeagueDescription;
 	@FXML
-	private TableColumn<PlayerJoinLeagueModel, Integer> columnLeagueID;
+	private TableColumn<PlayerManageLeagueModel, Integer> columnLeagueID;
+	@FXML
+	private TableColumn<PlayerManageLeagueModel, String> columnPlayerStatus;
+	
 
 ResultSet rs;
 Scene scene;
 Stage stage = new Stage();
-private ObservableList<PlayerJoinLeagueModel>data;
+private ObservableList<PlayerManageLeagueModel>data;
 
 @FXML
 private void goBackPlayerSplash(ActionEvent event) throws Exception {
@@ -77,11 +82,12 @@ private void goBackPlayerSplash(ActionEvent event) throws Exception {
     private void loadDataFromDatabase(ActionEvent event) throws SQLException{
     	Connection myConnection = DBHandler.getConnection();
     	data = FXCollections.observableArrayList();
+    	data.removeAll(data);
     	int PlayerID = UserModels.getUserID();
     	try {
-    		ResultSet rs2 = myConnection.createStatement().executeQuery("SELECT L.LeagueID, L.LeagueName, L.LeagueDesc  FROM arenadatabase.league L, arenadatabase.leaguemembers M WHERE L.LeagueID=M.League_LeagueID and M.users_userID ="+PlayerID+"");
+    		ResultSet rs2 = myConnection.createStatement().executeQuery("SELECT L.LeagueID, L.LeagueName, L.LeagueDesc, N.MembershipStatusCodeName  FROM arenadatabase.league L, arenadatabase.leaguemembers M, arenadatabase.MembershipStatusCode N WHERE L.LeagueID=M.League_LeagueID and M.users_userID ="+PlayerID+" and N.MembershipStatusCodeID= M.MembershipStatusCode_MembershipStatusCodeID");
     		while(rs2.next()) {
-    			data.add(new PlayerJoinLeagueModel(rs2.getInt("LeagueID"), rs2.getString("LeagueName"), rs2.getString("LeagueDesc")));
+    			data.add(new PlayerManageLeagueModel(rs2.getInt("LeagueID"), rs2.getString("LeagueName"), rs2.getString("LeagueDesc"), rs2.getString("MembershipStatusCodeName")));
     		}
     	}
     	catch(SQLException e) {
@@ -92,16 +98,18 @@ private void goBackPlayerSplash(ActionEvent event) throws Exception {
     	columnLeagueID.setCellValueFactory(new PropertyValueFactory<>("LeagueID"));
     	columnLeagueName.setCellValueFactory(new PropertyValueFactory<>("LeagueName"));
     	columnLeagueDescription.setCellValueFactory(new PropertyValueFactory<>("LeagueDesc"));
+    	columnPlayerStatus.setCellValueFactory(new PropertyValueFactory<>("MembershipStatusCodeName"));
     	PlayerLeagueTable.setItems(data); 
     } 
 	private void loadDatafromDatabaseLoading() throws SQLException{
     	Connection myConnection = DBHandler.getConnection();
     	data = FXCollections.observableArrayList();
+    	data.removeAll(data);
     	int PlayerID = UserModels.getUserID();
     	try {
-    		ResultSet rs2 = myConnection.createStatement().executeQuery("SELECT L.LeagueID, L.LeagueName, L.LeagueDesc  FROM arenadatabase.league L, arenadatabase.leaguemembers M WHERE L.LeagueID=M.League_LeagueID and M.users_userID ="+PlayerID+"");
+    		ResultSet rs2 = myConnection.createStatement().executeQuery("SELECT L.LeagueID, L.LeagueName, L.LeagueDesc, N.MembershipStatusCodeName  FROM arenadatabase.league L, arenadatabase.leaguemembers M, arenadatabase.MembershipStatusCode N WHERE L.LeagueID=M.League_LeagueID and M.users_userID ="+PlayerID+" and N.MembershipStatusCodeID= M.MembershipStatusCode_MembershipStatusCodeID");
     		while(rs2.next()) {
-    			data.add(new PlayerJoinLeagueModel(rs2.getInt("LeagueID"), rs2.getString("LeagueName"), rs2.getString("LeagueDesc")));
+    			data.add(new PlayerManageLeagueModel(rs2.getInt("LeagueID"), rs2.getString("LeagueName"), rs2.getString("LeagueDesc"), rs2.getString("MembershipStatusCodeName")));
     		}
     	}
     	catch(SQLException e) {
@@ -111,6 +119,7 @@ private void goBackPlayerSplash(ActionEvent event) throws Exception {
     	columnLeagueID.setCellValueFactory(new PropertyValueFactory<>("LeagueID"));
     	columnLeagueName.setCellValueFactory(new PropertyValueFactory<>("LeagueName"));
     	columnLeagueDescription.setCellValueFactory(new PropertyValueFactory<>("LeagueDesc"));
+    	columnPlayerStatus.setCellValueFactory(new PropertyValueFactory<>("MembershipStatusCodeName"));
     	PlayerLeagueTable.setItems(data); 
     }
 	@FXML
@@ -120,17 +129,27 @@ private void goBackPlayerSplash(ActionEvent event) throws Exception {
 	@FXML
 	private void removeLeagueMembership(ActionEvent event) throws SQLException {
 	     Connection myConnection = DBHandler.getConnection();
-	     PlayerJoinLeagueModel LeagueData = PlayerLeagueTable.getSelectionModel().getSelectedItem();
+	     PlayerManageLeagueModel LeagueData = PlayerLeagueTable.getSelectionModel().getSelectedItem();
 	     int selectedLeagueID = LeagueData.getLeagueID();
 	     int selectedUserID = UserModels.getUserID();
 	     String sqlDelete ="DELETE FROM arenadatabase.LeagueMembers WHERE League_LeagueID ="+selectedLeagueID+" and users_userID="+selectedUserID+"";
+	     String sqlStatus ="Select MembershipStatusCode_MembershipStatusCodeID FROM leaguemembers WHERE users_userid ="+selectedUserID+" and League_LeagueID="+selectedLeagueID+"";
 	     
 	     try {
-
-	    PreparedStatement pst = myConnection.prepareStatement(sqlDelete);
-	    pst.execute(sqlDelete);
-	     
-	     }
+	    
+	    	 ResultSet rs2 = myConnection.createStatement().executeQuery(sqlStatus);
+	    	 while(rs2.next()) {
+	    		int memberStatus = rs2.getInt(1);
+	    		if (memberStatus == 2){
+	    		BannedLabel.setVisible(true);
+	    		}
+	    	else{
+	    		PreparedStatement pst = myConnection.prepareStatement(sqlDelete);
+	    		pst.execute(sqlDelete);
+	    		loadDatafromDatabaseLoading();
+	    		}
+	    	 }
+	    }
 	     catch(SQLException e){
 	         e.printStackTrace();
 	         System.out.println("ERROR @ Control.JoinLeague");
