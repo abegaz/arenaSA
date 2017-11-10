@@ -6,7 +6,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import com.jfoenix.controls.JFXButton;
-import com.jfoenix.controls.JFXTextField;
 
 import arenaModels.LeagueOwnerManageUsersModel;
 import arenaModels.UserModels;
@@ -17,6 +16,7 @@ import javafx.fxml.FXML;
 import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
@@ -45,7 +45,7 @@ public class LeagueOwnerManageUsersController extends Main{
 	@FXML
 	private JFXButton UnBanButton;
 	@FXML
-	private JFXTextField SearchTextField;
+	private TextField SearchField;
 
 	
 	Scene scene;
@@ -171,8 +171,31 @@ public class LeagueOwnerManageUsersController extends Main{
 
 	@FXML
 	private void executeSearch(ActionEvent event) throws SQLException {
-		
+		Connection myConnection = DBHandler.getConnection();
+		data = FXCollections.observableArrayList();
+		String Searchfield = SearchField.getText();
+		int OwnerID = UserModels.getUserID();
+		data.removeAll(data);
+		try
+		{
+			ResultSet rs = myConnection.createStatement().executeQuery("SELECT Distinct userID, userName, LeagueName, MembershipStatusCodeName from users, leaguemembers, league, membershipstatuscode  Where userID=users_UserID and LeagueID=League_LeagueID and MembershipStatuscodeID= MembershipStatuscode_MembershipStatuscodeID and users_userID_LeagueOwner ="+OwnerID+" and userName = '"+Searchfield+"'");
+			while(rs.next())
+			{
+				data.add(new LeagueOwnerManageUsersModel(rs.getInt("userID"),rs.getString("userName"),rs.getString("LeagueName"), rs.getString("MembershipStatusCodeName")));
+			}
+		}
+		catch(SQLException e)
+		{
+			e.printStackTrace();
+			System.out.println("ERROR @ LeagueOwnerManageLeagueController.ManageUsersToTableView");
+		}
+		columnUserID.setCellValueFactory(new PropertyValueFactory<>("userID"));
+		columnUserName.setCellValueFactory(new PropertyValueFactory<>("userName"));
+		columnLeagueName.setCellValueFactory(new PropertyValueFactory<>("LeagueName"));
+		columnPlayerStatus.setCellValueFactory(new PropertyValueFactory<>("MembershipStatusCodeName"));
+		manageUsersTable.setItems(data);
 	}
+	
 	@FXML
     private void closeApplication(MouseEvent event) {
         System.exit(0);

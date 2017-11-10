@@ -31,14 +31,8 @@
             <Font name="Book Antiqua" size="18.0" />
          </font>
       </JFXButton>
-      <AnchorPane layoutX="145.0" layoutY="24.0" prefHeight="376.0" prefWidth="438.0" style="-fx-border-color: #f4ce42; -fx-border-width: 8; -fx-background-color: BLACK;">
+      <AnchorPane layoutX="125.0" layoutY="24.0" prefHeight="367.0" prefWidth="464.0" style="-fx-border-color: #f4ce42; -fx-border-width: 8; -fx-background-color: BLACK;">
          <children>
-            <TableView fx:id="teamsTable" layoutX="15.0" layoutY="48.0" onSort="#usersToTableView" prefHeight="217.0" prefWidth="407.0" style="-fx-background-color: #FFFFFF;">
-               <columns>
-                  <TableColumn fx:id="teamsColumnTeamID" prefWidth="93.0" text="Team ID #" />
-                  <TableColumn fx:id="teamsColumnTeamName" prefWidth="312.0" text="Name" />
-               </columns>
-            </TableView>
             <Label fx:id="loadMe1" layoutX="15.0" layoutY="266.0" text="*Initial Load Requires Refresh" textFill="#656565">
                <font>
                   <Font size="13.0" />
@@ -64,6 +58,13 @@
                   <Font size="15.0" />
                </font>
             </Label>
+            <TableView fx:id="teamsTable" layoutX="15.0" layoutY="39.0" prefHeight="246.0" prefWidth="431.0" style="-fx-background-color: #FFFFFF;">
+               <columns>
+                  <TableColumn fx:id="teamsColumnTeamID" prefWidth="78.0" text="ID #" />
+                  <TableColumn fx:id="teamsColumnTeamName" prefWidth="254.0" text="Team Name" />
+                  <TableColumn fx:id="teamsColumnTeamLeagueID" prefWidth="87.0" text="League ID #" />
+               </columns>
+            </TableView>
          </children>
       </AnchorPane>
    </children>

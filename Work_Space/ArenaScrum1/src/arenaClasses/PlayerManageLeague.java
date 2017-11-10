@@ -85,7 +85,7 @@ private void goBackPlayerSplash(ActionEvent event) throws Exception {
     	data.removeAll(data);
     	int PlayerID = UserModels.getUserID();
     	try {
-    		ResultSet rs2 = myConnection.createStatement().executeQuery("SELECT L.LeagueID, L.LeagueName, L.LeagueDesc, N.MembershipStatusCodeName  FROM arenadatabase.league L, arenadatabase.leaguemembers M, arenadatabase.MembershipStatusCode N WHERE L.LeagueID=M.League_LeagueID and M.users_userID ="+PlayerID+" and N.MembershipStatusCodeID= M.MembershipStatusCode_MembershipStatusCodeID");
+    		ResultSet rs2 = myConnection.createStatement().executeQuery("SELECT L.LeagueID, L.LeagueName, L.LeagueDesc, N.MembershipStatusCodeName  FROM arenadatabase.league L, arenadatabase.leaguemembers M, arenadatabase.membershipstatuscode N WHERE L.LeagueID=M.League_LeagueID and M.users_userID ="+PlayerID+" and N.MembershipStatusCodeID= M.MembershipStatusCode_MembershipStatusCodeID");
     		while(rs2.next()) {
     			data.add(new PlayerManageLeagueModel(rs2.getInt("LeagueID"), rs2.getString("LeagueName"), rs2.getString("LeagueDesc"), rs2.getString("MembershipStatusCodeName")));
     		}
@@ -107,7 +107,7 @@ private void goBackPlayerSplash(ActionEvent event) throws Exception {
     	data.removeAll(data);
     	int PlayerID = UserModels.getUserID();
     	try {
-    		ResultSet rs2 = myConnection.createStatement().executeQuery("SELECT L.LeagueID, L.LeagueName, L.LeagueDesc, N.MembershipStatusCodeName  FROM arenadatabase.league L, arenadatabase.leaguemembers M, arenadatabase.MembershipStatusCode N WHERE L.LeagueID=M.League_LeagueID and M.users_userID ="+PlayerID+" and N.MembershipStatusCodeID= M.MembershipStatusCode_MembershipStatusCodeID");
+    		ResultSet rs2 = myConnection.createStatement().executeQuery("SELECT L.LeagueID, L.LeagueName, L.LeagueDesc, N.MembershipStatusCodeName  FROM arenadatabase.league L, arenadatabase.leaguemembers M, arenadatabase.membershipstatuscode N WHERE L.LeagueID=M.League_LeagueID and M.users_userID ="+PlayerID+" and N.MembershipStatusCodeID= M.MembershipStatusCode_MembershipStatusCodeID");
     		while(rs2.next()) {
     			data.add(new PlayerManageLeagueModel(rs2.getInt("LeagueID"), rs2.getString("LeagueName"), rs2.getString("LeagueDesc"), rs2.getString("MembershipStatusCodeName")));
     		}
@@ -132,7 +132,7 @@ private void goBackPlayerSplash(ActionEvent event) throws Exception {
 	     PlayerManageLeagueModel LeagueData = PlayerLeagueTable.getSelectionModel().getSelectedItem();
 	     int selectedLeagueID = LeagueData.getLeagueID();
 	     int selectedUserID = UserModels.getUserID();
-	     String sqlDelete ="DELETE FROM arenadatabase.LeagueMembers WHERE League_LeagueID ="+selectedLeagueID+" and users_userID="+selectedUserID+"";
+	     String sqlDelete ="DELETE FROM arenadatabase.leaguemembers WHERE League_LeagueID ="+selectedLeagueID+" and users_userID="+selectedUserID+"";
 	     String sqlStatus ="Select MembershipStatusCode_MembershipStatusCodeID FROM leaguemembers WHERE users_userid ="+selectedUserID+" and League_LeagueID="+selectedLeagueID+"";
 	     
 	     try {

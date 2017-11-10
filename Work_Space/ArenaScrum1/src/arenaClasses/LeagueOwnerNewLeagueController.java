@@ -90,7 +90,7 @@ private ObservableList<ChoiceExpertRatingFormula>ExpertRatingFormulalist;
 		ExpertRatingFormulalist.removeAll(ExpertRatingFormulalist);
 		try
 		{
-			ResultSet rs = myConnection.createStatement().executeQuery("SELECT ExpertRatingFormulaFormula FROM ExpertRatingFormula");
+			ResultSet rs = myConnection.createStatement().executeQuery("SELECT ExpertRatingFormulaFormula FROM expertratingformula");
 			while(rs.next())
 			{
 				ExpertRatingFormulalist.add(new ChoiceExpertRatingFormula(rs.getString("ExpertRatingFormulaFormula")));
@@ -112,7 +112,7 @@ private ObservableList<ChoiceExpertRatingFormula>ExpertRatingFormulalist;
 		ExpertRatingFormulalist.removeAll(ExpertRatingFormulalist);
 		try
 		{
-			ResultSet rs = myConnection.createStatement().executeQuery("SELECT ExpertRatingFormulaFormula FROM ExpertRatingFormula");
+			ResultSet rs = myConnection.createStatement().executeQuery("SELECT ExpertRatingFormulaFormula FROM expertratingformula");
 			while(rs.next())
 			{
 				ExpertRatingFormulalist.add(new ChoiceExpertRatingFormula(rs.getString("ExpertRatingFormulaFormula")));
@@ -130,22 +130,19 @@ private ObservableList<ChoiceExpertRatingFormula>ExpertRatingFormulalist;
     private void CreateLeague(ActionEvent event) throws SQLException, IOException{
     	Connection myConnection = DBHandler.getConnection();
     	String LeagueName;
-    	int lID = 0;
     	LeagueCreatedLabel.setVisible(false);
     	NewLeagueError.setVisible(false);
     	String createLeagueQuery = "INSERT INTO league (LeagueName, ExpertRatingFormula_ExpertRatingFormulaID, users_userID_LeagueOwner, Arena_ArenaID, LeagueDesc) "
 			+ "VALUES (?, ?, ?, ?, ?)";
 		ChoiceExpertRatingFormula ExpertRank = ExpertTable.getSelectionModel().getSelectedItem();
 		String selectedFormula = ExpertRank.getExpertRatingFormulaFormula();
-		String sqlSelect = "SELECT ExpertRatingFormulaID From ExpertRatingFormula WHERE ExpertRatingFormulaFormula ='"+selectedFormula+"'";
+		String sqlSelect = "SELECT ExpertRatingFormulaID From expertratingformula WHERE ExpertRatingFormulaFormula ='"+selectedFormula+"'";
     	int eRFID;
     	LeagueName = LeagueNameTextField.getText();
 		int userID= UserModels.getUserID();
 		int arenaID = 50001;
-		int membercode= 3;
 		String LeagueDescrip = LeagueDescriptionTextField.getText();
-    	String sqlSelect2 = "SELECT LeagueID From League Where LeagueName = '"+LeagueName+"'";
-    	String Leaguemembership = "INSERT INTO leaguemembers(League_LeagueID, MembershipStatuscode_MembershipStatuscodeID, users_userID) " + "Values(?, ?, ?)";
+    	
     	
 	try
 	{
@@ -160,16 +157,6 @@ private ObservableList<ChoiceExpertRatingFormula>ExpertRatingFormulalist;
 			preparedStatement.setInt (4, arenaID);
 			preparedStatement.setString (5, LeagueDescrip);
 			preparedStatement.execute();
-		}
-		ResultSet rs1 = myConnection.createStatement().executeQuery(sqlSelect2);
-		while (rs1.next()){
-			lID =rs1.getInt(1);
-			
-			PreparedStatement pst = myConnection.prepareStatement(Leaguemembership);
-			pst.setInt (1, lID);
-			pst.setInt (2, membercode);
-			pst.setInt (3, userID);
-			pst.execute();
 		}
 		LeagueCreatedLabel.setText("League "+LeagueName+" created.");
 		LeagueCreatedLabel.setVisible(true);

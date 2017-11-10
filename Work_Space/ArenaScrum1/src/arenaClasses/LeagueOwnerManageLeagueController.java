@@ -33,7 +33,7 @@ public class LeagueOwnerManageLeagueController extends Main{
 	@FXML
 	private Label YourLeagues;
 	@FXML
-	private JFXTextField SearchBar;
+	private JFXTextField SearchTextField;
 	@FXML
 	private JFXButton SearchButton;
 	@FXML
@@ -138,8 +138,8 @@ private void goBackLeagueSplash(ActionEvent event) throws Exception {
 	     Connection myConnection = DBHandler.getConnection();
 	     PlayerJoinLeagueModel LeagueData = LeaguesTable.getSelectionModel().getSelectedItem();
 	     int selectedLeagueID = LeagueData.getLeagueID();
-	     String sqlDelete ="DELETE FROM arenadatabase.League WHERE LeagueID ="+selectedLeagueID+"";
-	     String sqlDelete2 ="DELETE FROM arenadatabase.Leaguemembers WHERE League_LeagueID ="+selectedLeagueID+"";
+	     String sqlDelete ="DELETE FROM arenadatabase.league WHERE LeagueID ="+selectedLeagueID+"";
+	     String sqlDelete2 ="DELETE FROM arenadatabase.leaguemembers WHERE League_LeagueID ="+selectedLeagueID+"";
 	     
 	     try {
 	    PreparedStatement pst2 = myConnection.prepareStatement(sqlDelete2);
@@ -191,7 +191,27 @@ private void goBackLeagueSplash(ActionEvent event) throws Exception {
 	}
 	@FXML
 	private void executeSearch(ActionEvent event) throws SQLException {
-		
+		Connection myConnection = DBHandler.getConnection();
+    	data = FXCollections.observableArrayList();
+    	String SearchText =SearchTextField.getText();
+    	int PlayerID = UserModels.getUserID();
+    	try {
+    		ResultSet rs2 = myConnection.createStatement().executeQuery("SELECT LeagueID, LeagueName, LeagueDesc  FROM arenadatabase.league WHERE users_userID_LeagueOwner ="+PlayerID+" and LeagueName = '"+SearchText+"'");
+    		while(rs2.next()) {
+    			data.add(new PlayerJoinLeagueModel(rs2.getInt("LeagueID"), rs2.getString("LeagueName"), rs2.getString("LeagueDesc")));
+    		}
+    	}
+    	catch(SQLException e) {
+    		e.printStackTrace();
+    		System.out.println("ERROR @ Controller.PlayerLeagueTable");
+    	}
+    	columnLeagueID.setCellValueFactory(new PropertyValueFactory<>("LeagueID"));
+    	columnLeagueName.setCellValueFactory(new PropertyValueFactory<>("LeagueName"));
+    	columnLeagueDescription.setCellValueFactory(new PropertyValueFactory<>("LeagueDesc"));
+    	LeaguesTable.setItems(data);
+    	LeaguesTable.setEditable(true);
+    	columnLeagueName.setCellFactory(TextFieldTableCell.forTableColumn());
+    	columnLeagueDescription.setCellFactory(TextFieldTableCell.forTableColumn());
 	}
 	
 }

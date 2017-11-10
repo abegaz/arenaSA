@@ -9,48 +9,48 @@ public class ManageUsersController
 {
 	private final SimpleIntegerProperty userIDNew, userRoleIDNew;
 	private final SimpleStringProperty userNameNew;
-	public ManageUsersController(Integer userIDNew, String userNameNew, Integer userRoleIDNew)
+public ManageUsersController(Integer userIDNew, String userNameNew, Integer userRoleIDNew)
 	{
 		this.userIDNew = new SimpleIntegerProperty(userIDNew);
 		this.userNameNew = new SimpleStringProperty(userNameNew);
 		this.userRoleIDNew= new SimpleIntegerProperty(userRoleIDNew);
 	}
-	// Getters
-	public Integer getUserID()
+// Getters
+public Integer getUserID()
 	{
 		return userIDNew.get();
 	}
-	public String getUserName()
+public String getUserName()
 	{
 		return userNameNew.get();
 	}
-	public Integer getuserRoleID()
+public Integer getuserRoleID()
 	{
 		return userRoleIDNew.get();
 	}
-	// Setters
-	public void setUserID(Integer value)
+// Setters
+public void setUserID(Integer value)
 	{
 		userIDNew.set(value);
 	}
-	public void setUserName(String value)
+public void setUserName(String value)
 	{
 		userNameNew.set(value);
 	}
-	public void setuserRoleID(Integer value)
+public void setuserRoleID(Integer value)
 	{
 		userRoleIDNew.set(value);
 	}
-	// Property Values
-	public IntegerProperty userIDProperty()
+// Property Values
+public IntegerProperty userIDProperty()
 	{
 		return userIDNew;
 	}
-	public StringProperty userNameProperty()
+public StringProperty userNameProperty()
 	{
 		return userNameNew;
 	}
-	public IntegerProperty userRoleIDProperty()
+public IntegerProperty userRoleIDProperty()
 	{
 		return userRoleIDNew;
 	}

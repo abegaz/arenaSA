@@ -48,11 +48,6 @@
             <Font name="Book Antiqua" size="14.0" />
          </font>
       </JFXButton>
-      <JFXButton fx:id="leagueOwnerGoToTournsButton" layoutX="213.0" layoutY="106.0" onAction="#goToTournMang" prefHeight="41.0" prefWidth="201.0" style="-fx-background-color: #f4ce42;" text="Manage Tournaments" textAlignment="CENTER">
-         <font>
-            <Font name="Book Antiqua" size="18.0" />
-         </font>
-      </JFXButton>
       <JFXButton fx:id="leagueOwnerGoToMangLeagues" layoutX="425.0" layoutY="106.0" onAction="#goToMangLeag" prefHeight="41.0" prefWidth="170.0" style="-fx-background-color: #f4ce42;" text="Manage Leagues" textAlignment="CENTER">
          <font>
             <Font name="Book Antiqua" size="18.0" />
@@ -63,7 +58,27 @@
             <Font name="Book Antiqua" size="18.0" />
          </font>
       </JFXButton>
-      <JFXButton fx:id="leagueOwnerGoToManagePlayers" layoutX="213.0" layoutY="159.0" onAction="#goToPlayerManagement" prefHeight="41.0" prefWidth="201.0" style="-fx-background-color: #f4ce42;" text="Manage Players" textAlignment="CENTER">
+      <JFXButton fx:id="LoCreateGame" layoutX="21.0" layoutY="215.0" onAction="#goToCreateGame" prefHeight="41.0" prefWidth="184.0" style="-fx-background-color: #f4ce42;" text="Create Game" textAlignment="CENTER">
+         <font>
+            <Font name="Book Antiqua" size="18.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="LoCreateMatch" layoutX="21.0" layoutY="270.0" onAction="#goToCreateMatch" prefHeight="41.0" prefWidth="184.0" style="-fx-background-color: #f4ce42;" text="Create Match" textAlignment="CENTER">
+         <font>
+            <Font name="Book Antiqua" size="18.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="leagueOwnerGoToManageTournsButton" layoutX="217.0" layoutY="106.0" onAction="#goToTournMang" prefHeight="41.0" prefWidth="201.0" style="-fx-background-color: #f4ce42;" text="Manage Tournaments" textAlignment="CENTER">
+         <font>
+            <Font name="Book Antiqua" size="18.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="leagueOwnerGoToCreateTournsButton" layoutX="217.0" layoutY="159.0" onAction="#goToCreateTournamentsView" prefHeight="41.0" prefWidth="201.0" style="-fx-background-color: #f4ce42;" text="Create Tournament" textAlignment="CENTER">
+         <font>
+            <Font name="Book Antiqua" size="18.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="leagueOwnerGoToManagePlayers" layoutX="217.0" layoutY="215.0" onAction="#goToPlayerManagement" prefHeight="41.0" prefWidth="201.0" style="-fx-background-color: #f4ce42;" text="Manage Players" textAlignment="CENTER">
          <font>
             <Font name="Book Antiqua" size="18.0" />
          </font>

@@ -52,12 +52,12 @@
                   <Font name="Book Antiqua" size="21.0" />
                </font>
             </JFXButton>
-            <JFXTextField fx:id="loginPageUserNameTextField" focusColor="#26ae48" layoutX="42.0" layoutY="47.0" promptText="Username" unFocusColor="#f4ce42">
+            <JFXTextField fx:id="loginPageUserNameTextField" focusColor="#26ae48" layoutX="42.0" layoutY="47.0" promptText="Username" style="-fx-text-inner-color: #FFFFFF; -fx-prompt-text-fill: #FFFFFF;" unFocusColor="#f4ce42">
                <font>
                   <Font size="17.0" />
                </font>
             </JFXTextField>
-            <JFXPasswordField fx:id="loginPagePasswordField" focusColor="#26ae48" layoutX="42.0" layoutY="102.0" promptText="Password" style="-fx-background-color: BLACK;" unFocusColor="#f4ce42">
+            <JFXPasswordField fx:id="loginPagePasswordField" focusColor="#26ae48" layoutX="42.0" layoutY="102.0" promptText="Password" style="-fx-background-color: BLACK; -fx-text-inner-color: #FFFFFF; -fx-prompt-text-fill: #FFFFFF;" unFocusColor="#f4ce42">
                <font>
                   <Font size="17.0" />
                </font>

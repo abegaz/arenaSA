@@ -130,7 +130,7 @@ private void goBackPlayerSplash(ActionEvent event) throws Exception {
 	     int selectedUserID = UserModels.getUserID();
 	     errorJoinLeague.setVisible(false);
 	     JoinLabel.setVisible(false);
-	     String sqlInsert ="INSERT INTO LeagueMembers (League_LeagueID, MembershipStatusCode_MembershipStatusCodeID, users_userID) "
+	     String sqlInsert ="INSERT INTO leaguemembers (League_LeagueID, MembershipStatusCode_MembershipStatusCodeID, users_userID) "
 			+ "VALUES (?, ?, ?)";
 	    
 	     try{
@@ -163,16 +163,15 @@ private void goBackPlayerSplash(ActionEvent event) throws Exception {
     	data.removeAll(data);
     	String SearchString = SearchBar.getText();
     	try {
-    		ResultSet rs2 = myConnection.createStatement().executeQuery("SELECT LeagueID, LeagueName, LeagueDesc  FROM arenadatabase.league  WHERE EXIST (Select league_LeagueID FROM leaguemembers Where leagueName='"+SearchString+"')");
+    		ResultSet rs2 = myConnection.createStatement().executeQuery("SELECT LeagueID, LeagueName, LeagueDesc  FROM arenadatabase.league  WHERE  leagueName='"+SearchString+"'");
     		while(rs2.next()) {
     			data.add(new PlayerJoinLeagueModel(rs2.getInt("LeagueID"), rs2.getString("LeagueName"), rs2.getString("LeagueDesc")));
     		}
     	}
     	catch(SQLException e) {
     		e.printStackTrace();
-    		System.out.println("ERROR @ Controller.PlayerLeagueTable");
+    		System.out.println("ERROR @ Controller.PlayerLeagueTableSearch");
     	}
-    	loadDatafromDatabaseLoading();
     	columnLeagueID.setCellValueFactory(new PropertyValueFactory<>("LeagueID"));
     	columnLeagueName.setCellValueFactory(new PropertyValueFactory<>("LeagueName"));
     	columnLeagueDescription.setCellValueFactory(new PropertyValueFactory<>("LeagueDesc"));

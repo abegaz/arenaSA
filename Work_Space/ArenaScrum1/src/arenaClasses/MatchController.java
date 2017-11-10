@@ -5,13 +5,11 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Timestamp;
-
+//import java.sql.Timestamp;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXDatePicker;
 import com.jfoenix.controls.JFXTextField;
-
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -28,18 +26,18 @@ import javafx.stage.StageStyle;
 
 public class MatchController extends Main {
 //Data sources from MatchMaker.fxml	
-	/*********************************************************/
-	 @FXML
-	 private JFXTextField teamID1;
-	 @FXML
-	 private JFXTextField teamID2;
-	 @FXML
-	 private JFXTextField gameID;
-	 @FXML
-	 private JFXTextField dateTime;
-	 @FXML
-	 private JFXDatePicker matchDate;
-	 /********************************************************/
+/*********************************************************/
+ @FXML
+private JFXTextField teamID1;
+@FXML
+private JFXTextField teamID2;
+@FXML
+private JFXTextField gameID;
+@FXML
+private JFXTextField dateTime;
+@FXML
+private JFXDatePicker matchDate;
+/********************************************************/
 //View Attributes for teamsPage View
 @FXML
  private Label closeIcon;
@@ -57,7 +55,6 @@ public class MatchController extends Main {
  private TableColumn<TeamsTableViewController, Integer> teamsColumnTeamID;
  @FXML
  private TableColumn<TeamsTableViewController, String> teamsColumnTeamName;
-
  @FXML
  private JFXButton teamAppGoBack;
  @FXML
@@ -88,7 +85,6 @@ public class MatchController extends Main {
  private JFXButton loPlayerAppRemove;
  @FXML
  private JFXButton leagueOwnerGoToManageMatch;
- 
 //Method Attributes
  ResultSet rs3,rs4,rs5;
  Scene scene;
@@ -101,15 +97,14 @@ public class MatchController extends Main {
  static String currTeamName;
 //-------------------------------------end_of_attributes----------------------------------------------------------------------
 //'X' Label Functionality
- @FXML
- private void closeApplication(MouseEvent event)
+@FXML
+private void closeApplication(MouseEvent event)
  {
      System.exit(0);
  }
-	
 //Go Back Button Functionality
- @FXML
- private void goToLOLanding(ActionEvent event) throws Exception
+@FXML
+private void goToLOLanding(ActionEvent event) throws Exception
  {
  	teamsGoBack.getScene().getWindow().hide();
      loader.setLocation(getClass().getResource("/arenaViews/leagueOwnerLanding.fxml"));
@@ -121,10 +116,9 @@ public class MatchController extends Main {
      stage.setTitle("Arena");
      stage.show();
  }
-
 //Teams Refresh Button Functionality
- @FXML
- private void usersToTableView(ActionEvent event) throws SQLException
+@FXML
+private void usersToTableView(ActionEvent event) throws SQLException
  {
  	myConnection = DBHandler.getConnection();
  	data = FXCollections.observableArrayList();
@@ -133,7 +127,7 @@ public class MatchController extends Main {
  		ResultSet rs2 = myConnection.createStatement().executeQuery("SELECT teamID,teamName FROM arenadatabase.teams");
  		while(rs2.next())
  		{
- 			data.add(new TeamsTableViewController(rs2.getInt("teamID"),rs2.getString("teamName")));
+ 			data.add(new TeamsTableViewController(rs2.getInt("teamID"),rs2.getString("teamName"), null));
  		}
  	}
  	catch(SQLException e)
@@ -146,8 +140,8 @@ public class MatchController extends Main {
  	teamsTable.setItems(data);
  }
 //Teams Remove Button Functionality
- @FXML
- private void teamsRemoveUser(ActionEvent event) throws SQLException
+@FXML
+private void teamsRemoveUser(ActionEvent event) throws SQLException
  {
      Connection myConnection = DBHandler.getConnection();
      TeamsTableViewController userData = teamsTable.getSelectionModel().getSelectedItem();
@@ -172,7 +166,7 @@ public class MatchController extends Main {
      }
      }
 //Teams Just Do. Refresh
- private void justDousersToTableView() throws SQLException
+private void justDousersToTableView() throws SQLException
  {
  	Connection myConnection = DBHandler.getConnection();
  	data = FXCollections.observableArrayList();
@@ -181,7 +175,7 @@ public class MatchController extends Main {
  		ResultSet rs2 = myConnection.createStatement().executeQuery("SELECT teamID,teamName FROM arenadatabase.teams");
  		while(rs2.next())
  		{
- 			data.add(new TeamsTableViewController(rs2.getInt("teamID"),rs2.getString("teamName")));
+ 			data.add(new TeamsTableViewController(rs2.getInt("teamID"),rs2.getString("teamName"), null));
  		}
  	}
  	catch(SQLException e)
@@ -207,8 +201,8 @@ public class MatchController extends Main {
      stage.show();
      } 
 //Player Team App Apply Button Functionality
- @FXML
- private void sendTeamApp(ActionEvent event) throws Exception{
+@FXML
+private void sendTeamApp(ActionEvent event) throws Exception{
  	myConnection = DBHandler.getConnection();
  	String check = "SELECT userTeamID FROM users WHERE userID ="+Controller.currUserID;
 		String insert = "INSERT INTO teamspending(appUserID,appUserName,desired_teamName,desired_teamID,current_teamName)"+ "VALUES (?,?,?,?,?)";
@@ -220,7 +214,7 @@ public class MatchController extends Main {
  	try
  	{
  		PreparedStatement preparedStatement = myConnection.prepareStatement(check);
-			rs3 = preparedStatement.executeQuery(check);
+		rs3 = preparedStatement.executeQuery(check);
  		rs3.first();
  		currTeamID = rs3.getInt("userTeamID");
  		}
@@ -260,8 +254,8 @@ public class MatchController extends Main {
  	}
  }
 //League Owners Pending Player Team Applications Refresh 
- @FXML
- private void usersToTableViewPendingTeamApps(ActionEvent event) throws SQLException
+@FXML
+private void usersToTableViewPendingTeamApps(ActionEvent event) throws SQLException
  {
  	myConnection = DBHandler.getConnection();
  	data5 = FXCollections.observableArrayList();
@@ -270,12 +264,10 @@ public class MatchController extends Main {
  		rs5 = myConnection.createStatement().executeQuery("SELECT * FROM teamspending");
  		while(rs5.next())
  		{
- 			data5.add(new loPlayerAppTable(rs5.getInt("appUserID"),rs5.getString("appUserName"),rs5.getString("desired_teamName"), rs5.getString("current_teamName")));
+ 			data5.add(new loPlayerAppTable(rs5.getInt("appUserID"),null, rs5.getString("appUserName"),rs5.getString("desired_teamName"), rs5.getString("current_teamName")));
  			System.out.println("Data2 contents: "+data5);
  			System.out.println(data5);
-
  		}
- 		
  	}
  	catch(SQLException e)
  	{
@@ -286,23 +278,23 @@ public class MatchController extends Main {
  	loPlayerAppColumnUserName.setCellValueFactory(new PropertyValueFactory<>("appUserName"));
  	loPlayerAppColumnCurrTeam.setCellValueFactory(new PropertyValueFactory<>("desired_teamName"));
  	loPlayerAppDesiredTeam.setCellValueFactory(new PropertyValueFactory<>("current_teamName"));
-		loPlayersAppTable.setItems(data5);
+	loPlayersAppTable.setItems(data5);
  }
 //Add Match
- @FXML
- private void addMatch(ActionEvent event) throws SQLException, IOException
+@FXML
+private void addMatch(ActionEvent event) throws SQLException, IOException
  {
  	myConnection = DBHandler.getConnection();
  	String addMatch = "INSERT INTO match (MatchStatus_MatchStatusID,Game_GameID,Tournament_TournamentID,matchDate,teams_TeamID2,teams_TeamID1)"+ "VALUES (?,?,?,?,?,?)";
  	try
  	{
  		PreparedStatement preparedStatement = myConnection.prepareStatement(addMatch);
-			preparedStatement.setString (1, "pending");
-			preparedStatement.setInt(2, Integer.parseInt(gameID.getText()));
-			preparedStatement.setInt(3, 2);
-			preparedStatement.setTimestamp(4, java.sql.Timestamp.valueOf("2017-11-08 12:30:00"));
-			preparedStatement.setInt(5, Integer.parseInt(teamID2.getText()));
-			preparedStatement.setInt(6, Integer.parseInt(teamID1.getText()));
+ 		preparedStatement.setString (1, "pending");
+ 		preparedStatement.setInt(2, Integer.parseInt(gameID.getText()));
+ 		preparedStatement.setInt(3, 2);
+ 		preparedStatement.setTimestamp(4, java.sql.Timestamp.valueOf("2017-11-08 12:30:00"));
+ 		preparedStatement.setInt(5, Integer.parseInt(teamID2.getText()));
+ 		preparedStatement.setInt(6, Integer.parseInt(teamID1.getText()));
  		preparedStatement.execute();
  		}
  	catch(SQLException e) 
@@ -314,5 +306,4 @@ public class MatchController extends Main {
  		myConnection.close();
  	}
  	}
-
 }

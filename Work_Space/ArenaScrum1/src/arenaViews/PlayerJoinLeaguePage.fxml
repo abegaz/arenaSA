@@ -53,7 +53,7 @@
                </font>
             </Label>
             <ScrollBar fx:id="Scrollbar" layoutX="716.0" layoutY="64.0" orientation="VERTICAL" prefHeight="323.0" prefWidth="19.0" style="-fx-background-color: #f4ce42;" />
-            <JFXTextField fx:id="SearchBar" layoutX="391.0" layoutY="28.0" prefHeight="25.0" prefWidth="183.0" promptText="Enter Search Query" style="-fx-background-color: #FFFFFF;" />
+            <JFXTextField fx:id="SearchBar" layoutX="391.0" layoutY="28.0" prefHeight="25.0" prefWidth="183.0" promptText="Search League Names" style="-fx-background-color: #FFFFFF;" />
             <JFXButton fx:id="SearchButton" layoutX="622.0" layoutY="28.0" onAction="#executeSearch" prefHeight="25.0" prefWidth="113.0" style="-fx-background-color: #f4ce42;" text="Search">
                <font>
                   <Font size="14.0" />

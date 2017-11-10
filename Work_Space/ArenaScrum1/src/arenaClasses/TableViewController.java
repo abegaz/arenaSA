@@ -9,7 +9,7 @@ public class TableViewController
 {
 	private final SimpleIntegerProperty appUserIDNew, appCurrentRoleNew, desired_RoleIDNew;
 	private final SimpleStringProperty appUserNameNew;
-	public TableViewController(
+public TableViewController(
 			Integer appUserIDNew,
 			String appUserNameNew,
 			Integer appCurrentRoleNew,
@@ -20,53 +20,53 @@ public class TableViewController
 		this.appCurrentRoleNew = new SimpleIntegerProperty(appCurrentRoleNew);
 		this.desired_RoleIDNew = new SimpleIntegerProperty(desired_RoleIDNew);
 	}
-	// Getters
-	public Integer getAppUserID()
+// Getters
+public Integer getAppUserID()
 	{
 		return appUserIDNew.get();
 	}
-	public String getAppUserName()
+public String getAppUserName()
 	{
 		return appUserNameNew.get();
 	}
-	public Integer getAppCurrentRole()
+public Integer getAppCurrentRole()
 	{
 		return appCurrentRoleNew.get();
 	}
-	public Integer getdesired_RoleIDNew()
+public Integer getdesired_RoleIDNew()
 	{
 		return desired_RoleIDNew.get();
 	}
-	// Setters
-	public void setAppUserID(Integer value)
+// Setters
+public void setAppUserID(Integer value)
 	{
 		appUserIDNew.set(value);
 	}
-	public void setAppUserName(String value)
+public void setAppUserName(String value)
 	{
 		appUserNameNew.set(value);
 	}
-	public void setAppCurrentRole(Integer value) {
+public void setAppCurrentRole(Integer value) {
 		appCurrentRoleNew.set(value);
 	}
-	public void setdesired_RoleIDNew(Integer value)
+public void setdesired_RoleIDNew(Integer value)
 	{
 		desired_RoleIDNew.set(value);
 	}
-	// Property Values
-	public IntegerProperty appUserIDProperty()
+// Property Values
+public IntegerProperty appUserIDProperty()
 	{
 		return appUserIDNew;
 	}
-	public StringProperty appUserNameProperty()
+public StringProperty appUserNameProperty()
 	{
 		return appUserNameNew;
 	}
-	public IntegerProperty appCurrentRoleProperty()
+public IntegerProperty appCurrentRoleProperty()
 	{
 		return appCurrentRoleNew;
 	}
-	public IntegerProperty desired_RoleIDNewProperty()
+public IntegerProperty desired_RoleIDNewProperty()
 	{
 		return desired_RoleIDNew;
 	}

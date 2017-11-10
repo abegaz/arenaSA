@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="594.0" prefWidth="840.0" style="-fx-background-color: #20120F;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="arenaClasses.LeagueOwnerManageLeagueController">
+<AnchorPane prefHeight="594.0" prefWidth="840.0" style="-fx-background-color: #20120F;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="arenaClasses.LeagueOwnerManageLeagueController">
    <children>
       <ImageView fitHeight="596.0" fitWidth="840.0" layoutY="-1.0" opacity="0.12" pickOnBounds="true">
          <image>
@@ -53,7 +53,7 @@
                </font>
             </Label>
             <ScrollBar fx:id="ScrollBar" layoutX="725.0" layoutY="67.0" orientation="VERTICAL" prefHeight="323.0" prefWidth="19.0" style="-fx-background-color: #f4ce42;" />
-            <JFXTextField fx:id="SearchTextField" layoutX="408.0" layoutY="28.0" prefHeight="25.0" prefWidth="183.0" promptText="Enter Search Query" style="-fx-background-color: #FFFFFF;" />
+            <JFXTextField fx:id="SearchTextField" layoutX="408.0" layoutY="28.0" prefHeight="25.0" prefWidth="183.0" promptText="Search League Names" style="-fx-background-color: #FFFFFF;" />
             <JFXButton fx:id="SearchButton" layoutX="634.0" layoutY="28.0" onAction="#executeSearch" prefHeight="25.0" prefWidth="113.0" style="-fx-background-color: #f4ce42;" text="Search">
                <font>
                   <Font size="14.0" />

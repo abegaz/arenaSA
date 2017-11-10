@@ -7,13 +7,12 @@ import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
-
 public class Main extends Application
 {
 	Scene sceneLogin;
 	FXMLLoader loader = new FXMLLoader();
-	@Override
-	public void start(Stage stage) throws Exception
+@Override
+public void start(Stage stage) throws Exception
 	{
 		try
 		{
@@ -32,7 +31,7 @@ public class Main extends Application
 			System.out.println("Main Operation Failure");
 		}
 	}
-	public static void main(String[] args)
+public static void main(String[] args)
 	{
             launch(args);
 	}

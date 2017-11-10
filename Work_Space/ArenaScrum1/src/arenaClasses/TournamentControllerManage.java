@@ -16,7 +16,6 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.DatePicker;
@@ -30,7 +29,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
-public class TournamentController extends Main implements Initializable
+public class TournamentControllerManage extends Main
 {
 	@FXML private Label closeIcon;
     @FXML private Label errorLabel;
@@ -60,41 +59,9 @@ public class TournamentController extends Main implements Initializable
 
     private ObservableList<TournamentData> tournamentDataArray;
     //Initialize observable list to hold database data
-
-    public void loadTournamentsFromDatabase(ActionEvent event) throws SQLException
+    public void initialize() throws SQLException, Exception
     {
-    	//System.out.println("loadTournamentsFromDatabase");
-    	Connection connection = DBHandler.getConnection();
-
-    	tournamentDataArray = FXCollections.observableArrayList();
-    	// Execute query and store results
-    	String getTournamentDataQuery =  "SELECT TournamentName, TournamentDescription, tournamentDate, leagueName, TournamentStyleCodeName FROM tournament, league, tournamentstylecode WHERE League_LeagueID = leagueID AND TournamentStyleCodeID = TournamentStyleCode_TournamentStyleCodeID AND users_userID_LeagueOwner ='" + controller.currUserID +"'";
-    	try
-    	{
-    		ResultSet rs = connection.createStatement().executeQuery(getTournamentDataQuery);
-			while (rs.next())
-			{
-				String tournamentName = rs.getString("TournamentName");
-				String tournamentDesc = rs.getString("TournamentDescription");
-				String tournamentLeagueName = rs.getString("leagueName");
-				String tournamentStyleName = rs.getString("TournamentStyleCodeName");
-				String tournamentDate = rs.getString("tournamentDate");
-				tournamentDataArray.add(new TournamentData (tournamentName, tournamentDesc, tournamentLeagueName, tournamentStyleName, tournamentDate));
-			}
-
-			getTournamentsTournamentNameColumn.setCellValueFactory(new PropertyValueFactory<>("tournamentName"));
-			getTournamentsTournamentDescriptionColumn.setCellValueFactory(new PropertyValueFactory<>("tournamentDesc"));
-			getTournamentsLeagueNameColumn.setCellValueFactory(new PropertyValueFactory<>("tournamentLeagueName"));
-			getTournamentsTournamentStyleColumn.setCellValueFactory(new PropertyValueFactory<>("tournamentStyleName"));
-			getTournamentsTournamentDateColumn.setCellValueFactory(new PropertyValueFactory<>("tournamentDate"));
-
-			getTournamentsTable.setItems(null);
-			getTournamentsTable.setItems(tournamentDataArray);
-		}
-    	catch(Exception ex)
-		{
-			System.out.println("Error: " + ex);
-		}
+    	loadTournamentsFromDatabase(null);
     }
     public String getLeagueID(String leagueName) throws SQLException
     {
@@ -153,22 +120,6 @@ public class TournamentController extends Main implements Initializable
     }
    // DBHandler databaseConnector = new DBHandler();
 
-    @Override
-	public void initialize(URL location, ResourceBundle resources)
-    {
-    	try
-    	{
-			populateChoiceBoxLeagueWithLeagueOwnerLeagues();
-			populateChoiceBoxTournamentStyleWithLeagueOwnerLeagues();
-	    	loadTournamentsFromDatabase(null);
-    		System.out.println("");
-		}
-    	catch (Exception e)
-    	{
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
     @FXML
     private void closeApplication(MouseEvent event)
     {
@@ -200,47 +151,42 @@ public class TournamentController extends Main implements Initializable
     	stage.setTitle("Arena");
     	stage.show();
     }
-    @FXML
-    private void createTournament(ActionEvent event)
+    public void loadTournamentsFromDatabase(ActionEvent event) throws SQLException
     {
+    	//System.out.println("loadTournamentsFromDatabase");
+    	Connection connection = DBHandler.getConnection();
+
+    	tournamentDataArray = FXCollections.observableArrayList();
+    	// Execute query and store results
+    	String getTournamentDataQuery =  "SELECT TournamentName, TournamentDescription, tournamentDate, leagueName, TournamentStyleCodeName FROM tournament, league, tournamentstylecode WHERE League_LeagueID = leagueID AND TournamentStyleCodeID = TournamentStyleCode_TournamentStyleCodeID AND users_userID_LeagueOwner ='" + controller.currUserID +"'";
     	try
     	{
-    		String choiceBoxLeagueValue = ChoiceBoxLeague.getValue();
-    		String choiceBoxTournamentStyleValue = ChoiceBoxTournamentStyle.getValue();
+    		ResultSet rs = connection.createStatement().executeQuery(getTournamentDataQuery);
+			while (rs.next())
+			{
+				String tournamentName = rs.getString("TournamentName");
+				String tournamentDesc = rs.getString("TournamentDescription");
+				String tournamentLeagueName = rs.getString("leagueName");
+				String tournamentStyleName = rs.getString("TournamentStyleCodeName");
+				String tournamentDate = rs.getString("tournamentDate");
+				tournamentDataArray.add(new TournamentData (tournamentName, tournamentDesc, tournamentLeagueName, tournamentStyleName, tournamentDate));
+			}
 
-    		Connection connection = DBHandler.getConnection();
+			getTournamentsTournamentNameColumn.setCellValueFactory(new PropertyValueFactory<>("tournamentName"));
+			getTournamentsTournamentDescriptionColumn.setCellValueFactory(new PropertyValueFactory<>("tournamentDesc"));
+			getTournamentsLeagueNameColumn.setCellValueFactory(new PropertyValueFactory<>("tournamentLeagueName"));
+			getTournamentsTournamentStyleColumn.setCellValueFactory(new PropertyValueFactory<>("tournamentStyleName"));
+			getTournamentsTournamentDateColumn.setCellValueFactory(new PropertyValueFactory<>("tournamentDate"));
 
-			String leagueID = getLeagueID(choiceBoxLeagueValue);
-			String tourStyleID = getTournamentStyleID(choiceBoxTournamentStyleValue);
-			String tourDesc = createTournamentDescField.getText();
-			String tourName = createTournamentNameField.getText();
-			String tourDate = getPickedDate();
-			String addNewTournamentQuery = "INSERT INTO tournament (TournamentName,TournamentDescription,League_LeagueID,TournamentStyleCode_TournamentStyleCodeID,tournamentDate)"
-				+ " VALUES (?,?,?,?,?)";
-
-			PreparedStatement preparedStmt = connection.prepareStatement(addNewTournamentQuery);
-			preparedStmt.setString (1, tourName);
-			preparedStmt.setString (2, tourDesc);
-			preparedStmt.setString (3, leagueID);
-			preparedStmt.setString (4, tourStyleID);
-			preparedStmt.setString (5, tourDate);
-
-			// execute the preparedstatement
-			preparedStmt.execute();
-
-			//System.out.println(preparedStmt);
-			createTournamentNameField.setText("");
-			createTournamentDescField.setText("");
-			ChoiceBoxTournamentStyle.getSelectionModel().clearSelection();
-			ChoiceBoxLeague.getSelectionModel().clearSelection();
-			//createTournamentDatePicker.
-			loadTournamentsFromDatabase(null);
+			getTournamentsTable.setItems(null);
+			getTournamentsTable.setItems(tournamentDataArray);
 		}
     	catch(Exception ex)
 		{
-			ex.printStackTrace();
+			System.out.println("Error: " + ex);
 		}
     }
+
     @FXML
     private void removeTournament(ActionEvent event) throws SQLException
     {
@@ -253,6 +199,7 @@ public class TournamentController extends Main implements Initializable
 		{
 			PreparedStatement preparedStmt = connection.prepareStatement(deleteTournamentQuery);
 			preparedStmt.execute();
+			loadTournamentsFromDatabase(null);
 		}
 		catch(SQLException e)
 		{
@@ -263,46 +210,6 @@ public class TournamentController extends Main implements Initializable
 		{
 			connection.close();
 		}
-    }
-    private void populateChoiceBoxLeagueWithLeagueOwnerLeagues() throws SQLException
-    {
-    	Connection connection = DBHandler.getConnection();
-    	System.out.println("Current UserID:" + controller.currUserID);
-    	String getLeagueOwnerLeaguesToPopulateCreateTournamentsChoiceBox = "SELECT LeagueName FROM league league1, users users1 WHERE league1.users_userID_LeagueOwner = users1.userID AND userID = " + controller.currUserID;
-    	try
-		{
-    		ResultSet rs = connection.createStatement().executeQuery(getLeagueOwnerLeaguesToPopulateCreateTournamentsChoiceBox);
-
-    		while (rs.next())
-			{
-				ChoiceBoxLeague.getItems().addAll(rs.getString("LeagueName"));
-			}
-		}
-		catch(SQLException e)
-		{
-			e.printStackTrace();
-			System.out.println("ERROR @ Control.removeUser.First Try");
-		}
-
-    }
-    private void populateChoiceBoxTournamentStyleWithLeagueOwnerLeagues() throws SQLException
-    {
-    	Connection connection = DBHandler.getConnection();
-    	String getLeagueOwnerLeaguesToPopulateCreateTournamentsChoiceBox = "SELECT TournamentStyleCodeName FROM tournamentstylecode";
-    	try
-		{
-    		ResultSet rs = connection.createStatement().executeQuery(getLeagueOwnerLeaguesToPopulateCreateTournamentsChoiceBox);
-			while (rs.next())
-			{
-				ChoiceBoxTournamentStyle.getItems().addAll(rs.getString("TournamentStyleCodeName"));
-			}
-		}
-		catch(SQLException e)
-		{
-			e.printStackTrace();
-			System.out.println("ERROR @ Control.removeUser.First Try");
-		}
-
     }
 
 }
