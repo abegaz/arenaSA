@@ -4,13 +4,14 @@ ArenaSA Sprint One
 Download the lastest exported zip file folder: ArenaSA_v1.zip
 Within you will find "ArenaSA_v1.jar" simply double click to run the program.
 To Exit the Program, simple click the 'X' in the top right. 
+
 Before continuing, Please take the time to read the instructions below.
 
 NOTE: 
 This program connects to a remote server so an internet connection is necessary for program functionality. 
 
 
-• Getting Started with the program:
+â€¢ Getting Started with the program:
   -Create a new username and password: 
 New users are automatically assigned a spectator role. 
 This is the most basic role with the most basic permissions. 
@@ -35,7 +36,7 @@ Default for security purposes.
 After this step is complete. Using your new Operator Account. You can now Manage New Users Applications.
 Allowing for the creation of any Role you wish.  
  
-• Roles Explained: 
+â€¢ Roles Explained: 
 There are 5 Role Types: Spectator. Operator. League Owner. Player. Advertiser
 Initially, a new User is given the role Spectator. As mentioned above. Spectator's have a limited
 range of functionality within the program. 
