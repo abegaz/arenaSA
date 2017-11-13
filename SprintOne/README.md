@@ -29,7 +29,7 @@ The Default Login information is : Username:  Admin
 Note that both User Names & Passwords are case sensitive.
 Note Usernames are only allowed 1 Role at a time.
 
-It is recommended that you First. Create your intented Admin account. Sign out. Log in as the default
+It is recommended that you First. Create your intended Admin account. Sign out. Log in as the default
 Admin account mentioned aboved. Approve your created account as Operator. And then remove the Admin
 Default for security purposes. 
 
