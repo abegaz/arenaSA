@@ -37,7 +37,8 @@ After this step is complete. Using your new Operator Account. You can now Manage
 Allowing for the creation of any Role you wish.  
  
 • Roles Explained: 
-There are 5 Role Types: Spectator. Operator. League Owner. Player. Advertiser
+There are 5 Role Types: Spectator. Operator. League Owner. Player.& Advertiser
+
 Initially, a new User is given the role Spectator. As mentioned above. Spectator's have a limited
 range of functionality within the program. 
 - Operator:  This is the Administrative Role. From here Users, Games, & Arenas can be managed.
