@@ -15,3 +15,11 @@ Be wary:
   Please make sure to change those credentials to match your own database credentials.
 
 As Development of this project continues this isolated 'System' will become more and more obsolete. I don't plan on removing anything yet but this will probably be deleted to only contain zips of isolated GUI components and the database sql file.
+
+Example Operator Credentials:
+  User: admin
+  password: password
+  
+Example Operator Credentials:
+  User: james
+  password: james
