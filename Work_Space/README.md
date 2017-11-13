@@ -20,6 +20,6 @@ Example Operator Credentials:
   User: admin
   password: password
   
-Example Operator Credentials:
+Example League Owner Credentials:
   User: james
   password: james
