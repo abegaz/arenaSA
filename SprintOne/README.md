@@ -45,6 +45,6 @@ range of functionality within the program.
 - Player: Players can Apply to a Team, Join a League, or manaage the Leagues they are in.
 - Advertiser: Currently this role lacks functionality. 
 Eventually will allow for management of both Advertisements & balance. 
-
+ 
 
 
