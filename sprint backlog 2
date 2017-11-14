@@ -1,9 +1,28 @@
 • As a league owner, I want to conduct Tournaments within my own Leagues.
 
+• As a Spectator I want the ability to view current Matches in progress
+
+• As an Advertiser I want the abililty to create new advertisements
+
 • As a league owner, I want to declare a winner of my Matches for Tournaments within my own Leagues.
 
+• As a Spectator I want the ability to select players and view thier statistics
+
+• As an Advertiser I want the abililty to manage my own advertisements
+
 • As a league owner, I want to declare a winner of my Tournaments within my own Leagues.
+
+• As a Spectator I want the ability to view Statistics of past matches 
+
+• As an Advertiser I want the abililty to select an Advertisement scheme 
 
 • As an operator, I want to create Expert Rating Formula.
 
 • As an operator, I want to manage Expert Rating Formula.
+
+• As an Advertiser I want the ability to view my balance due
+
+• As an Advertiser I want the ability to pay my balance due
+
+• As a Spectator I want to do the above without needing to signup for an arena.
+
