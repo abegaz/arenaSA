@@ -1,18 +1,18 @@
 • (XL) As a league owner, I want to conduct Tournaments within my own Leagues.
-  Time: 12 hours - 24 hours - multiple days
+  Time: 24 - 48 hours - multiple days
 • (s) As a league owner, I want to declare a winner of my Matches for Tournaments within my own Leagues.
   Time: 3 hours - single day
 • (s) As a league owner, I want to declare a winner of my Tournaments within my own Leagues.
   Time: 3 hours - single day
 
 • (M) As a Spectator I want the ability to view current Matches in progress.
-  Time: 2 hours - single day
+  Time: 6 - 12 hours - multiple days
 • (M) As a Spectator I want the ability to select players and view thier statistics.
-  Time: 12 -24 hours - multiple day
+  Time: 6 - 12 hours - multiple days
 • (M) As a Spectator I want the ability to view Statistics of past matches.
-  Time: 12 -24 hours - multiple days
-x •(S) As a Spectator I want to do the above without needing to signup for an arena.
-  time: 3 mins - instant
+  Time: 6 - 12 hours - multiple days
+x •(s) As a Spectator I want to do the above without needing to signup for an arena.
+  time: 3 hours - single day
 
 • (L) As an Advertiser I want the abililty to create new advertisements.
   Time: 12 -24 hours - multiple days
@@ -21,14 +21,14 @@ x •(S) As a Spectator I want to do the above without needing to signup for an 
 • (L) As an Advertiser I want the abililty to select an Advertisement scheme.
   Time: 12 -24 hours - multiple days
 • (L) As an Advertiser I want the ability to view my balance due.
-  Time: 24 - 48 hours - two days
+  Time: 12 -24 hours - multiple days
 • (L) As an Advertiser I want the ability to pay my balance due.
-  Time: 24 - 48 hours - two days
+  Time: 12 -24 hours - multiple days
 
 • (XL) As an operator, I want to create Expert Rating Formula.
   Time: 24 - 48 hours - multiple days
-• (XL) As an operator, I want to manage Expert Rating Formula.
-  Time: 3 hours - single days
+• (s) As an operator, I want to manage Expert Rating Formula.
+  Time: 3 hours - single day
 
 
 
