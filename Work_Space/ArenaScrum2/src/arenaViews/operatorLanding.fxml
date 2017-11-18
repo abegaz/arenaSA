@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #20120F;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="arenaClasses.Controller">
+   <children>
+      <ImageView fitHeight="406.0" fitWidth="615.0" layoutX="-7.0">
+         <image>
+            <Image url="@../images/domina9.jpg" />
+         </image>
+      </ImageView>
+      <Label fx:id="closeIcon" layoutX="581.0" layoutY="1.0" onMouseClicked="#closeApplication" text="X" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="signUpPageGoBackButton" layoutX="14.0" layoutY="345.0" onAction="#goBackToSignIn" prefHeight="41.0" prefWidth="94.0" style="-fx-background-color: #f4ce42;" text="Go Back" textAlignment="CENTER">
+         <font>
+            <Font name="Book Antiqua" size="18.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="opSeePendingButton" layoutX="13.0" layoutY="145.0" onAction="#opGoToPending" prefHeight="41.0" prefWidth="191.0" style="-fx-background-color: #f4ce42;" text="Pending Approval" textAlignment="CENTER">
+         <font>
+            <Font name="Book Antiqua" size="18.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="opManageUsersButton" layoutX="13.0" layoutY="200.0" onAction="#goToMangUsers" prefHeight="41.0" prefWidth="191.0" style="-fx-background-color: #f4ce42;" text="Manage Users" textAlignment="CENTER">
+         <font>
+            <Font name="Book Antiqua" size="18.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="opCreateArenasButton" layoutX="398.0" layoutY="145.0" onAction="#opGoToCreateArenas" prefHeight="41.0" prefWidth="184.0" style="-fx-background-color: #f4ce42;" text="Create Arenas" textAlignment="CENTER">
+         <font>
+            <Font name="Book Antiqua" size="18.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="opManageArenaButton" layoutX="398.0" layoutY="200.0" onAction="#opGoToManageArenas" prefHeight="41.0" prefWidth="184.0" style="-fx-background-color: #f4ce42;" text="Manage Arenas" textAlignment="CENTER">
+         <font>
+            <Font name="Book Antiqua" size="18.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="LoCreateGame" layoutX="395.0" layoutY="251.0" onAction="#goToCreateGame" prefHeight="41.0" prefWidth="184.0" style="-fx-background-color: #f4ce42;" text="Create Game" textAlignment="CENTER">
+         <font>
+            <Font name="Book Antiqua" size="18.0" />
+         </font>
+      </JFXButton>
+      <AnchorPane layoutX="134.0" layoutY="15.0" prefHeight="91.0" prefWidth="330.0" style="-fx-border-color: #f4ce42; -fx-border-width: 8; -fx-background-color: BLACK;">
+         <children>
+            <Label fx:id="errorLabel" layoutX="39.0" layoutY="26.0" text="Invalid Username / Password" textFill="#ff0f0f" visible="false">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="14.0" layoutY="22.0" text="Welcome Operator" textFill="WHITE">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
