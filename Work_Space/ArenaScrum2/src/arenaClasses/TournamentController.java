@@ -1,17 +1,12 @@
 package arenaClasses;
 
-//import java.net.URL;
-//import java.util.ResourceBundle;
 import arenaClasses.DBHandler;
 import arenaModels.TournamentData;
-
 import com.jfoenix.controls.JFXButton;
-
 import java.net.URL;
 import java.sql.*;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
-
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -28,7 +23,6 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 
 public class TournamentController extends Main implements Initializable
 {
@@ -181,7 +175,6 @@ public class TournamentController extends Main implements Initializable
     	loader.setLocation(getClass().getResource("/arenaViews/leagueOwnerLanding.fxml"));
     	scene = new Scene(loader.load());
     	stage.setScene(scene);
-    	stage.initStyle(StageStyle.UNDECORATED);
     	stage.setResizable(false);
     	stage.getIcons().add(new Image(getClass().getResourceAsStream("/images/arenaIcon.png")));
     	stage.setTitle("Arena");
@@ -194,7 +187,6 @@ public class TournamentController extends Main implements Initializable
     	loader.setLocation(getClass().getResource("/arenaViews/CreateTournaments.fxml"));
     	scene = new Scene(loader.load());
     	stage.setScene(scene);
-    	stage.initStyle(StageStyle.UNDECORATED);
     	stage.setResizable(false);
     	stage.getIcons().add(new Image(getClass().getResourceAsStream("/images/arenaIcon.png")));
     	stage.setTitle("Arena");

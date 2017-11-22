@@ -10,24 +10,19 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="539.0" prefWidth="763.0" style="-fx-background-color: #20120F;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="arenaClasses.AdvertController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="539.0" prefWidth="897.0" style="-fx-background-color: #20120F;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="arenaClasses.AdvertController">
    <children>
-      <ImageView fitHeight="555.0" fitWidth="770.0" layoutX="-3.0" layoutY="-11.0">
+      <ImageView fitHeight="569.0" fitWidth="928.0" layoutX="-3.0" layoutY="-11.0">
          <image>
             <Image url="@../images/domina0.jpg" />
          </image>
       </ImageView>
-      <JFXButton fx:id="signUpPageGoBackButton" layoutX="14.0" layoutY="484.0" onAction="#goBackToSignIn" prefHeight="41.0" prefWidth="94.0" style="-fx-background-color: #f4ce42;" text="Go Back" textAlignment="CENTER">
+      <JFXButton fx:id="signUpPageGoBackButton" layoutX="7.0" layoutY="492.0" onAction="#goBackToSignIn" prefHeight="41.0" prefWidth="94.0" style="-fx-background-color: #f4ce42;" text="Go Back" textAlignment="CENTER">
          <font>
             <Font name="Book Antiqua" size="18.0" />
          </font>
       </JFXButton>
-      <Label fx:id="closeIcon" layoutX="741.0" layoutY="1.0" onMouseClicked="#closeApplication" text="X" textFill="WHITE">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <AnchorPane layoutX="207.0" layoutY="1.0" prefHeight="88.0" prefWidth="349.0" style="-fx-border-color: #f4ce42; -fx-border-width: 8; -fx-background-color: BLACK;">
+      <AnchorPane layoutX="286.0" prefHeight="88.0" prefWidth="349.0" style="-fx-border-color: #f4ce42; -fx-border-width: 8; -fx-background-color: BLACK;">
          <children>
             <Label layoutX="14.0" layoutY="19.0" text="Welcome Advertiser" textFill="WHITE">
                <font>
@@ -36,7 +31,7 @@
             </Label>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="382.0" layoutY="369.0" prefHeight="135.0" prefWidth="342.0" style="-fx-border-color: #f4ce42; -fx-border-width: 8; -fx-background-color: BLACK;">
+      <AnchorPane layoutX="522.0" layoutY="366.0" prefHeight="135.0" prefWidth="342.0" style="-fx-border-color: #f4ce42; -fx-border-width: 8; -fx-background-color: BLACK;">
          <children>
             <Label layoutX="142.0" layoutY="9.0" text="Balance" textFill="WHITE" underline="true">
                <font>
@@ -75,7 +70,7 @@
             </Label>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="61.0" layoutY="81.0" prefHeight="285.0" prefWidth="663.0" style="-fx-border-color: #f4ce42; -fx-border-width: 8; -fx-background-color: BLACK;">
+      <AnchorPane layoutX="189.0" layoutY="88.0" prefHeight="285.0" prefWidth="663.0" style="-fx-border-color: #f4ce42; -fx-border-width: 8; -fx-background-color: BLACK;">
          <children>
             <Label layoutX="14.0" layoutY="13.0" text="Who Will See The Ad:" textFill="WHITE">
                <font>
@@ -87,7 +82,7 @@
                   <Font size="14.0" />
                </font>
             </Label>
-            <AnchorPane layoutX="-35.0" layoutY="98.0" prefHeight="164.0" prefWidth="427.0" style="-fx-border-color: #f4ce42; -fx-border-width: 8; -fx-background-color: BLACK;">
+            <AnchorPane layoutX="-102.0" layoutY="99.0" prefHeight="164.0" prefWidth="427.0" style="-fx-border-color: #f4ce42; -fx-border-width: 8; -fx-background-color: BLACK;">
                <children>
                   <JFXButton fx:id="adImageUpload" layoutX="145.0" layoutY="90.0" onAction="#uploadImageToDB" prefHeight="41.0" prefWidth="77.0" style="-fx-background-color: #26ae48;" text="Upload" textAlignment="CENTER">
                      <font>
@@ -173,7 +168,7 @@
                <children>
                   <ImageView fx:id="adPreviewImage" fitHeight="149.0" fitWidth="236.0" pickOnBounds="true">
                      <image>
-                        <Image url="@../images/adDefaultBottom.jpg" />
+                        <Image url="@../images/default1.jpg" />
                      </image>
                   </ImageView>
                </children>
@@ -200,7 +195,7 @@
             </Label>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="116.0" layoutY="376.0" prefHeight="142.0" prefWidth="272.0" style="-fx-border-color: #f4ce42; -fx-border-width: 8; -fx-background-color: BLACK;">
+      <AnchorPane layoutX="259.0" layoutY="366.0" prefHeight="142.0" prefWidth="272.0" style="-fx-border-color: #f4ce42; -fx-border-width: 8; -fx-background-color: BLACK;">
          <children>
             <Label layoutX="14.0" layoutY="37.0" text="Top Banner Price: $" textFill="WHITE">
                <font>
@@ -257,6 +252,16 @@
                   <Font size="14.0" />
                </font>
             </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="42.0" layoutY="366.0" prefHeight="120.0" prefWidth="209.0" style="-fx-border-color: #f4ce42; -fx-border-width: 8; -fx-background-color: BLACK;">
+         <children>
+            <Label layoutX="17.0" layoutY="23.0" text="• Top Banner Size: 527 • 47" textFill="WHITE" />
+            <Label layoutX="15.0" layoutY="40.0" text="• Side Banner (Left) Size:  96 • 342" textFill="WHITE" />
+            <Label layoutX="17.0" layoutY="57.0" text="• Side Banner (Right) Size: 96 • 342" textFill="WHITE" />
+            <Label layoutX="18.0" layoutY="70.0" text="• Bottom Banner Size: 516 • 69" textFill="WHITE" />
+            <Label layoutX="23.0" layoutY="87.0" text="• Background Size: 890 • 570" textFill="WHITE" />
+            <Label layoutX="46.0" layoutY="6.0" text="All Sizes Given in px" textFill="WHITE" underline="true" />
          </children>
       </AnchorPane>
    </children>

@@ -14,16 +14,11 @@
 
 <AnchorPane prefHeight="484.0" prefWidth="685.0" style="-fx-background-color: #20120F;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="arenaClasses.LeagueOwnerNewLeagueController">
    <children>
-      <ImageView fitHeight="484.0" fitWidth="685.0">
+      <ImageView fitHeight="505.0" fitWidth="709.0">
          <image>
             <Image url="@../images/domina0.jpg" />
          </image>
       </ImageView>
-      <Label fx:id="closeIcon" layoutX="666.0" layoutY="1.0" onMouseClicked="#handleClose" text="X" textFill="WHITE">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
       <JFXButton fx:id="LeagueGoBackButton" layoutX="26.0" layoutY="435.0" onAction="#goBackLeagueSplash" prefHeight="30.0" prefWidth="91.0" style="-fx-background-color: #f4ce42;" text="Go Back">
          <font>
             <Font size="14.0" />

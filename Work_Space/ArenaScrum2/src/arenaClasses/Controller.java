@@ -26,8 +26,9 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 import javafx.fxml.Initializable;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.HBox;
 
 public class Controller extends Main  implements Initializable{
 
@@ -159,13 +160,12 @@ private JFXButton leagueOwnerGoToManagePlayers;
 private JFXButton LoCreateGame;
 @FXML
 private JFXButton LoCreateMatch;
+@FXML
+private AnchorPane loginBGPane;
+@FXML
+private HBox dragBar;
 
 
-
-
-
-
-// Attributes used in various Role ID related Methods
 ResultSet rs;
 ResultSetMetaData rsmd;
 String currentName, currentPass,columnValue ;
@@ -178,26 +178,24 @@ private PreparedStatement pst,pstTwo;
 static String currName,currPass;
 public static int currUserID,currRoleID,appRoleChoice;
 
-//-------------------------------------end_of_attributes----------------------------------------------------------------------
+
 @Override
 public void initialize(URL location, ResourceBundle resources)
 {
 	try{
-
 		}
 	catch(Exception e)
 	{
 		e.printStackTrace();
 		System.out.println("Error@ AdvertController.initialize");
 	}
-} 
+}
 @FXML
 void goToCreateMatch(ActionEvent event) throws IOException {
 	 LoCreateMatch.getScene().getWindow().hide();
      loader.setLocation(getClass().getResource("/arenaViews/MatchMaker.fxml"));
      scene = new Scene(loader.load());
      stage.setScene(scene);
-     stage.initStyle(StageStyle.UNDECORATED);
      stage.setResizable(false);
      stage.getIcons().add(new Image(getClass().getResourceAsStream("/images/arenaIcon.png")));
      stage.setTitle("Arena");
@@ -206,12 +204,10 @@ void goToCreateMatch(ActionEvent event) throws IOException {
 }
 @FXML
 private void goToCreateGame(ActionEvent event) throws IOException {
- 	//System.out.println("Go to Create Arenas");
 	 LoCreateGame.getScene().getWindow().hide();
      loader.setLocation(getClass().getResource("/arenaViews/GetGames.fxml"));
      scene = new Scene(loader.load());
      stage.setScene(scene);
-     stage.initStyle(StageStyle.UNDECORATED);
      stage.setResizable(false);
      stage.getIcons().add(new Image(getClass().getResourceAsStream("/images/arenaIcon.png")));
      stage.setTitle("Arena");
@@ -224,7 +220,6 @@ private void goToSignUp(ActionEvent event) throws Exception {
         loader.setLocation(getClass().getResource("/arenaViews/signUpPage.fxml"));
         scene = new Scene(loader.load());
         stage.setScene(scene);
-        stage.initStyle(StageStyle.UNDECORATED);
         stage.setResizable(false);
         stage.getIcons().add(new Image(getClass().getResourceAsStream("/images/arenaIcon.png")));
         stage.setTitle("Arena");
@@ -237,77 +232,66 @@ private void goToLoPlayersApp(ActionEvent event) throws Exception {
         loader.setLocation(getClass().getResource("/arenaViews/loPlayerApp.fxml"));
         scene = new Scene(loader.load());
         stage.setScene(scene);
-        stage.initStyle(StageStyle.UNDECORATED);
         stage.setResizable(false);
         stage.getIcons().add(new Image(getClass().getResourceAsStream("/images/arenaIcon.png")));
         stage.setTitle("Arena");
         stage.show();
         System.gc();
         }
-// League Owner . Go to Manage Leagues Button Functionality
 @FXML
 private void goToMangLeag(ActionEvent event) throws Exception {
     	leagueOwnerGoToMangLeagues.getScene().getWindow().hide();
         loader.setLocation(getClass().getResource("/arenaViews/LeagueOwnerLeagueManagementPage.fxml"));
         scene = new Scene(loader.load());
         stage.setScene(scene);
-        stage.initStyle(StageStyle.UNDECORATED);
         stage.setResizable(false);
         stage.getIcons().add(new Image(getClass().getResourceAsStream("/images/arenaIcon.png")));
         stage.setTitle("Arena");
         stage.show();
         System.gc();
         }
-// League Owner. Go to Create Leagues Button Functionality
 @FXML
 private void goToCreateLeag(ActionEvent event) throws Exception {
     	leagueOwnerGoToCreateLeagues.getScene().getWindow().hide();
         loader.setLocation(getClass().getResource("/arenaViews/LeagueOwnerNewLeague.fxml"));
         scene = new Scene(loader.load());
         stage.setScene(scene);
-        stage.initStyle(StageStyle.UNDECORATED);
         stage.setResizable(false);
         stage.getIcons().add(new Image(getClass().getResourceAsStream("/images/arenaIcon.png")));
         stage.setTitle("Arena");
         stage.show();
         System.gc();
         }
-// Player Landing. Go to Join League Button Functionality
 @FXML
 private void goToJoinLeag(ActionEvent event) throws Exception {
     	playerTeamJoinLeague.getScene().getWindow().hide();
         loader.setLocation(getClass().getResource("/arenaViews/PlayerJoinLeaguePage.fxml"));
         scene = new Scene(loader.load());
         stage.setScene(scene);
-        stage.initStyle(StageStyle.UNDECORATED);
         stage.setResizable(false);
         stage.getIcons().add(new Image(getClass().getResourceAsStream("/images/arenaIcon.png")));
         stage.setTitle("Arena");
         stage.show();
         System.gc();
         }
- // Player Landing. Go to Manage League Button Functionality
 @FXML
 private void goToPlayerMangLeag(ActionEvent event) throws Exception {
     	playerTeamMangLeague.getScene().getWindow().hide();
         loader.setLocation(getClass().getResource("/arenaViews/PlayerCurrentLeaguePage.fxml"));
         scene = new Scene(loader.load());
         stage.setScene(scene);
-        stage.initStyle(StageStyle.UNDECORATED);
         stage.setResizable(false);
         stage.getIcons().add(new Image(getClass().getResourceAsStream("/images/arenaIcon.png")));
         stage.setTitle("Arena");
         stage.show();
         System.gc();
         }
-// Player Landing Page Go To teamsApp
 @FXML
 private void goToTeamsApp(ActionEvent event) throws Exception {
     	playerTeamAppButton.getScene().getWindow().hide();
         loader.setLocation(getClass().getResource("/arenaViews/teamApp.fxml"));
         scene = new Scene(loader.load());
         stage.setScene(scene);
-        stage.initStyle(StageStyle.UNDECORATED);
         stage.setResizable(false);
         stage.getIcons().add(new Image(getClass().getResourceAsStream("/images/arenaIcon.png")));
         stage.setTitle("Arena");
@@ -340,21 +324,8 @@ private void signIn(ActionEvent event) throws SQLException, IOException
     		PreparedStatement preparedStatement = myConnection.prepareStatement(queryOne);
     		preparedStatement.executeQuery(queryOne);
     		rs = preparedStatement.executeQuery(queryOne);
-    		// Display Current User Info in Console
     		rsmd = rs.getMetaData();
     		columnsNumber = rsmd.getColumnCount();
-    		//System.out.println("signIn ResultSet Contents: ");
-    		/*while (rs.next())
-    		{
-    			for (int i = 1; i <= columnsNumber; i++)
-    			{
-    				if (i > 1) System.out.print("");
-    				columnValue = rs.getString(i);
-    				System.out.println(rsmd.getColumnName(i)+ " : " + columnValue);
-    			}
-    			System.out.println("");
-    		} */
-    		// if userName & Password Match DOES NOT Exist
     		if (rs.first())
     		{
     			roleIDCheck = rs.getInt(4);
@@ -366,28 +337,23 @@ private void signIn(ActionEvent event) throws SQLException, IOException
     			errorLabel.setVisible(true);
     			loadingGif.setVisible(true);
     		}
-    	// If userName & Password Match DOES exist &
-    		// Role ID # = 0 (Operator). Lands on "operatorLanding.fxml"
     		if((rs.first()) && roleIDCheck == 0)
     		{
     			loginPageSignInButton.getScene().getWindow().hide();
     			loader.setLocation(getClass().getResource("/arenaViews/operatorLanding.fxml"));
     			scene = new Scene(loader.load());
     			stage.setScene(scene);
-    			stage.initStyle(StageStyle.UNDECORATED);
     			stage.setResizable(false);
     			stage.getIcons().add(new Image(getClass().getResourceAsStream("/images/arenaIcon.png")));
     			stage.setTitle("Arena");
     			stage.show();
     		}
-    		// Role ID # = 1 (LeagueOwner). Lands on "leagueOwnerLanding.fxml"
     		if((rs.first()) && roleIDCheck == 1)
     		{
     			loginPageSignInButton.getScene().getWindow().hide();
     			loader.setLocation(getClass().getResource("/arenaViews/leagueOwnerLanding.fxml"));
     			scene = new Scene(loader.load());
     			stage.setScene(scene);
-    			stage.initStyle(StageStyle.UNDECORATED);
     			stage.setResizable(false);
     			stage.getIcons().add(new Image(getClass().getResourceAsStream("/images/arenaIcon.png")));
     			stage.setTitle("Arena");
@@ -395,14 +361,12 @@ private void signIn(ActionEvent event) throws SQLException, IOException
             	UserModels UserID = new UserModels(currUserID);
             	UserID.setUserID(currUserID);
     		}
-    		// Role ID # = 2 (Advertiser). Lands on "advertisorLanding.fxml"
     		if((rs.first()) && roleIDCheck == 2)
     		{
     			loginPageSignInButton.getScene().getWindow().hide();
     			loader.setLocation(getClass().getResource("/arenaViews/advertisorLanding.fxml"));
     			scene = new Scene(loader.load());
     			stage.setScene(scene);
-    			stage.initStyle(StageStyle.UNDECORATED);
     			stage.setResizable(false);
     			stage.getIcons().add(new Image(getClass().getResourceAsStream("/images/arenaIcon.png")));
     			stage.setTitle("Arena");
@@ -410,14 +374,12 @@ private void signIn(ActionEvent event) throws SQLException, IOException
             	UserModels UserID = new UserModels(currUserID);
             	UserID.setUserID(currUserID);
     		}
-    		// Role ID # = 3 (Player). Lands on "playerLanding.fxml"
     		if((rs.first()) && roleIDCheck == 3)
     		{
     			loginPageSignInButton.getScene().getWindow().hide();
     			loader.setLocation(getClass().getResource("/arenaViews/playerLanding.fxml"));
     			scene = new Scene(loader.load());
             	stage.setScene(scene);
-            	stage.initStyle(StageStyle.UNDECORATED);
             	stage.setResizable(false);
             	stage.getIcons().add(new Image(getClass().getResourceAsStream("/images/arenaIcon.png")));
             	stage.setTitle("Arena");
@@ -425,14 +387,12 @@ private void signIn(ActionEvent event) throws SQLException, IOException
             	UserModels UserID = new UserModels(currUserID);
             	UserID.setUserID(currUserID);
     		}
-    		// Role ID # = 4 (Spectator). Lands on "spectatorLanding.fxml"
     		if((rs.first()) && roleIDCheck == 4)
     		{
     			loginPageSignInButton.getScene().getWindow().hide();
     			loader.setLocation(getClass().getResource("/arenaViews/spectatorLanding.fxml"));
     			scene = new Scene(loader.load());
     			stage.setScene(scene);
-    			stage.initStyle(StageStyle.UNDECORATED);
     			stage.setResizable(false);
     			stage.getIcons().add(new Image(getClass().getResourceAsStream("/images/arenaIcon.png")));
     			stage.setTitle("Arena");
@@ -446,18 +406,15 @@ private void signIn(ActionEvent event) throws SQLException, IOException
     	}
     	finally
     	{
-    		// Close Connection
     		myConnection.close();
     	}
     }
-// 'X' Label Functionality. Closes the Application.
 @FXML
 private void closeApplication(MouseEvent event)
     {
 	    System.gc();
         System.exit(0);
     }
-// Sign Up Page Go Back Button Functionality. Brings user from "signUpPage" View to "loginPage" View.
 @FXML
 private void goBackToSignIn(ActionEvent event) throws Exception
     {
@@ -465,15 +422,12 @@ private void goBackToSignIn(ActionEvent event) throws Exception
     	loader.setLocation(getClass().getResource("/arenaViews/loginPage.fxml"));
     	scene = new Scene(loader.load());
     	stage.setScene(scene);
-    	stage.initStyle(StageStyle.UNDECORATED);
     	stage.setResizable(false);
     	stage.getIcons().add(new Image(getClass().getResourceAsStream("/images/arenaIcon.png")));
     	stage.setTitle("Arena");
     	stage.show();
     	System.gc();
      }
-// Sign Up Page Sign Up Button Functionality. First Checks if signUpTextFied for User Name exist in users Table. If so. Displays Error to User
-// If NOT. Adds user to user Table. Displays Success Label to User.
 @FXML
 private void firstSignUp (ActionEvent event) throws SQLException, IOException
     {
@@ -491,14 +445,12 @@ private void firstSignUp (ActionEvent event) throws SQLException, IOException
     		e.printStackTrace();
     		System.out.println("ERROR @ Conrol.firstSignUp. First Try/Catch.");
     	}
-    	// already exist
     	if(rs.first())
     	{
     		successLabelRegForm.setVisible(false);
     		errorLabelRegForm.setVisible(true);
     		myConnection.close();
     	}
-    	// does NOT exist
     	else if(!rs.isBeforeFirst())
     	{
     		String insert = "INSERT INTO users(userName,userPassword)"
@@ -519,12 +471,10 @@ private void firstSignUp (ActionEvent event) throws SQLException, IOException
     		{
     			myConnection.close();
     		}
-    		// User Successfully Added
     		errorLabelRegForm.setVisible(false);
     		successLabelRegForm.setVisible(true);
     		}
     	}
-// Spectator Landing Page's Apply Button (spectApply Functionality)  Brings User from Spectator Page to Application Page
 @FXML
 private void goToApplicationPage(ActionEvent event) throws Exception
     {
@@ -532,14 +482,12 @@ private void goToApplicationPage(ActionEvent event) throws Exception
         loader.setLocation(getClass().getResource("/arenaViews/spectAppPage.fxml"));
         scene = new Scene(loader.load());
         stage.setScene(scene);
-        stage.initStyle(StageStyle.UNDECORATED);
         stage.setResizable(false);
         stage.getIcons().add(new Image(getClass().getResourceAsStream("/images/arenaIcon.png")));
         stage.setTitle("Arena");
         stage.show();
         System.gc();
     }
-// League Owner's Manage Team Button Functionality. Brings League Owner to Manage Teams Page (from leagueOwnerLanding to teamsPage )
 @FXML
 private void goToLOTeamsPage(ActionEvent event) throws Exception
     {
@@ -547,13 +495,11 @@ private void goToLOTeamsPage(ActionEvent event) throws Exception
         loader.setLocation(getClass().getResource("/arenaViews/makeTeam.fxml"));
         scene = new Scene(loader.load());
         stage.setScene(scene);
-        stage.initStyle(StageStyle.UNDECORATED);
         stage.setResizable(false);
         stage.getIcons().add(new Image(getClass().getResourceAsStream("/images/arenaIcon.png")));
         stage.setTitle("Arena");
         stage.show();
     }
-// Operator Landing Page's Pending Application Button Functionality. Brings User from Operator Landing to Operator Pending User Management Page.
 @FXML
 private void opGoToPending(ActionEvent event) throws Exception
     {
@@ -561,14 +507,12 @@ private void opGoToPending(ActionEvent event) throws Exception
         loader.setLocation(getClass().getResource("/arenaViews/operatorPendingPage.fxml"));
         scene = new Scene(loader.load());
         stage.setScene(scene);
-        stage.initStyle(StageStyle.UNDECORATED);
         stage.setResizable(false);
         stage.getIcons().add(new Image(getClass().getResourceAsStream("/images/arenaIcon.png")));
         stage.setTitle("Arena");
         stage.show();
         System.gc();
     }
-// Operator Pending Page's Go Back Button Functionality. Brings User from Operator Pending User Management Page to Operator Landing Page.
 @FXML
 private void goBackToOpLanding(ActionEvent event) throws Exception
     {
@@ -576,14 +520,12 @@ private void goBackToOpLanding(ActionEvent event) throws Exception
         loader.setLocation(getClass().getResource("/arenaViews/operatorLanding.fxml"));
         scene = new Scene(loader.load());
         stage.setScene(scene);
-        stage.initStyle(StageStyle.UNDECORATED);
         stage.setResizable(false);
         stage.getIcons().add(new Image(getClass().getResourceAsStream("/images/arenaIcon.png")));
         stage.setTitle("Arena");
         stage.show();
         System.gc();
     }
-// Operator Manage Users Page's Go Back Button Functionality.
 @FXML
 private void goBackToOpLandingForMangUsers(ActionEvent event) throws Exception
     {
@@ -591,14 +533,12 @@ private void goBackToOpLandingForMangUsers(ActionEvent event) throws Exception
         loader.setLocation(getClass().getResource("/arenaViews/operatorLanding.fxml"));
         scene = new Scene(loader.load());
         stage.setScene(scene);
-        stage.initStyle(StageStyle.UNDECORATED);
         stage.setResizable(false);
         stage.getIcons().add(new Image(getClass().getResourceAsStream("/images/arenaIcon.png")));
         stage.setTitle("Arena");
         stage.show();
         System.gc();
     }
-// Operator Pending User Management Page Refresh Button Functionality. Populates pending Table View from pending Table.
 @FXML
 private void pendingUsersToTableView(ActionEvent event) throws SQLException
     {
@@ -632,8 +572,6 @@ private void pendingUsersToTableView(ActionEvent event) throws SQLException
     	pendingColumnDesiredRole.setCellValueFactory(new PropertyValueFactory<>("desired_RoleIDNew"));
     	userPendingTable.setItems(data);
     }
-// Loads data from pending Table to Operator Pending User Management Table View. NOT FXML related. Used to Refresh Table View without Need
-// to press Refresh Button
 private void pendingUsersToTableLoad() throws SQLException
     {
     	Connection myConnection = DBHandler.getConnection();
@@ -660,7 +598,6 @@ private void pendingUsersToTableLoad() throws SQLException
     	pendingColumnDesiredRole.setCellValueFactory(new PropertyValueFactory<>("pendingTable.desired_RoleID"));
     	userPendingTable.setItems(data);
     }
- // From Spectator's Application Page Go Back to Spectator's Landing Page ( Go Back Button Functionality )
 @FXML
 private void goBackToSpect(ActionEvent event) throws Exception
     {
@@ -668,14 +605,12 @@ private void goBackToSpect(ActionEvent event) throws Exception
     	loader.setLocation(getClass().getResource("/arenaViews/spectatorLanding.fxml"));
     	scene = new Scene(loader.load());
     	stage.setScene(scene);
-    	stage.initStyle(StageStyle.UNDECORATED);
     	stage.setResizable(false);
     	stage.getIcons().add(new Image(getClass().getResourceAsStream("/images/arenaIcon.png")));
     	stage.setTitle("Arena");
     	stage.show();
     	System.gc();
      }
-// From Spectator's Application Confirmation Page back to Spectator's Application Page ( Go Back Button Functionality )
 @FXML
 private void goBackToApp(ActionEvent event) throws Exception
     {
@@ -683,7 +618,6 @@ private void goBackToApp(ActionEvent event) throws Exception
     	loader.setLocation(getClass().getResource("/arenaViews/spectAppPage.fxml"));
     	scene = new Scene(loader.load());
     	stage.setScene(scene);
-    	stage.initStyle(StageStyle.UNDECORATED);
     	stage.setResizable(false);
     	stage.getIcons().add(new Image(getClass().getResourceAsStream("/images/arenaIcon.png")));
     	stage.setTitle("Arena");
@@ -691,7 +625,6 @@ private void goBackToApp(ActionEvent event) throws Exception
     	stage.show();
     	System.gc();
      }
-// Application Choice Button Functionality. Goes from Spectator Application Page to Spectator Confirmation Page.
 @FXML
 private void appChoice(ActionEvent event) throws Exception
     {
@@ -699,13 +632,11 @@ private void appChoice(ActionEvent event) throws Exception
         loader.setLocation(getClass().getResource("/arenaViews/appConfPage.fxml"));
         scene = new Scene(loader.load());
         stage.setScene(scene);
-        stage.initStyle(StageStyle.UNDECORATED);
         stage.setResizable(false);
         stage.getIcons().add(new Image(getClass().getResourceAsStream("/images/arenaIcon.png")));
         stage.setTitle("Arena");
         stage.show();
     }
-// Spectator Page Show / Hide Label(s)
 @FXML
 private void showRoleDetails(MouseEvent event) throws IOException
     {
@@ -761,22 +692,15 @@ private void hideAdvertRoleDetails(MouseEvent event) throws IOException
 @FXML
 private void goToCreateTournamentsView (ActionEvent event) throws Exception
  {
- 	//System.out.println("Go to Create Arenas");
  	 leagueOwnerGoToCreateTournsButton.getScene().getWindow().hide();
      loader.setLocation(getClass().getResource("/arenaViews/CreateTournaments.fxml"));
      scene = new Scene(loader.load());
      stage.setScene(scene);
-     stage.initStyle(StageStyle.UNDECORATED);
      stage.setResizable(false);
      stage.getIcons().add(new Image(getClass().getResourceAsStream("/images/arenaIcon.png")));
      stage.setTitle("Arena");
      stage.show();
      System.gc();
- }
-@FXML
-private void goToCreateGamesView (ActionEvent event) throws Exception
- {
-
  }
  @FXML
 private void goToTournMang(ActionEvent event) throws Exception
@@ -785,7 +709,6 @@ private void goToTournMang(ActionEvent event) throws Exception
     loader.setLocation(getClass().getResource("/arenaViews/ManageTournaments.fxml"));
     scene = new Scene(loader.load());
     stage.setScene(scene);
-    stage.initStyle(StageStyle.UNDECORATED);
     stage.setResizable(false);
     stage.getIcons().add(new Image(getClass().getResourceAsStream("/images/arenaIcon.png")));
     stage.setTitle("Arena");
@@ -799,7 +722,6 @@ private void goToMangUsers(ActionEvent event) throws Exception
     loader.setLocation(getClass().getResource("/arenaViews/operatorManageUsersPage.fxml"));
     scene = new Scene(loader.load());
     stage.setScene(scene);
-    stage.initStyle(StageStyle.UNDECORATED);
     stage.setResizable(false);
     stage.getIcons().add(new Image(getClass().getResourceAsStream("/images/arenaIcon.png")));
     stage.setTitle("Arena");
@@ -809,12 +731,10 @@ private void goToMangUsers(ActionEvent event) throws Exception
 @FXML
 private void opGoToCreateArenas(ActionEvent event) throws IOException, SQLException
  {
- 	//System.out.println("Go to Create Arenas");
  	 opCreateArenasButton.getScene().getWindow().hide();
      loader.setLocation(getClass().getResource("/arenaViews/CreateArena.fxml"));
      scene = new Scene(loader.load());
      stage.setScene(scene);
-     stage.initStyle(StageStyle.UNDECORATED);
      stage.setResizable(false);
      stage.getIcons().add(new Image(getClass().getResourceAsStream("/images/arenaIcon.png")));
      stage.setTitle("Arena");
@@ -824,12 +744,10 @@ private void opGoToCreateArenas(ActionEvent event) throws IOException, SQLExcept
 @FXML
 private void opGoToManageArenas(ActionEvent event) throws IOException, SQLException
  {
- 	//System.out.println("Go to Mange Arenas");
  	opManageArenaButton.getScene().getWindow().hide();
      loader.setLocation(getClass().getResource("/arenaViews/ManageArena.fxml"));
      scene = new Scene(loader.load());
      stage.setScene(scene);
-     stage.initStyle(StageStyle.UNDECORATED);
      stage.setResizable(false);
      stage.getIcons().add(new Image(getClass().getResourceAsStream("/images/arenaIcon.png")));
      stage.setTitle("Arena");
@@ -837,8 +755,6 @@ private void opGoToManageArenas(ActionEvent event) throws IOException, SQLExcept
      System.gc();
  }
 ArenaController arenaController = new ArenaController();
-//---------------------end Spectator Page Show/Hide Label(s) Methods----------------------------
-// Gets Role Choice. Spectator Role Choice Button(s) Functionality.
 @FXML
 private void appOpChoice(MouseEvent event) throws IOException
   {
@@ -859,22 +775,14 @@ private void appAdChoice(MouseEvent event) throws IOException
   {
   	appRoleChoice = 2;
   }
-//-------- end Get Role Spectator Button Functionality ----------
-
-// Spectator confirmation YES button Functionality
 @FXML
 private void confYes(ActionEvent event) throws SQLException, IOException
   {
   	Connection myConnection = DBHandler.getConnection();
-  	//String modCN = "\""+currName+"\"";
-  	//String modCP = "\""+currPass+"\"";
-  	// if Operator Chosen. Add to Pending Table
   	if(appRoleChoice == 0)
   	{
   		String confYesInsert = "INSERT INTO pending (appUserID,appCurrentRole,desired_RoleID)"
       			+ " VALUES("+currUserID+","+currRoleID+","+appRoleChoice+")";
-
-  		//String confYesInsert = "INSERT INTO pending (roleID_desired,appUserID,appUserName,appUserPassword,appCurrentRole) VALUES("+appRoleChoice+","+currUserID+","+modCN+","+modCP+","+currRoleID+")";
   		try
   		{
   			PreparedStatement preparedStatement = myConnection.prepareStatement(confYesInsert);
@@ -890,12 +798,10 @@ private void confYes(ActionEvent event) throws SQLException, IOException
   			myConnection.close();
   		}
   	}
-  	// if League Owner is chosen. Add to Pending Table
   	if(appRoleChoice == 1)
   	{
   		String confYesInsert = "INSERT INTO pending (appUserID,appCurrentRole,desired_RoleID)"
       			+ " VALUES("+currUserID+","+currRoleID+","+appRoleChoice+")";
-  		//String confYesInsert = "INSERT INTO pending (roleID_desired,appUserID,appUserName,appUserPassword,appCurrentRole) VALUES("+appRoleChoice+","+currUserID+","+modCN+","+modCP+","+currRoleID+")";
   		try
   		{
   			PreparedStatement preparedStatement = myConnection.prepareStatement(confYesInsert);
@@ -911,7 +817,6 @@ private void confYes(ActionEvent event) throws SQLException, IOException
   			myConnection.close();
   		}
   	}
-  	// if Advertiser is Chosen. Update User Role ID.
   	if(appRoleChoice == 2)
   	{
   		String confYesInsert ="UPDATE arenadatabase.users SET userRoleID = ? WHERE userID = ?";
@@ -932,7 +837,6 @@ private void confYes(ActionEvent event) throws SQLException, IOException
   			myConnection.close();
   		}
   	}
-  	// if Player is Chosen. Update User Role ID.
   	if(appRoleChoice == 3)
   	{
   		String confYesInsert ="UPDATE arenadatabase.users SET userRoleID = ? WHERE userID = ?";
@@ -953,19 +857,15 @@ private void confYes(ActionEvent event) throws SQLException, IOException
   			myConnection.close();
   		}
   	}
-
-  	// Bring User back to Log in.
   	confYesButton.getScene().getWindow().hide();
   	loader.setLocation(getClass().getResource("/arenaViews/loginPage.fxml"));
   	sceneLogin = new Scene(loader.load());
   	stage.setScene(sceneLogin);
-	stage.initStyle(StageStyle.UNDECORATED);
   	stage.getIcons().add(new Image(getClass().getResourceAsStream("/images/arenaIcon.png")));
   	stage.setTitle("Arena");
   	stage.setResizable(false);
   	stage.show();
   }
-//Spectator Confirmation NO Button Functionality
 @FXML
 private void confNo(ActionEvent event) throws IOException
   {
@@ -973,14 +873,11 @@ private void confNo(ActionEvent event) throws IOException
       loader.setLocation(getClass().getResource("/arenaViews/spectAppPage.fxml"));
       scene = new Scene(loader.load());
       stage.setScene(scene);
-      stage.initStyle(StageStyle.UNDECORATED);
       stage.setResizable(false);
       stage.getIcons().add(new Image(getClass().getResourceAsStream("/images/arenaIcon.png")));
       stage.setTitle("Arena");
       stage.show();
   }
-//Operator Pending Users Manage Page Approve Button Functionality. Will Change the Role of Selected ID to Desired Role
-//Then Delete that selection from pending Table.
 @FXML
 private void approveNewUser(ActionEvent event) throws SQLException
   {
@@ -1017,7 +914,6 @@ private void approveNewUser(ActionEvent event) throws SQLException
   		myConnection.close();
   	}
   }
-//Deletes selected userID Row from pending Table. User will need to Apply again if they want to be considered again.
 @FXML
 private void denyNewUser(ActionEvent event) throws SQLException
   {
@@ -1050,7 +946,6 @@ private void denyNewUser(ActionEvent event) throws SQLException
       	myConnection.close();
       }
       }
-//Operator Manage Users TableView. Populate Table from users Table when user presses Refresh Button.
 @FXML
 private void ManageUsersToTableView(ActionEvent event) throws SQLException
 	{
@@ -1074,7 +969,6 @@ private void ManageUsersToTableView(ActionEvent event) throws SQLException
 		manageUsersColumnCurrentRole.setCellValueFactory(new PropertyValueFactory<>("userRoleID"));
 		manageUsersTable.setItems(data2);
 	}
-//Just Do. Load Manage Users Table View.
 private void JustDoManageUsersToTableView() throws SQLException
 	{
 		Connection myConnection = DBHandler.getConnection();
@@ -1097,13 +991,11 @@ private void JustDoManageUsersToTableView() throws SQLException
 		manageUsersColumnCurrentRole.setCellValueFactory(new PropertyValueFactory<>("userRoleID"));
 		manageUsersTable.setItems(data2);
 	}
-// Operator Manager Users TableView. Remove Button Functionality. Removes Selected user from Users Table.
 @FXML
 private void removeUser(ActionEvent event) throws SQLException
 	{
 		Connection myConnection = DBHandler.getConnection();
 		ManageUsersController userData2 = manageUsersTable.getSelectionModel().getSelectedItem();
-		//userData.setAppCurrentRole(appRoleChoice);
 		int selectedUserID = userData2.getUserID();
 		String sqlUpdateThree = "DELETE FROM arenadatabase.users WHERE users.userID =" +selectedUserID +"";
 		try
@@ -1130,22 +1022,16 @@ private void removeUser(ActionEvent event) throws SQLException
 			myConnection.close();
 		}
 	}
-// League Owner to Manage Players
 @FXML
 private void goToPlayerManagement(ActionEvent event) throws Exception {
       	  leagueOwnerGoToManagePlayers.getScene().getWindow().hide();
           loader.setLocation(getClass().getResource("/arenaViews/LeagueOwnerManageUsersPage.fxml"));
           scene = new Scene(loader.load());
           stage.setScene(scene);
-          stage.initStyle(StageStyle.UNDECORATED);
           stage.setResizable(false);
           stage.getIcons().add(new Image(getClass().getResourceAsStream("/images/arenaIcon.png")));
           stage.setTitle("Arena");
           stage.show();
           System.gc();
           }
-//Spectator to current matches
-
 }
-
-

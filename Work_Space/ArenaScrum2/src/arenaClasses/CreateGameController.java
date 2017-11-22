@@ -12,7 +12,6 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
-import javafx.stage.StageStyle;
 import javafx.stage.Stage;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -116,10 +115,7 @@ public class CreateGameController extends Main{
 	}
 	public boolean isValidEntry(String entry){
 
-		/*if(entry.length() == 0){
-			hideError();
-			return false
-		}*/
+
 		if(entry.length() < MIN_NAME_LENGTH){
 			showError("Name must be a least " + MIN_NAME_LENGTH +" characters.");
 			return false;
@@ -216,7 +212,6 @@ public class CreateGameController extends Main{
 		loader.setLocation(getClass().getResource("/arenaViews/"+ view +".fxml"));
 		scene = new Scene(loader.load());
 		stage.setScene(scene);
-		stage.initStyle(StageStyle.UNDECORATED);
 		stage.setResizable(false);
 		stage.getIcons().add(new Image(getClass().getResourceAsStream("/images/arenaIcon.png")));
 		stage.setTitle("Arena");

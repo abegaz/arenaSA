@@ -3,12 +3,9 @@ package arenaClasses;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-
 import java.sql.SQLException;
-
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
-
 import arenaModels.PlayerJoinLeagueModel;
 import arenaModels.UserModels;
 import javafx.collections.FXCollections;
@@ -24,7 +21,6 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 
 public class PlayerJoinLeague extends Main{
 
@@ -71,7 +67,6 @@ private void goBackPlayerSplash(ActionEvent event) throws Exception {
     loader.setLocation(getClass().getResource("/arenaViews/playerLanding.fxml"));
     scene = new Scene(loader.load());
     stage.setScene(scene);
-    stage.initStyle(StageStyle.UNDECORATED);
     stage.setResizable(false);
     stage.getIcons().add(new Image(getClass().getResourceAsStream("/images/arenaIcon.png")));
     stage.setTitle("Arena");

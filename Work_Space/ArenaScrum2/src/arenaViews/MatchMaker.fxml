@@ -15,16 +15,11 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="445.0" prefWidth="1125.0" style="-fx-background-color: #20120F;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="arenaClasses.MatchController">
    <children>
-      <ImageView fitHeight="458.0" fitWidth="1143.0" layoutX="-10.0" layoutY="-6.0">
+      <ImageView fitHeight="480.0" fitWidth="1163.0" layoutX="-10.0" layoutY="-6.0">
          <image>
             <Image url="@../images/domina9.jpg" />
          </image>
       </ImageView>
-      <Label fx:id="closeIcon" layoutX="1111.0" layoutY="3.0" onMouseClicked="#closeApplication" prefHeight="27.0" prefWidth="0.0" text="X" textFill="WHITE">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
       <JFXButton fx:id="teamsGoBack" layoutX="8.0" layoutY="393.0" onAction="#goToLOLanding" prefHeight="38.0" prefWidth="85.0" style="-fx-background-color: #f4ce42;" text="Back" textAlignment="CENTER">
          <font>
             <Font name="Book Antiqua" size="18.0" />

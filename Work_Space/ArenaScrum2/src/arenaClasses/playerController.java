@@ -11,9 +11,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
-
 import com.jfoenix.controls.JFXButton;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -23,7 +21,6 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 
 public class playerController extends Main  implements Initializable {
 
@@ -47,10 +44,13 @@ private ImageView plTopBannerImage;
 private ImageView plRightBannerImage;
 @FXML
 private ImageView plBottomBannerImage;
+@FXML
+private Label playerNameLabel;
 	
 Scene scene;
 Stage stage = new Stage();
 ResultSet rs;
+
 	
 @Override
 public void initialize(URL location, ResourceBundle resources)
@@ -61,6 +61,7 @@ public void initialize(URL location, ResourceBundle resources)
 				setPlADLeft();
 				setPlADRight();
 				setPlADBG();
+				setUserName();
 				}
 			catch(Exception e)
 			{
@@ -74,6 +75,9 @@ private void closeApplication(MouseEvent event)
 	    System.gc();
         System.exit(0);
     }
+private void setUserName() {
+	playerNameLabel.setText(Controller.currName);
+}
 @FXML
 private void goBackToSignIn(ActionEvent event) throws Exception
     {
@@ -81,7 +85,6 @@ private void goBackToSignIn(ActionEvent event) throws Exception
     	loader.setLocation(getClass().getResource("/arenaViews/loginPage.fxml"));
     	scene = new Scene(loader.load());
     	stage.setScene(scene);
-    	stage.initStyle(StageStyle.UNDECORATED);
     	stage.setResizable(false);
     	stage.getIcons().add(new Image(getClass().getResourceAsStream("/images/arenaIcon.png")));
     	stage.setTitle("Arena");
@@ -94,7 +97,6 @@ private void goToTeamsApp(ActionEvent event) throws Exception {
         loader.setLocation(getClass().getResource("/arenaViews/teamApp.fxml"));
         scene = new Scene(loader.load());
         stage.setScene(scene);
-        stage.initStyle(StageStyle.UNDECORATED);
         stage.setResizable(false);
         stage.getIcons().add(new Image(getClass().getResourceAsStream("/images/arenaIcon.png")));
         stage.setTitle("Arena");
@@ -107,7 +109,6 @@ private void goToJoinLeag(ActionEvent event) throws Exception {
         loader.setLocation(getClass().getResource("/arenaViews/PlayerJoinLeaguePage.fxml"));
         scene = new Scene(loader.load());
         stage.setScene(scene);
-        stage.initStyle(StageStyle.UNDECORATED);
         stage.setResizable(false);
         stage.getIcons().add(new Image(getClass().getResourceAsStream("/images/arenaIcon.png")));
         stage.setTitle("Arena");
@@ -120,7 +121,6 @@ private void goToPlayerMangLeag(ActionEvent event) throws Exception {
         loader.setLocation(getClass().getResource("/arenaViews/PlayerCurrentLeaguePage.fxml"));
         scene = new Scene(loader.load());
         stage.setScene(scene);
-        stage.initStyle(StageStyle.UNDECORATED);
         stage.setResizable(false);
         stage.getIcons().add(new Image(getClass().getResourceAsStream("/images/arenaIcon.png")));
         stage.setTitle("Arena");

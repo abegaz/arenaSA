@@ -11,16 +11,11 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="436.0" prefWidth="613.0" style="-fx-background-color: #20120F;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="arenaClasses.TeamsController">
    <children>
-      <ImageView fitHeight="449.0" fitWidth="625.0" layoutX="-6.0" layoutY="-6.0">
+      <ImageView fitHeight="472.0" fitWidth="646.0" layoutX="-6.0" layoutY="-6.0">
          <image>
             <Image url="@../images/domina1.jpg" />
          </image>
       </ImageView>
-      <Label fx:id="closeIcon" layoutX="587.0" layoutY="1.0" onMouseClicked="#closeApplication" prefHeight="27.0" prefWidth="16.0" text="X" textFill="WHITE">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
       <AnchorPane layoutX="19.0" layoutY="29.0" prefHeight="370.0" prefWidth="576.0" style="-fx-border-color: #f4ce42; -fx-border-width: 8; -fx-background-color: BLACK;">
          <children>
             <TableView fx:id="loPlayersAppTable" layoutX="21.0" layoutY="40.0" prefHeight="233.0" prefWidth="533.0" style="-fx-background-color: #FFFFFF;">

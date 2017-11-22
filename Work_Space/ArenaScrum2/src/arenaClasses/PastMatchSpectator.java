@@ -8,6 +8,7 @@ import com.jfoenix.controls.JFXButton;
 import arenaModels.CurrentMatchSpecModel;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
@@ -18,12 +19,14 @@ import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
-public class CurrentMatchSpectator extends Main{
+public class PastMatchSpectator extends Main{
 
 	@FXML
 	private JFXButton GoBackButton;
 	@FXML
 	private JFXButton MatchesRefreshButton;
+	@FXML
+	private JFXButton MatchDetailsButton;
 	@FXML
 	private TableView<CurrentMatchSpecModel> SpecCurrentTable;
 	@FXML
@@ -42,12 +45,13 @@ public class CurrentMatchSpectator extends Main{
 	private TableColumn<CurrentMatchSpecModel, Integer> matchColumnTeam1Score;
 	@FXML
 	private TableColumn<CurrentMatchSpecModel, Integer> matchColumnTeam2Score;
-	@FXML
-	private Label closeIcon;
+
 	
 	Scene scene;
 	Stage stage = new Stage();
 	private ObservableList<CurrentMatchSpecModel>data;
+
+
 
 	@FXML
 	private void goToSpecLanding() throws IOException{
@@ -67,18 +71,18 @@ public class CurrentMatchSpectator extends Main{
     }
     
     @FXML
-    private void LoadCurrentMatches() throws SQLException {
+    private void LoadPastMatches() throws SQLException {
     	Connection myConnection = DBHandler.getConnection();
     	data = FXCollections.observableArrayList();
     	data.removeAll(data);
     	try {
-    		ResultSet rs = myConnection.createStatement().executeQuery("Select M.MatchID, G.GameName, L.LeagueName, T.TournamentName, M.teams_TeamID1, M.teams_TeamID2, S.Team1_Score, S.Team2_Score FROM league AS L, tournament AS T, scores AS S, teams AS A, teams AS B, matches AS M, game AS G WHERE M.Game_GameID=G.GameID and S.match_MatchID = M.MatchID and L.LeagueID=T.League_LeagueID and T.TournamentID=M.Tournament_TournamentID and A.TeamID=M.teams_TeamID1 and B.TeamID=M.teams_TeamID2 and M.MatchStatus_MatchStatusID=1 and M.MatchDate<=+NOW() and S.Team1_Score = (Select MAX(S1.Team1_Score) from scores S1 where S.match_MatchID=S1.match_MatchID) and S.Team2_Score = (Select MAX(S1.Team2_Score) from scores S1 where S.match_MatchID=S1.match_MatchID) ");
+    		ResultSet rs = myConnection.createStatement().executeQuery("Select M.MatchID, G.GameName, L.LeagueName, T.TournamentName, M.teams_TeamID1, M.teams_TeamID2, S.Team1_Score, S.Team2_Score FROM league AS L, tournament AS T, scores AS S, teams AS A, teams AS B, matches AS M, game AS G WHERE M.Game_GameID=G.GameID and S.match_MatchID = M.MatchID and L.LeagueID=T.League_LeagueID and T.TournamentID=M.Tournament_TournamentID and A.TeamID=M.teams_TeamID1 and B.TeamID=M.teams_TeamID2 and M.MatchStatus_MatchStatusID=2 and ScoreStatusTable_idScoreStatusTable=4");
     		while (rs.next()){
     			String teamname1 = getTeamNameWithTeamID(rs.getString("teams_TeamID1"));
     			String teamname2 = getTeamNameWithTeamID(rs.getString("teams_TeamID2"));
     			data.add(new CurrentMatchSpecModel(rs.getInt("MatchID"),rs.getString("GameName"), rs.getString("LeagueName"), rs.getString("TournamentName"),teamname1, teamname2, rs.getInt("Team1_Score"), rs.getInt("Team2_Score")));
     		}
-    		JustDoLoadCurrentMatches();
+    		JustDoLoadPastMatches();
     		matchColumnMatchID.setCellValueFactory(new PropertyValueFactory<>("MatchID"));
     		matchColumnGameName.setCellValueFactory(new PropertyValueFactory<>("GameName"));
     		matchColumnLeagueName.setCellValueFactory(new PropertyValueFactory<>("LeagueName"));
@@ -100,13 +104,13 @@ public class CurrentMatchSpectator extends Main{
         	myConnection.close();
         }
     }
-    private void JustDoLoadCurrentMatches() throws SQLException {
+    private void JustDoLoadPastMatches() throws SQLException {
     	Connection myConnection = DBHandler.getConnection();
     	data = FXCollections.observableArrayList();
     	data.removeAll(data);
     	
     	try {
-    		ResultSet rs = myConnection.createStatement().executeQuery("Select M.MatchID, G.GameName, L.LeagueName, T.TournamentName, M.teams_TeamID1, M.teams_TeamID2, S.Team1_Score, S.Team2_Score FROM league AS L, tournament AS T, scores AS S, teams AS A, teams AS B, matches AS M, game AS G WHERE M.Game_GameID=G.GameID and S.match_MatchID = M.MatchID and L.LeagueID=T.League_LeagueID and T.TournamentID=M.Tournament_TournamentID and A.TeamID=M.teams_TeamID1 and B.TeamID=M.teams_TeamID2 and M.MatchStatus_MatchStatusID=1 and M.MatchDate<=+NOW() and S.Team1_Score = (Select MAX(S1.Team1_Score) from scores S1 where S.match_MatchID=S1.match_MatchID) and S.Team2_Score = (Select MAX(S1.Team2_Score) from scores S1 where S.match_MatchID=S1.match_MatchID) ");
+    		ResultSet rs = myConnection.createStatement().executeQuery("Select M.MatchID, G.GameName, L.LeagueName, T.TournamentName, M.teams_TeamID1, M.teams_TeamID2, S.Team1_Score, S.Team2_Score FROM league AS L, tournament AS T, scores AS S, teams AS A, teams AS B, matches AS M, game AS G WHERE M.Game_GameID=G.GameID and S.match_MatchID = M.MatchID and L.LeagueID=T.League_LeagueID and T.TournamentID=M.Tournament_TournamentID and A.TeamID=M.teams_TeamID1 and B.TeamID=M.teams_TeamID2 and M.MatchStatus_MatchStatusID=2 and ScoreStatusTable_idScoreStatusTable=4");
     		while (rs.next()){
         		String teamname1 = getTeamNameWithTeamID(rs.getString("teams_TeamID1"));
     			String teamname2 = getTeamNameWithTeamID(rs.getString("teams_TeamID2"));
@@ -155,5 +159,25 @@ public class CurrentMatchSpectator extends Main{
     		return null;
     	}
     	return null;
+    }
+
+	
+ 
+
+    
+    public void goToMatchDetail(ActionEvent event) throws IOException, SQLException
+    {	
+    	MatchDetailsButton.getScene().getWindow().hide();
+        loader.setLocation(getClass().getResource("/arenaViews/PastMatchDetails.fxml"));
+        scene = new Scene(loader.load());
+        stage.setScene(scene);
+        PastMatchDetailsController controller = loader.getController();
+        controller.initData(SpecCurrentTable.getSelectionModel().getSelectedItem());
+        PastMatchDetailsController controller2 = loader.getController();
+        controller2.initalize(SpecCurrentTable.getSelectionModel().getSelectedItem());
+        stage.setResizable(false);
+        stage.getIcons().add(new Image(getClass().getResourceAsStream("/images/arenaIcon.png")));
+        stage.setTitle("Arena");
+        stage.show();
     }
 }

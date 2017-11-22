@@ -12,7 +12,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="456.0" prefWidth="1080.0" style="-fx-background-color: #20120F;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="arenaClasses.TeamsController">
    <children>
-      <ImageView fitHeight="472.0" fitWidth="1092.0" layoutX="-6.0" layoutY="-9.0">
+      <ImageView fitHeight="504.0" fitWidth="1115.0" layoutX="-6.0" layoutY="-9.0">
          <image>
             <Image url="@../images/domina9.jpg" />
          </image>
@@ -79,10 +79,5 @@
             <Label fx:id="loadMe111" layoutX="120.0" layoutY="354.0" text="3) Press 'Create Team' Button " textFill="WHITE" />
          </children>
       </AnchorPane>
-      <Label fx:id="closeIcon" layoutX="1051.0" layoutY="3.0" onMouseClicked="#closeApplication" text="X" textFill="WHITE">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
    </children>
 </AnchorPane>

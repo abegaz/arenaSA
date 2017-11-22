@@ -11,7 +11,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="442.0" prefWidth="330.0" style="-fx-background-color: #20120F;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="arenaClasses.Controller">
    <children>
-      <ImageView fitHeight="456.0" fitWidth="346.0" layoutX="-9.0" layoutY="-7.0">
+      <ImageView fitHeight="469.0" fitWidth="371.0" layoutX="-9.0" layoutY="-7.0">
          <image>
             <Image url="@../images/domina9.jpg" />
          </image>
@@ -19,11 +19,6 @@
       <Label layoutX="37.0" layoutY="35.0" text="Registration Form" textFill="WHITE">
          <font>
             <Font name="Book Antiqua" size="32.0" />
-         </font>
-      </Label>
-      <Label fx:id="closeIcon" layoutX="311.0" layoutY="1.0" onMouseClicked="#closeApplication" text="X" textFill="WHITE">
-         <font>
-            <Font size="18.0" />
          </font>
       </Label>
       <AnchorPane layoutX="37.0" layoutY="84.0" prefHeight="294.0" prefWidth="257.0" style="-fx-border-color: #f4ce42; -fx-border-width: 8; -fx-background-color: BLACK;">

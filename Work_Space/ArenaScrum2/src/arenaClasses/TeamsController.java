@@ -20,7 +20,6 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 import arenaClasses.DBHandler;
 
 public class TeamsController extends Main {
@@ -111,7 +110,6 @@ private void goToLOLanding(ActionEvent event) throws Exception
         loader.setLocation(getClass().getResource("/arenaViews/leagueOwnerLanding.fxml"));
         scene = new Scene(loader.load());
         stage.setScene(scene);
-        stage.initStyle(StageStyle.UNDECORATED);
         stage.setResizable(false);
         stage.getIcons().add(new Image(getClass().getResourceAsStream("/images/arenaIcon.png")));
         stage.setTitle("Arena");
@@ -224,7 +222,6 @@ private void goBacktoPlayerLanding(ActionEvent event) throws Exception {
         loader.setLocation(getClass().getResource("/arenaViews/playerLanding.fxml"));
         scene = new Scene(loader.load());
         stage.setScene(scene);
-        stage.initStyle(StageStyle.UNDECORATED);
         stage.setResizable(false);
         stage.getIcons().add(new Image(getClass().getResourceAsStream("/images/arenaIcon.png")));
         stage.setTitle("Arena");

@@ -10,7 +10,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="549.0" prefWidth="809.0" style="-fx-background-color: #20120F;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="arenaClasses.spectController">
    <children>
-      <ImageView fx:id="specBGBannerImage" fitHeight="562.0" fitWidth="824.0" layoutX="-7.0" layoutY="-6.0">
+      <ImageView fx:id="specBGBannerImage" fitHeight="587.0" fitWidth="858.0" layoutX="-7.0" layoutY="-6.0">
          <image>
             <Image url="@../images/domina0.jpg" />
          </image>
@@ -18,11 +18,6 @@
       <Label fx:id="errorLabel" layoutX="54.0" layoutY="-38.0" text="Invalid Username / Password" textFill="#ff0f0f">
          <font>
             <Font size="15.0" />
-         </font>
-      </Label>
-      <Label fx:id="closeIcon" layoutX="777.0" layoutY="3.0" onMouseClicked="#closeApplication" text="X" textFill="WHITE">
-         <font>
-            <Font size="18.0" />
          </font>
       </Label>
       <JFXButton fx:id="spectApply" layoutX="688.0" layoutY="501.0" onAction="#goToApplicationPage" prefHeight="35.0" prefWidth="94.0" style="-fx-background-color: #f4ce42;" text="Apply" textAlignment="CENTER">
@@ -40,16 +35,21 @@
             <Font name="Book Antiqua" size="18.0" />
          </font>
       </JFXButton>
-      <AnchorPane layoutX="234.0" layoutY="55.0" prefHeight="91.0" prefWidth="333.0" style="-fx-border-color: #f4ce42; -fx-border-width: 8; -fx-background-color: BLACK;">
+      <AnchorPane layoutX="234.0" layoutY="55.0" prefHeight="122.0" prefWidth="341.0" style="-fx-border-color: #f4ce42; -fx-border-width: 8; -fx-background-color: BLACK;">
          <children>
             <Label fx:id="errorLabel1" layoutX="39.0" layoutY="26.0" text="Invalid Username / Password" textFill="#ff0f0f" visible="false">
                <font>
                   <Font size="15.0" />
                </font>
             </Label>
-            <Label layoutX="14.0" layoutY="22.0" text="Welcome Spectator" textFill="WHITE">
+            <Label layoutX="15.0" layoutY="10.0" text="Welcome Spectator" textFill="WHITE">
                <font>
                   <Font size="36.0" />
+               </font>
+            </Label>
+            <Label fx:id="playerNameLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="58.0" layoutY="61.0" text="\$SPECTATOR_NAME" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font size="25.0" />
                </font>
             </Label>
          </children>
@@ -58,7 +58,7 @@
          <children>
             <ImageView fx:id="specTopBannerImage" fitHeight="47.0" fitWidth="527.0">
                <image>
-                  <Image url="@../images/adDefaultTop.jpg" />
+                  <Image url="@../images/default1.jpg" />
                </image>
             </ImageView>
          </children>
@@ -67,7 +67,7 @@
          <children>
             <ImageView fx:id="specBottomBannerImage" fitHeight="69.0" fitWidth="516.0">
                <image>
-                  <Image url="@../images/adDefaultBottom.jpg" />
+                  <Image url="@../images/default1.jpg" />
                </image>
             </ImageView>
          </children>
@@ -76,7 +76,7 @@
          <children>
             <ImageView fx:id="specRightBannerImage" fitHeight="432.0" fitWidth="96.0">
                <image>
-                  <Image url="@../images/adDefaultRight.jpg" />
+                  <Image url="@../images/default1.jpg" />
                </image>
             </ImageView>
          </children>
@@ -85,12 +85,17 @@
          <children>
             <ImageView fx:id="specLeftBannerImage" fitHeight="432.0" fitWidth="96.0">
                <image>
-                  <Image url="@../images/adDefaultRight.jpg" />
+                  <Image url="@../images/default1.jpg" />
                </image>
             </ImageView>
          </children>
       </HBox>
-      <JFXButton fx:id="CurrentMatchesSpecButton" layoutX="152.0" layoutY="163.0" onAction="#goToCurrentMatchSpec" prefHeight="41.0" prefWidth="164.0" style="-fx-background-color: #f4ce42;" text="Current Matches" textAlignment="CENTER">
+      <JFXButton fx:id="CurrentMatchesSpecButton" layoutX="152.0" layoutY="188.0" onAction="#goToCurrentMatchSpec" prefHeight="41.0" prefWidth="164.0" style="-fx-background-color: #f4ce42;" text="Current Matches" textAlignment="CENTER">
+         <font>
+            <Font name="Book Antiqua" size="18.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="PastMatchesSpecButton" layoutX="412.0" layoutY="188.0" onAction="#goToPastMatchSpec" prefHeight="41.0" prefWidth="164.0" style="-fx-background-color: #f4ce42;" text="Past Matches" textAlignment="CENTER">
          <font>
             <Font name="Book Antiqua" size="18.0" />
          </font>

@@ -16,7 +16,6 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -56,7 +55,6 @@ public class ArenaController extends Main
         loader.setLocation(getClass().getResource("/arenaViews/operatorLanding.fxml"));
         scene = new Scene(loader.load());
         stage.setScene(scene);
-        stage.initStyle(StageStyle.UNDECORATED);
         stage.setResizable(false);
         stage.getIcons().add(new Image(getClass().getResourceAsStream("/images/arenaIcon.png")));
         stage.setTitle("Arena");

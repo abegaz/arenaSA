@@ -12,16 +12,11 @@
 
 <AnchorPane prefHeight="529.0" prefWidth="806.0" style="-fx-background-color: #20120F;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="arenaClasses.PlayerJoinLeague">
    <children>
-      <ImageView fitHeight="529.0" fitWidth="808.0" layoutY="-1.0">
+      <ImageView fitHeight="555.0" fitWidth="833.0" layoutY="-1.0">
          <image>
             <Image url="@../images/domina0.jpg" />
          </image>
       </ImageView>
-      <Label fx:id="XCloseLabel" layoutX="782.0" layoutY="14.0" onMouseClicked="#handleClose" text="X" textFill="WHITE">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
       <JFXButton fx:id="GoBackButton" layoutX="14.0" layoutY="493.0" onAction="#goBackPlayerSplash" prefHeight="30.0" prefWidth="105.0" style="-fx-background-color: #f4ce42;" text="Go Back">
          <font>
             <Font size="14.0" />

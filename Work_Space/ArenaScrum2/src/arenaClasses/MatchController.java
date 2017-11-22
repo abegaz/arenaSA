@@ -10,14 +10,11 @@ import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ResourceBundle;
-
-//import java.sql.Timestamp;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXDatePicker;
 import com.jfoenix.controls.JFXTextField;
 import com.jfoenix.controls.JFXTimePicker;
-
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -31,7 +28,6 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 import arenaClasses.DBHandler;
 import arenaModels.MatchData;
 
@@ -148,7 +144,6 @@ private void goToLOLanding(ActionEvent event) throws Exception
      loader.setLocation(getClass().getResource("/arenaViews/leagueOwnerLanding.fxml"));
      scene = new Scene(loader.load());
      stage.setScene(scene);
-     stage.initStyle(StageStyle.UNDECORATED);
      stage.setResizable(false);
      stage.getIcons().add(new Image(getClass().getResourceAsStream("/images/arenaIcon.png")));
      stage.setTitle("Arena");
@@ -184,7 +179,7 @@ private void usersToTableView(ActionEvent event) throws SQLException
 
 	matchData = FXCollections.observableArrayList();
 	// Execute query and store results
-	String getMatchDataQuery = "SELECT * FROM arenadatabase.match";
+	String getMatchDataQuery = "SELECT * FROM arenadatabase.matches";
 	try
 	{
 		ResultSet rs = connection.createStatement().executeQuery(getMatchDataQuery);
@@ -289,7 +284,6 @@ private void justDousersToTableView() throws SQLException
      loader.setLocation(getClass().getResource("/arenaViews/playerLanding.fxml"));
      scene = new Scene(loader.load());
      stage.setScene(scene);
-     stage.initStyle(StageStyle.UNDECORATED);
      stage.setResizable(false);
      stage.getIcons().add(new Image(getClass().getResourceAsStream("/images/arenaIcon.png")));
      stage.setTitle("Arena");
@@ -653,7 +647,7 @@ private void addMatch(ActionEvent event) throws SQLException, IOException
 	System.out.println(matchTeam1ID);
 	System.out.println(matchTime);
  	myConnection = DBHandler.getConnection();
- 	String addMatch = "INSERT INTO arenadatabase.match (Game_GameID,Tournament_TournamentID,MatchStatus_MatchStatusID, matchDate,teams_TeamID2,teams_TeamID1)"+ "VALUES (?,?,?,?,?,?)";
+ 	String addMatch = "INSERT INTO arenadatabase.matches (Game_GameID,Tournament_TournamentID,MatchStatus_MatchStatusID, matchDate,teams_TeamID2,teams_TeamID1)"+ "VALUES (?,?,?,?,?,?)";
  	try
  	{
  		PreparedStatement preparedStatement = myConnection.prepareStatement(addMatch);

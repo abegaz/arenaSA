@@ -11,16 +11,11 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="742.0" style="-fx-background-color: #20120F;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="arenaClasses.ArenaController">
    <children>
-      <ImageView fitHeight="412.0" fitWidth="754.0" layoutX="-5.0" layoutY="-6.0">
+      <ImageView fitHeight="442.0" fitWidth="788.0" layoutX="-5.0" layoutY="-6.0">
          <image>
             <Image url="@../images/domina7.jpg" />
          </image>
       </ImageView>
-      <Label fx:id="closeIcon" layoutX="717.0" onMouseClicked="#closeApplication" text="X" textFill="WHITE">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
       <AnchorPane layoutX="122.0" layoutY="27.0" prefHeight="303.0" prefWidth="600.0" style="-fx-border-color: #f4ce42; -fx-border-width: 8; -fx-background-color: BLACK;">
          <children>
             <Label fx:id="errorLabel" layoutX="39.0" layoutY="26.0" text="Invalid Username / Password" textFill="#ff0f0f" visible="false">

@@ -21,7 +21,6 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 
 
 
@@ -45,6 +44,10 @@ private Label closeIcon;
 private JFXButton spectApply;
 @FXML
 private JFXButton CurrentMatchesSpecButton;
+@FXML
+private JFXButton PastMatchesSpecButton;
+@FXML
+private Label playerNameLabel;
 
 Scene scene;
 Stage stage = new Stage();
@@ -59,6 +62,7 @@ public void initialize(URL location, ResourceBundle resources)
 			setSpecADLeft();
 			setSpecADRight();
 			setSpecADBG();
+			setUserName();
 
 			}
 		catch(Exception e)
@@ -66,7 +70,10 @@ public void initialize(URL location, ResourceBundle resources)
 			e.printStackTrace();
 			System.out.println("Error@ spectController.initialize");
 		}
-	} 
+	}
+private void setUserName() {
+	playerNameLabel.setText(Controller.currName);
+}
 private void setSpecADTop() throws SQLException, IOException{
 		Connection myConnection = DBHandler.getConnection();
 	    String loadImage = "default.jpg";
@@ -319,7 +326,6 @@ private void goBackToSignIn(ActionEvent event) throws Exception
 	    	loader.setLocation(getClass().getResource("/arenaViews/loginPage.fxml"));
 	    	scene = new Scene(loader.load());
 	    	stage.setScene(scene);
-	    	stage.initStyle(StageStyle.UNDECORATED);
 	    	stage.setResizable(false);
 	    	stage.getIcons().add(new Image(getClass().getResourceAsStream("/images/arenaIcon.png")));
 	    	stage.setTitle("Arena");
@@ -333,7 +339,6 @@ private void goToApplicationPage(ActionEvent event) throws Exception
         loader.setLocation(getClass().getResource("/arenaViews/spectAppPage.fxml"));
         scene = new Scene(loader.load());
         stage.setScene(scene);
-        stage.initStyle(StageStyle.UNDECORATED);
         stage.setResizable(false);
         stage.getIcons().add(new Image(getClass().getResourceAsStream("/images/arenaIcon.png")));
         stage.setTitle("Arena");
@@ -352,7 +357,18 @@ private void goToCurrentMatchSpec(ActionEvent event) throws Exception{
       loader.setLocation(getClass().getResource("/arenaViews/SpectCurrentMatch.fxml"));
       scene = new Scene(loader.load());
       stage.setScene(scene);
-      stage.initStyle(StageStyle.UNDECORATED);
+      stage.setResizable(false);
+      stage.getIcons().add(new Image(getClass().getResourceAsStream("/images/arenaIcon.png")));
+      stage.setTitle("Arena");
+      stage.show();
+      System.gc();
+      }
+@FXML
+private void goToPastMatchSpec(ActionEvent event) throws Exception{
+	PastMatchesSpecButton.getScene().getWindow().hide();
+      loader.setLocation(getClass().getResource("/arenaViews/PastMatches.fxml"));
+      scene = new Scene(loader.load());
+      stage.setScene(scene);
       stage.setResizable(false);
       stage.getIcons().add(new Image(getClass().getResourceAsStream("/images/arenaIcon.png")));
       stage.setTitle("Arena");

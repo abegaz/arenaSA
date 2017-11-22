@@ -29,7 +29,6 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 import arenaClasses.DBHandler;
 
 public class AdvertController extends Main implements Initializable{
@@ -106,7 +105,6 @@ private void goBackToSignIn(ActionEvent event) throws Exception
 	loader.setLocation(getClass().getResource("/arenaViews/loginPage.fxml"));
 	scene = new Scene(loader.load());
 	stage.setScene(scene);
-	stage.initStyle(StageStyle.UNDECORATED);
 	stage.setResizable(false);
 	stage.getIcons().add(new Image(getClass().getResourceAsStream("/images/arenaIcon.png")));
 	stage.setTitle("Arena");
