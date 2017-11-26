@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="445.0" prefWidth="1103.0" style="-fx-background-color: #20120F;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="arenaClasses.MatchManager">
+   <children>
+      <ImageView fitHeight="453.0" fitWidth="1111.0" layoutX="-8.0" layoutY="-7.0">
+         <image>
+            <Image url="@../images/domina9.jpg" />
+         </image>
+      </ImageView>
+      <JFXButton fx:id="matchesGoBack" layoutX="8.0" layoutY="393.0" onAction="#goToLOLanding" prefHeight="38.0" prefWidth="85.0" style="-fx-background-color: #f4ce42;" text="Back" textAlignment="CENTER">
+         <font>
+            <Font name="Book Antiqua" size="18.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="matchesRefreshButton" layoutX="8.0" layoutY="16.0" onAction="#matchesToTableView" prefHeight="38.0" prefWidth="85.0" style="-fx-background-color: #e09a0f;" text="Refresh" textAlignment="CENTER">
+         <font>
+            <Font name="Book Antiqua" size="18.0" />
+         </font>
+      </JFXButton>
+      <AnchorPane layoutX="102.0" layoutY="8.0" opacity="0.9" prefHeight="429.0" prefWidth="649.0" style="-fx-border-color: #f4ce42; -fx-border-width: 8; -fx-background-color: #303030;">
+         <children>
+            <BorderPane layoutX="16.0" layoutY="17.0" prefHeight="396.0" prefWidth="214.0" style="-fx-background-color: BLACK;">
+               <top>
+                  <Label alignment="CENTER" prefHeight="24.0" prefWidth="153.0" text="Manage Match" textAlignment="CENTER" textFill="WHITE" underline="true" BorderPane.alignment="CENTER">
+                     <font>
+                        <Font name="Bookman Old Style" size="20.0" />
+                     </font>
+                  </Label>
+               </top>
+            </BorderPane>
+            <JFXButton fx:id="matchCreateButton" layoutX="41.0" layoutY="363.0" onAction="#addMatch" prefHeight="38.0" prefWidth="153.0" style="-fx-background-color: #61c63f;" text="Update Match" textAlignment="CENTER">
+               <font>
+                  <Font name="Book Antiqua" size="18.0" />
+               </font>
+            </JFXButton>
+            <TableView fx:id="matchTable" layoutX="245.0" layoutY="50.0" prefHeight="259.0" prefWidth="733.0" style="-fx-background-color: #bbbbbb;">
+               <columns>
+                  <TableColumn fx:id="matchColumnMatchID" prefWidth="76.0" text="Match ID" />
+                  <TableColumn fx:id="matchColumnGameName" minWidth="0.0" prefWidth="67.0" text="Game" />
+                  <TableColumn fx:id="matchColumnLeagueName" prefWidth="62.0" text="League" />
+                  <TableColumn fx:id="matchColumnTournamentName" prefWidth="86.0" text="Tournament" /> 
+                  <TableColumn fx:id="matchColumnTeam1" prefWidth="70.0" text="Team 1" />
+                  <TableColumn fx:id="matchColumnTeam2" prefWidth="79.0" text="Team 2" />
+                  <TableColumn fx:id="matchColumnWinner" minWidth="0.0" prefWidth="79.0" text="Winner" />
+                  <TableColumn fx:id="matchColumnLoser" minWidth="0.0" prefWidth="69.0" text="Loser" />
+                  <TableColumn fx:id="matchColumnStatus" minWidth="0.0" prefWidth="70.0" text="Status" />
+                  <TableColumn fx:id="matchColumnDate" minWidth="0.0" prefWidth="74.0" text="Date" />
+               </columns>
+            </TableView>
+            <JFXComboBox fx:id="selectLoser" layoutX="42.0" layoutY="187.0" prefHeight="28.0" prefWidth="153.0" promptText="Select Loser" style="-fx-background-color: #ffffff;" />
+            <JFXComboBox fx:id="selectWinner" layoutX="42.0" layoutY="141.0" prefHeight="28.0" prefWidth="153.0" promptText="Select Winner" style="-fx-background-color: #ffffff;" />
+            <JFXComboBox fx:id="selectMatchComboBox" focusColor="WHITE" layoutX="43.0" layoutY="50.0" prefHeight="28.0" prefWidth="153.0" promptText="Select Match" style="-fx-background-color: #ffffff;" unFocusColor="#a1a1a1" />
+            
+            <JFXComboBox fx:id="selectMatchStatus" focusColor="WHITE" layoutX="42.0" layoutY="95.0" prefHeight="28.0" prefWidth="153.0" promptText="Edit Match Status" style="-fx-background-color: #ffffff;" />
+            <JFXButton fx:id="cancelMatch" layoutX="532.0" layoutY="363.0" onAction="#cancelMatch" prefHeight="38.0" prefWidth="162.0" style="-fx-background-color: #c63f3f;" text="Cancel" textAlignment="CENTER">
+               <font>
+                  <Font name="Book Antiqua" size="18.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="542.0" prefWidth="841.0" style="-fx-background-color: #20120F;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="arenaClasses.loController">
+   <children>
+      <ImageView fx:id="loBGBannerImage" fitHeight="575.0" fitWidth="909.0" layoutX="-8.0" layoutY="-6.0">
+         <image>
+            <Image url="@../images/domina9.jpg" />
+         </image>
+      </ImageView>
+      <JFXButton fx:id="signUpPageGoBackButton" layoutX="21.0" layoutY="472.0" onAction="#goBackToSignIn" prefHeight="41.0" prefWidth="98.0" style="-fx-background-color: #f4ce42;" text="Go Back" textAlignment="CENTER">
+         <font>
+            <Font name="Book Antiqua" size="18.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="leagueOwnerGoToTeamsButton" layoutX="550.0" layoutY="296.0" onAction="#goToLOTeamsPage" prefHeight="41.0" prefWidth="170.0" style="-fx-background-color: #f4ce42;" text="Manage Teams" textAlignment="CENTER">
+         <font>
+            <Font name="Book Antiqua" size="18.0" />
+         </font>
+      </JFXButton>
+      <AnchorPane layoutX="217.0" layoutY="54.0" prefHeight="121.0" prefWidth="418.0" style="-fx-border-color: #f4ce42; -fx-border-width: 8; -fx-background-color: BLACK;">
+         <children>
+            <Label fx:id="errorLabel" layoutX="39.0" layoutY="26.0" text="Invalid Username / Password" textFill="#ff0f0f" visible="false">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="15.0" layoutY="10.0" text="Welcome League Owner" textFill="WHITE">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Label>
+            <Label fx:id="playerNameLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="120.0" layoutY="61.0" text="\$PLAYER_NAME" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <JFXButton fx:id="leagueOwnerPendingButton" layoutX="131.0" layoutY="296.0" onAction="#goToLoPlayersApp" prefHeight="41.0" prefWidth="184.0" style="-fx-background-color: #f4ce42;" text="Player Team Applications" textAlignment="CENTER">
+         <font>
+            <Font name="Book Antiqua" size="14.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="leagueOwnerGoToMangLeagues" layoutX="550.0" layoutY="244.0" onAction="#goToMangLeag" prefHeight="41.0" prefWidth="170.0" style="-fx-background-color: #f4ce42;" text="Manage Leagues" textAlignment="CENTER">
+         <font>
+            <Font name="Book Antiqua" size="18.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="leagueOwnerGoToCreateLeagues" layoutX="349.0" layoutY="296.0" onAction="#goToCreateLeag" prefHeight="41.0" prefWidth="170.0" style="-fx-background-color: #f4ce42;" text="Create League" textAlignment="CENTER">
+         <font>
+            <Font name="Book Antiqua" size="18.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="LoCreateMatch" layoutX="349.0" layoutY="348.0" onAction="#goToCreateMatch" prefHeight="41.0" prefWidth="170.0" style="-fx-background-color: #f4ce42;" text="Create Match" textAlignment="CENTER">
+         <font>
+            <Font name="Book Antiqua" size="18.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="leagueOwnerGoToManageTournsButton" layoutX="550.0" layoutY="191.0" onAction="#goToTournMang" prefHeight="41.0" prefWidth="170.0" style="-fx-background-color: #f4ce42;" text="Manage Tournaments" textAlignment="CENTER">
+         <font>
+            <Font name="Book Antiqua" size="16.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="leagueOwnerGoToCreateTournsButton" layoutX="349.0" layoutY="244.0" onAction="#goToCreateTournamentsView" prefHeight="41.0" prefWidth="170.0" style="-fx-background-color: #f4ce42;" text="Create Tournament" textAlignment="CENTER">
+         <font>
+            <Font name="Book Antiqua" size="16.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="leagueOwnerGoToManagePlayers" layoutX="550.0" layoutY="348.0" onAction="#goToPlayerManagement" prefHeight="41.0" prefWidth="170.0" style="-fx-background-color: #f4ce42;" text="Manage Players" textAlignment="CENTER">
+         <font>
+            <Font name="Book Antiqua" size="18.0" />
+         </font>
+      </JFXButton>
+      <HBox layoutX="729.0" layoutY="28.0" prefHeight="432.0" prefWidth="98.0" style="-fx-border-color: #f4ce42;">
+         <children>
+            <ImageView fx:id="loRightBannerImage" fitHeight="432.0" fitWidth="96.0">
+               <image>
+                  <Image url="@../images/default1.jpg" />
+               </image>
+            </ImageView>
+         </children>
+      </HBox>
+      <HBox layoutX="21.0" layoutY="28.0" prefHeight="432.0" prefWidth="98.0" style="-fx-border-color: #f4ce42;">
+         <children>
+            <ImageView fx:id="loLeftBannerImage" fitHeight="432.0" fitWidth="96.0">
+               <image>
+                  <Image url="@../images/default1.jpg" />
+               </image>
+            </ImageView>
+         </children>
+      </HBox>
+      <HBox layoutX="155.0" layoutY="3.0" prefHeight="41.0" prefWidth="531.0" style="-fx-border-width: 2; -fx-border-color: #f4ce42;">
+         <children>
+            <ImageView fx:id="loTopBannerImage" fitHeight="47.0" fitWidth="527.0">
+               <image>
+                  <Image url="@../images/default1.jpg" />
+               </image>
+            </ImageView>
+         </children>
+      </HBox>
+      <HBox layoutX="155.0" layoutY="456.0" prefHeight="71.0" prefWidth="520.0" style="-fx-border-width: 2; -fx-border-color: #f4ce42;">
+         <children>
+            <ImageView fx:id="loBottomBannerImage" fitHeight="69.0" fitWidth="516.0">
+               <image>
+                  <Image url="@../images/default1.jpg" />
+               </image>
+            </ImageView>
+         </children>
+      </HBox>
+      <JFXButton fx:id="conductTournamentButton" layoutX="131.0" layoutY="348.0" onAction="#goToConductTournament" prefHeight="41.0" prefWidth="184.0" style="-fx-background-color: #f4ce42;" text="Conduct Tournament" textAlignment="CENTER">
+         <font>
+            <Font name="Book Antiqua" size="16.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="LoManageMatch" layoutX="349.0" layoutY="402.0" onAction="#goToManageMatch" prefHeight="41.0" prefWidth="170.0" style="-fx-background-color: #f4ce42;" text="Manage Matches" textAlignment="CENTER">
+         <font>
+            <Font name="Book Antiqua" size="18.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>
