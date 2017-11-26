@@ -161,9 +161,6 @@ public class PastMatchSpectator extends Main{
     	return null;
     }
 
-	
- 
-
     
     public void goToMatchDetail(ActionEvent event) throws IOException, SQLException
     {	

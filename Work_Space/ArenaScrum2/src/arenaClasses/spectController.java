@@ -47,6 +47,10 @@ private JFXButton CurrentMatchesSpecButton;
 @FXML
 private JFXButton PastMatchesSpecButton;
 @FXML
+private JFXButton TeamListButton;
+@FXML
+private JFXButton PlayerListButton;
+@FXML
 private Label playerNameLabel;
 
 Scene scene;
@@ -367,6 +371,30 @@ private void goToCurrentMatchSpec(ActionEvent event) throws Exception{
 private void goToPastMatchSpec(ActionEvent event) throws Exception{
 	PastMatchesSpecButton.getScene().getWindow().hide();
       loader.setLocation(getClass().getResource("/arenaViews/PastMatches.fxml"));
+      scene = new Scene(loader.load());
+      stage.setScene(scene);
+      stage.setResizable(false);
+      stage.getIcons().add(new Image(getClass().getResourceAsStream("/images/arenaIcon.png")));
+      stage.setTitle("Arena");
+      stage.show();
+      System.gc();
+      }
+@FXML
+private void goToTeamSpec(ActionEvent event) throws Exception{
+	  PastMatchesSpecButton.getScene().getWindow().hide();
+      loader.setLocation(getClass().getResource("/arenaViews/SpectatorTeams.fxml"));
+      scene = new Scene(loader.load());
+      stage.setScene(scene);
+      stage.setResizable(false);
+      stage.getIcons().add(new Image(getClass().getResourceAsStream("/images/arenaIcon.png")));
+      stage.setTitle("Arena");
+      stage.show();
+      System.gc();
+      }
+@FXML
+private void goToPlayerSpec(ActionEvent event) throws Exception{
+	PlayerListButton.getScene().getWindow().hide();
+      loader.setLocation(getClass().getResource("/arenaViews/SpectPlayer.fxml"));
       scene = new Scene(loader.load());
       stage.setScene(scene);
       stage.setResizable(false);
