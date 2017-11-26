@@ -14,6 +14,9 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
 import javafx.scene.chart.BarChart;
+import javafx.scene.chart.CategoryAxis;
+import javafx.scene.chart.NumberAxis;
+import javafx.scene.chart.XYChart;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.image.Image;
@@ -31,13 +34,18 @@ public class SpecTeamDetails extends Main{
 	@FXML
 	private JFXButton DetailsGoBackButton;
     @FXML
-    private BarChart<String, Integer> TournyWinloseChart;
-    @FXML
     private BarChart<String, Integer> MatchWinloseChart;
     @FXML
     private ListView<String> PlayerList;
+    @FXML
+    private ListView<String> TourniesWon;
+    @FXML
+    private CategoryAxis WinLoss;
+    @FXML
+    private NumberAxis Numbers;
     
     private ObservableList<String> data;
+    private ObservableList<String> data2;
 	
     public void initData(SpecTeamModel Select){
     	TeamSelected = Select;
@@ -50,12 +58,35 @@ public class SpecTeamDetails extends Main{
     	data.removeAll(data);
     	TeamSelected = Teams;
     	int TeamID =TeamSelected.getTeamID();
+    	XYChart.Series<String, Integer> series1 = new XYChart.Series<>();
+		XYChart.Series<String, Integer> series2 = new XYChart.Series<>();
+		series1.setName("Wins");
+		series2.setName("Losses");
+
     	try {
     		ResultSet rs = myConnection.createStatement().executeQuery("SELECT userName FROM users WHERE userTeamID ="+TeamID+" and userRoleID<>1");
+    		ResultSet rs2 = myConnection.createStatement().executeQuery("SELECT Count(OutcomeWin_UserID) FROM matches WHERE OutcomeWin_UserID="+TeamID+" ");
+    		ResultSet rs3 = myConnection.createStatement().executeQuery("SELECT Count(OutcomeLoss_UserID) FROM matches WHERE OutcomeLoss_UserID="+TeamID+" ");
+    		ResultSet rs4 = myConnection.createStatement().executeQuery("SELECT TournamentName FROM tournament WHERE tournamentWinner_TeamID="+TeamID+" ");
     		while (rs.next()){
     			data.add((rs.getString(1)));
     		}
+    		while (rs2.next()){
+    			Integer win = rs2.getInt(1);
+    			series1.getData().add(new XYChart.Data<String, Integer>("", win));
+    		}
+    		while (rs3.next()){
+    			Integer lose = rs3.getInt(1);
+    			series2.getData().add(new XYChart.Data<String, Integer>("", lose));
+    		}
+    		while (rs4.next()){
+    			data2.add((rs4.getString(1)));
+    		}
     		PlayerList.setItems(data);
+    		TourniesWon.setItems(data2);
+    		MatchWinloseChart.getData().add(series1);
+    		MatchWinloseChart.getData().add(series2);
+    		
     	}
         	catch(SQLException e)
             {

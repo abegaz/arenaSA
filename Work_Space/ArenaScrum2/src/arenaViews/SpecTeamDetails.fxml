@@ -24,14 +24,6 @@
                   <Font name="Book Antiqua" size="18.0" />
                </font>
             </JFXButton>
-            <BarChart fx:id="TournyWinloseChart" layoutX="14.0" layoutY="179.0" prefHeight="237.0" prefWidth="256.0">
-              <xAxis>
-                <CategoryAxis side="BOTTOM" />
-              </xAxis>
-              <yAxis>
-                <NumberAxis side="LEFT" />
-              </yAxis>
-            </BarChart>
             <BarChart fx:id="MatchWinloseChart" layoutX="295.0" layoutY="179.0" prefHeight="237.0" prefWidth="256.0">
                <xAxis>
                   <CategoryAxis side="BOTTOM" />
@@ -40,7 +32,7 @@
                   <NumberAxis side="LEFT" />
                </yAxis>
             </BarChart>
-            <Label layoutX="75.0" layoutY="135.0" text="Tournament Wins/losses" textFill="WHITE" underline="true">
+            <Label layoutX="97.0" layoutY="135.0" text="Tournament Won" textFill="WHITE" underline="true">
                <font>
                   <Font size="14.0" />
                </font>
@@ -56,6 +48,7 @@
                   <Font size="14.0" />
                </font>
             </Label>
+            <ListView fx:id="TourniesWon" layoutX="51.0" layoutY="198.0" prefHeight="200.0" prefWidth="200.0" />
          </children>
       </Pane>
    </children>
