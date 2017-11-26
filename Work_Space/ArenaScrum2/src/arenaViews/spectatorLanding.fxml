@@ -100,5 +100,15 @@
             <Font name="Book Antiqua" size="18.0" />
          </font>
       </JFXButton>
+      <JFXButton fx:id="TeamListButton" layoutX="152.0" layoutY="267.0" onAction="#goToTeamSpec" prefHeight="41.0" prefWidth="164.0" style="-fx-background-color: #f4ce42;" text="Teams" textAlignment="CENTER">
+         <font>
+            <Font name="Book Antiqua" size="18.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="PlayerListButton" layoutX="412.0" layoutY="267.0" onAction="#goToPlayerSpec" prefHeight="41.0" prefWidth="164.0" style="-fx-background-color: #f4ce42;" text="Players" textAlignment="CENTER">
+         <font>
+            <Font name="Book Antiqua" size="18.0" />
+         </font>
+      </JFXButton>
    </children>
 </AnchorPane>
