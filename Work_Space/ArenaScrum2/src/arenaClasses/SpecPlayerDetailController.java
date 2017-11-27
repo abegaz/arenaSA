@@ -64,7 +64,7 @@ public class SpecPlayerDetailController extends Main{
     	try {
     		ResultSet rs2 = myConnection.createStatement().executeQuery("SELECT Count(*) FROM playerwin WHERE users_userID="+userID+" ");
     		ResultSet rs3 = myConnection.createStatement().executeQuery("SELECT Count(*)  FROM playerlose WHERE users_userID="+userID+" ");
-    		ResultSet rs4 = myConnection.createStatement().executeQuery("SELECT TournamentName FROM tournament, playertournywin, users WHERE Tournament_TournamentID = TournamentID and users_userID="+userID+" ");
+    		ResultSet rs4 = myConnection.createStatement().executeQuery("SELECT TournamentName FROM tournament, playertournywin WHERE Tournament_TournamentID = TournamentID and users_userID="+userID+" ");
 
     		while (rs2.next()){
     			Integer win = rs2.getInt(1);
