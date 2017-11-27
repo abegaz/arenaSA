@@ -55,7 +55,9 @@ public class SpecTeamDetails extends Main{
     public void initalize(SpecTeamModel Teams) throws SQLException{
     	Connection myConnection = DBHandler.getConnection();
     	data = FXCollections.observableArrayList();
+    	data2 = FXCollections.observableArrayList();
     	data.removeAll(data);
+    	data2.removeAll(data2);
     	TeamSelected = Teams;
     	int TeamID =TeamSelected.getTeamID();
     	XYChart.Series<String, Integer> series1 = new XYChart.Series<>();

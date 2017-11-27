@@ -56,7 +56,7 @@ public class SpecTeamController extends Main{
     	data = FXCollections.observableArrayList();
     	data.removeAll(data);
     	try {
-    		ResultSet rs = myConnection.createStatement().executeQuery("Select TeamID, TeamName FROM teams");
+    		ResultSet rs = myConnection.createStatement().executeQuery("Select TeamID, TeamName FROM teams WHERE TeamID<>0");
     		while (rs.next()){
 
     			data.add(new SpecTeamModel(rs.getInt("TeamID"),rs.getString("TeamName")));
@@ -84,7 +84,7 @@ public class SpecTeamController extends Main{
     	data = FXCollections.observableArrayList();
     	data.removeAll(data);
     	try {
-    		ResultSet rs = myConnection.createStatement().executeQuery("Select TeamID, TeamName FROM teams");
+    		ResultSet rs = myConnection.createStatement().executeQuery("Select TeamID, TeamName FROM teams WHERE TeamID<>0");
     		while (rs.next()){
 
     			data.add(new SpecTeamModel(rs.getInt("TeamID"),rs.getString("TeamName")));

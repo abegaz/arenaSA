@@ -684,9 +684,28 @@ public class TournamentConductController extends Main implements Initializable
     		System.out.println("Declared Winner: " + declaredWinner);
     		System.out.println("Declared Losser: " + declaredLosser);
     		String setMatchWinnerUpdateQuery = "UPDATE matches SET OutcomeWin_UserID ='"+ declaredWinner +"', OutcomeLoss_UserID='"+ declaredLosser +"' WHERE MatchID= ? and Game_GameID= ? and teams_TeamID2 = ? and teams_TeamID1 = ?";
-
+    		String winnerPlayers = "INSERT INTO playerwin "+ "VALUES(?,?)";
+    		String loserPlayers = "INSERT INTO playerlose "+ "VALUES(?,?)";
+    		
 			Connection connection = DBHandler.getConnection();
 
+			ResultSet rs = connection.createStatement().executeQuery("SELECT userID FROM users WHERE userTeamID ="+declaredWinner+" ");
+			ResultSet rs2 = connection.createStatement().executeQuery("SELECT userID FROM users WHERE userTeamID ="+declaredLosser+" ");
+			while (rs.next()){
+				int win = rs.getInt(1);
+				PreparedStatement winners = connection.prepareStatement(winnerPlayers);
+				winners.setString(1, currentMatchID);
+				winners.setInt(2, win);
+				winners.executeUpdate();
+			}
+			while (rs2.next()){
+				int lose = rs2.getInt(1);
+				PreparedStatement losers = connection.prepareStatement(loserPlayers);
+				losers.setString(1, currentMatchID);
+				losers.setInt(2, lose);
+				losers.executeUpdate();
+				
+			}
 			PreparedStatement pendApprovalScoreStatus = connection.prepareStatement(setMatchWinnerUpdateQuery);
 			pendApprovalScoreStatus.setString(1, currentMatchID);
 			pendApprovalScoreStatus.setString(2, currentMatchGameID);
@@ -774,9 +793,18 @@ public class TournamentConductController extends Main implements Initializable
 			String selectedTournamentID = selectTournamentConductTour.getSelectionModel().getSelectedItem().getKey();
 			System.out.println(selectTournamentWinnerTeamID + ": " + selectTournamentWinnerTeamName);
 
+			String winnerPlayers = "INSERT INTO playertournywin "+ "VALUES(?,?)";
 			String declareTournamentWinnerQuery = "UPDATE tournament SET tournamentWinner_TeamID= ? WHERE TournamentID = ?";
 			Connection connection = DBHandler.getConnection();
+			ResultSet rs = connection.createStatement().executeQuery("SELECT userID FROM users WHERE userTeamID ="+selectTournamentWinnerTeamID+" ");
 
+			while (rs.next()){
+				int win = rs.getInt(1);
+				PreparedStatement winners = connection.prepareStatement(winnerPlayers);
+				winners.setString(1, selectedTournamentID);
+				winners.setInt(2, win);
+				winners.executeUpdate();
+			}
 			PreparedStatement declareTournamentWinner = connection.prepareStatement(declareTournamentWinnerQuery);
 			declareTournamentWinner.setString(1, selectTournamentWinnerTeamID);
 			declareTournamentWinner.setString(2, selectedTournamentID);
