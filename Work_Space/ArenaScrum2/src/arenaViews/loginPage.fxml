@@ -9,19 +9,19 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="loginBGPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="459.0" prefWidth="529.0" style="-fx-background-color: BLACK;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="arenaClasses.Controller">
+<AnchorPane fx:id="loginBGPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="459.0" prefWidth="529.0" style="-fx-background-color: BLACK;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="arenaClasses.Controller">
    <children>
       <ImageView fitHeight="489.0" fitWidth="557.0" layoutX="-2.0" opacity="0.43" pickOnBounds="true">
          <image>
             <Image url="@../images/domina3.jpg" />
          </image>
       </ImageView>
-      <Label alignment="CENTER" layoutX="148.0" layoutY="361.0" prefHeight="53.0" prefWidth="257.0" text="New to Arena?  Sign up today!" textFill="#ddd3d3">
+      <Label alignment="CENTER" layoutX="60.0" layoutY="361.0" prefHeight="53.0" prefWidth="434.0" text="New to Arena?  Sign up today or continue as Guest!" textFill="#ddd3d3">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <JFXButton fx:id="loginPageSignUpButton" layoutX="216.0" layoutY="406.0" onAction="#goToSignUp" prefHeight="41.0" prefWidth="107.0" style="-fx-background-color: #f4ce42;" text="Sign Up" textAlignment="CENTER">
+      <JFXButton fx:id="loginPageSignUpButton" layoutX="135.0" layoutY="406.0" onAction="#goToSignUp" prefHeight="41.0" prefWidth="107.0" style="-fx-background-color: #f4ce42;" text="Sign Up" textAlignment="CENTER">
          <font>
             <Font name="Book Antiqua" size="21.0" />
          </font></JFXButton>
@@ -69,5 +69,10 @@
             </Label>
          </children>
       </AnchorPane>
+      <JFXButton fx:id="GuestButton" layoutX="301.0" layoutY="406.0" onAction="#goToGuestLanding" prefHeight="41.0" prefWidth="107.0" style="-fx-background-color: #f4ce42;" text="Guest" textAlignment="CENTER">
+         <font>
+            <Font name="Book Antiqua" size="21.0" />
+         </font>
+      </JFXButton>
    </children>
 </AnchorPane>

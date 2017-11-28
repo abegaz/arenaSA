@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="601.0" prefWidth="981.0" style="-fx-background-color: #20120F;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="arenaClasses.spectController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="601.0" prefWidth="981.0" style="-fx-background-color: #20120F;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="arenaClasses.GuestController">
    <children>
       <ImageView fx:id="specBGBannerImage" fitHeight="614.0" fitWidth="999.0" layoutX="-7.0" layoutY="-6.0">
          <image>
@@ -19,16 +19,6 @@
       <Label fx:id="errorLabel" layoutX="54.0" layoutY="-38.0" text="Invalid Username / Password" textFill="#ff0f0f">
          <font>
             <Font size="15.0" />
-         </font>
-      </Label>
-      <JFXButton fx:id="spectApply" layoutX="873.0" layoutY="542.0" onAction="#goToApplicationPage" prefHeight="35.0" prefWidth="94.0" style="-fx-background-color: #f4ce42;" text="Apply" textAlignment="CENTER">
-         <font>
-            <Font name="Book Antiqua" size="18.0" />
-         </font>
-      </JFXButton>
-      <Label layoutX="861.0" layoutY="510.0" prefHeight="21.0" prefWidth="118.0" text="Want To Do More?" textFill="WHITE">
-         <font>
-            <Font size="14.0" />
          </font>
       </Label>
       <JFXButton fx:id="signUpPageGoBackButton" layoutX="14.0" layoutY="536.0" onAction="#goBackToSignIn" prefHeight="41.0" prefWidth="94.0" style="-fx-background-color: #f4ce42;" text="Go Back" textAlignment="CENTER">
@@ -43,14 +33,9 @@
                   <Font size="15.0" />
                </font>
             </Label>
-            <Label layoutX="15.0" layoutY="10.0" text="Welcome Spectator" textFill="WHITE">
+            <Label layoutX="15.0" layoutY="10.0" text="Welcome Guest" textFill="WHITE">
                <font>
                   <Font size="36.0" />
-               </font>
-            </Label>
-            <Label fx:id="playerNameLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="58.0" layoutY="61.0" text="\$SPECTATOR_NAME" textAlignment="CENTER" textFill="WHITE">
-               <font>
-                  <Font size="25.0" />
                </font>
             </Label>
          </children>

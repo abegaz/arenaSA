@@ -61,6 +61,18 @@ public class CurrentMatchSpectator extends Main{
         stage.show();
 	}
 	
+	@FXML
+	private void goToGuestLanding() throws IOException{
+    	GoBackButton.getScene().getWindow().hide();
+        loader.setLocation(getClass().getResource("/arenaViews/GuestLanding.fxml"));
+        scene = new Scene(loader.load());
+        stage.setScene(scene);
+        stage.setResizable(false);
+        stage.getIcons().add(new Image(getClass().getResourceAsStream("/images/arenaIcon.png")));
+        stage.setTitle("Arena");
+        stage.show();
+	}
+	
     @FXML
     private void closeApplication(MouseEvent event) {
         System.exit(0);

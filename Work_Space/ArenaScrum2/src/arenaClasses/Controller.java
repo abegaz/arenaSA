@@ -41,6 +41,8 @@ private JFXButton loginPageSignUpButton;
 @FXML
 private JFXButton loginPageSignInButton;
 @FXML
+private JFXButton GuestButton;
+@FXML
 private ImageView loadingGif;
 @FXML
 private JFXTextField loginPageUserNameTextField;
@@ -746,6 +748,19 @@ private void opGoToManageArenas(ActionEvent event) throws IOException, SQLExcept
  {
  	opManageArenaButton.getScene().getWindow().hide();
      loader.setLocation(getClass().getResource("/arenaViews/ManageArena.fxml"));
+     scene = new Scene(loader.load());
+     stage.setScene(scene);
+     stage.setResizable(false);
+     stage.getIcons().add(new Image(getClass().getResourceAsStream("/images/arenaIcon.png")));
+     stage.setTitle("Arena");
+     stage.show();
+     System.gc();
+ }
+@FXML
+private void goToGuestLanding(ActionEvent event) throws IOException, SQLException
+ {
+ 	 GuestButton.getScene().getWindow().hide();
+     loader.setLocation(getClass().getResource("/arenaViews/GuestLanding.fxml"));
      scene = new Scene(loader.load());
      stage.setScene(scene);
      stage.setResizable(false);

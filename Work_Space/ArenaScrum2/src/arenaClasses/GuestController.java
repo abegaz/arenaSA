@@ -28,7 +28,7 @@ import javafx.stage.Stage;
 
 
 
-public class spectController extends Main  implements Initializable {
+public class GuestController extends Main  implements Initializable {
 	
 @FXML
 private ImageView specTopBannerImage;
@@ -82,7 +82,6 @@ public void initialize(URL location, ResourceBundle resources)
 			setSpecADLeft();
 			setSpecADRight();
 			setSpecADBG();
-			setUserName();
 			loadArenasFromDatabase();
 			loadLeagueFromDatabase(); 
 			loadTournFromDatabase();
@@ -96,9 +95,7 @@ public void initialize(URL location, ResourceBundle resources)
 			System.out.println("Error@ spectController.initialize");
 		}
 	}
-private void setUserName() {
-	playerNameLabel.setText(Controller.currName);
-}
+
 private void setSpecADTop() throws SQLException, IOException{
 		Connection myConnection = DBHandler.getConnection();
 	    String loadImage = "default.jpg";
@@ -376,18 +373,7 @@ private void closeApplication(MouseEvent event)
 	    System.gc();
         System.exit(0);
     }
-@FXML
-private void goToCurrentMatchSpec(ActionEvent event) throws Exception{
-	  CurrentMatchesSpecButton.getScene().getWindow().hide();
-      loader.setLocation(getClass().getResource("/arenaViews/SpectCurrentMatch.fxml"));
-      scene = new Scene(loader.load());
-      stage.setScene(scene);
-      stage.setResizable(false);
-      stage.getIcons().add(new Image(getClass().getResourceAsStream("/images/arenaIcon.png")));
-      stage.setTitle("Arena");
-      stage.show();
-      System.gc();
-      }
+
 private void loadArenasFromDatabase() throws SQLException
 {
 	Connection connection = DBHandler.getConnection();
@@ -497,9 +483,21 @@ private void loadPlayersFromDatabase() throws SQLException{
 	}
 }
 @FXML
+private void goToCurrentMatchSpec(ActionEvent event) throws Exception{
+	  CurrentMatchesSpecButton.getScene().getWindow().hide();
+      loader.setLocation(getClass().getResource("/arenaViews/GuestCurrentMatches.fxml"));
+      scene = new Scene(loader.load());
+      stage.setScene(scene);
+      stage.setResizable(false);
+      stage.getIcons().add(new Image(getClass().getResourceAsStream("/images/arenaIcon.png")));
+      stage.setTitle("Arena");
+      stage.show();
+      System.gc();
+      }
+@FXML
 private void goToPastMatchSpec(ActionEvent event) throws Exception{
 	PastMatchesSpecButton.getScene().getWindow().hide();
-      loader.setLocation(getClass().getResource("/arenaViews/PastMatches.fxml"));
+      loader.setLocation(getClass().getResource("/arenaViews/GuestPastMatches.fxml"));
       scene = new Scene(loader.load());
       stage.setScene(scene);
       stage.setResizable(false);
@@ -511,7 +509,7 @@ private void goToPastMatchSpec(ActionEvent event) throws Exception{
 @FXML
 private void goToTeamSpec(ActionEvent event) throws Exception{
 	  PastMatchesSpecButton.getScene().getWindow().hide();
-      loader.setLocation(getClass().getResource("/arenaViews/SpectatorTeams.fxml"));
+      loader.setLocation(getClass().getResource("/arenaViews/GuestTeams.fxml"));
       scene = new Scene(loader.load());
       stage.setScene(scene);
       stage.setResizable(false);
@@ -523,7 +521,7 @@ private void goToTeamSpec(ActionEvent event) throws Exception{
 @FXML
 private void goToPlayerSpec(ActionEvent event) throws Exception{
 	PlayerListButton.getScene().getWindow().hide();
-      loader.setLocation(getClass().getResource("/arenaViews/SpectPlayer.fxml"));
+      loader.setLocation(getClass().getResource("/arenaViews/GuestPlayers.fxml"));
       scene = new Scene(loader.load());
       stage.setScene(scene);
       stage.setResizable(false);
@@ -533,4 +531,3 @@ private void goToPlayerSpec(ActionEvent event) throws Exception{
       System.gc();
       }
 }
-

@@ -50,6 +50,18 @@ public class SpecTeamController extends Main{
         stage.show();
 	}
 	
+	@FXML
+	private void goToGuestLanding() throws IOException{
+    	GoBackButton.getScene().getWindow().hide();
+        loader.setLocation(getClass().getResource("/arenaViews/GuestLanding.fxml"));
+        scene = new Scene(loader.load());
+        stage.setScene(scene);
+        stage.setResizable(false);
+        stage.getIcons().add(new Image(getClass().getResourceAsStream("/images/arenaIcon.png")));
+        stage.setTitle("Arena");
+        stage.show();
+	}
+	
     @FXML
     private void LoadTeams() throws SQLException {
     	Connection myConnection = DBHandler.getConnection();
@@ -109,6 +121,22 @@ public class SpecTeamController extends Main{
     {	
     	TeamDetailsButton.getScene().getWindow().hide();
         loader.setLocation(getClass().getResource("/arenaViews/SpecTeamDetails.fxml"));
+        scene = new Scene(loader.load());
+        stage.setScene(scene);
+        SpecTeamDetails controller = loader.getController();
+        controller.initData(TeamListTable.getSelectionModel().getSelectedItem());
+        SpecTeamDetails controller2 = loader.getController();
+        controller2.initalize(TeamListTable.getSelectionModel().getSelectedItem());
+        stage.setResizable(false);
+        stage.getIcons().add(new Image(getClass().getResourceAsStream("/images/arenaIcon.png")));
+        stage.setTitle("Arena");
+        stage.show();
+    }
+    
+    public void LoadGuestTeamDetails(ActionEvent event) throws IOException, SQLException
+    {	
+    	TeamDetailsButton.getScene().getWindow().hide();
+        loader.setLocation(getClass().getResource("/arenaViews/GuestTeamDetails.fxml"));
         scene = new Scene(loader.load());
         stage.setScene(scene);
         SpecTeamDetails controller = loader.getController();

@@ -114,11 +114,37 @@ public class SpecPlayerController extends Main{
         stage.setTitle("Arena");
         stage.show();
     }
+    @FXML
+    void LoadGuestPlayerDetails(ActionEvent event) throws IOException, SQLException {
+    	PlayerDetailsButton.getScene().getWindow().hide();
+        loader.setLocation(getClass().getResource("/arenaViews/GuestPlayerDetails.fxml"));
+        scene = new Scene(loader.load());
+        stage.setScene(scene);
+        SpecPlayerDetailController controller = loader.getController();
+        controller.initData(PlayerListTable.getSelectionModel().getSelectedItem());
+        SpecPlayerDetailController controller2 = loader.getController();
+        controller2.initalize(PlayerListTable.getSelectionModel().getSelectedItem());
+        stage.setResizable(false);
+        stage.getIcons().add(new Image(getClass().getResourceAsStream("/images/arenaIcon.png")));
+        stage.setTitle("Arena");
+        stage.show();
+    }
 
     @FXML
     void goToSpecLanding(ActionEvent event) throws IOException {
     	GoBackButton.getScene().getWindow().hide();
         loader.setLocation(getClass().getResource("/arenaViews/spectatorLanding.fxml"));
+        scene = new Scene(loader.load());
+        stage.setScene(scene);
+        stage.setResizable(false);
+        stage.getIcons().add(new Image(getClass().getResourceAsStream("/images/arenaIcon.png")));
+        stage.setTitle("Arena");
+        stage.show();
+    }
+    @FXML
+    void goToGuestLanding(ActionEvent event) throws IOException {
+    	GoBackButton.getScene().getWindow().hide();
+        loader.setLocation(getClass().getResource("/arenaViews/GuestLanding.fxml"));
         scene = new Scene(loader.load());
         stage.setScene(scene);
         stage.setResizable(false);

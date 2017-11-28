@@ -65,6 +65,18 @@ public class PastMatchSpectator extends Main{
         stage.show();
 	}
 	
+	@FXML
+	private void goToGuestLanding() throws IOException{
+    	GoBackButton.getScene().getWindow().hide();
+        loader.setLocation(getClass().getResource("/arenaViews/GuestLanding.fxml"));
+        scene = new Scene(loader.load());
+        stage.setScene(scene);
+        stage.setResizable(false);
+        stage.getIcons().add(new Image(getClass().getResourceAsStream("/images/arenaIcon.png")));
+        stage.setTitle("Arena");
+        stage.show();
+	}
+	
     @FXML
     private void closeApplication(MouseEvent event) {
         System.exit(0);
@@ -76,7 +88,7 @@ public class PastMatchSpectator extends Main{
     	data = FXCollections.observableArrayList();
     	data.removeAll(data);
     	try {
-    		ResultSet rs = myConnection.createStatement().executeQuery("Select M.MatchID, G.GameName, L.LeagueName, T.TournamentName, M.teams_TeamID1, M.teams_TeamID2, S.Team1_Score, S.Team2_Score FROM league AS L, tournament AS T, scores AS S, teams AS A, teams AS B, matches AS M, game AS G WHERE M.Game_GameID=G.GameID and S.match_MatchID = M.MatchID and L.LeagueID=T.League_LeagueID and T.TournamentID=M.Tournament_TournamentID and A.TeamID=M.teams_TeamID1 and B.TeamID=M.teams_TeamID2 and M.MatchStatus_MatchStatusID=2 and ScoreStatusTable_idScoreStatusTable=4");
+    		ResultSet rs = myConnection.createStatement().executeQuery("Select M.MatchID, G.GameName, L.LeagueName, T.TournamentName, M.teams_TeamID1, M.teams_TeamID2, S.Team1_Score, S.Team2_Score FROM league AS L, tournament AS T, scores AS S, teams AS A, teams AS B, matches AS M, game AS G WHERE M.Game_GameID=G.GameID and S.match_MatchID = M.MatchID and L.LeagueID=T.League_LeagueID and T.TournamentID=M.Tournament_TournamentID and A.TeamID=M.teams_TeamID1 and B.TeamID=M.teams_TeamID2 and M.MatchStatus_MatchStatusID=2 and ScoreStatusTable_idScoreStatusTable<>1 and ScoreStatusTable_idScoreStatusTable<>3 and ScoreStatusTable_idScoreStatusTable<>4");
     		while (rs.next()){
     			String teamname1 = getTeamNameWithTeamID(rs.getString("teams_TeamID1"));
     			String teamname2 = getTeamNameWithTeamID(rs.getString("teams_TeamID2"));
@@ -110,7 +122,7 @@ public class PastMatchSpectator extends Main{
     	data.removeAll(data);
     	
     	try {
-    		ResultSet rs = myConnection.createStatement().executeQuery("Select M.MatchID, G.GameName, L.LeagueName, T.TournamentName, M.teams_TeamID1, M.teams_TeamID2, S.Team1_Score, S.Team2_Score FROM league AS L, tournament AS T, scores AS S, teams AS A, teams AS B, matches AS M, game AS G WHERE M.Game_GameID=G.GameID and S.match_MatchID = M.MatchID and L.LeagueID=T.League_LeagueID and T.TournamentID=M.Tournament_TournamentID and A.TeamID=M.teams_TeamID1 and B.TeamID=M.teams_TeamID2 and M.MatchStatus_MatchStatusID=2 and ScoreStatusTable_idScoreStatusTable=4");
+    		ResultSet rs = myConnection.createStatement().executeQuery("Select M.MatchID, G.GameName, L.LeagueName, T.TournamentName, M.teams_TeamID1, M.teams_TeamID2, S.Team1_Score, S.Team2_Score FROM league AS L, tournament AS T, scores AS S, teams AS A, teams AS B, matches AS M, game AS G WHERE M.Game_GameID=G.GameID and S.match_MatchID = M.MatchID and L.LeagueID=T.League_LeagueID and T.TournamentID=M.Tournament_TournamentID and A.TeamID=M.teams_TeamID1 and B.TeamID=M.teams_TeamID2 and M.MatchStatus_MatchStatusID=2 and ScoreStatusTable_idScoreStatusTable<>1 and ScoreStatusTable_idScoreStatusTable<>3 and ScoreStatusTable_idScoreStatusTable<>4");
     		while (rs.next()){
         		String teamname1 = getTeamNameWithTeamID(rs.getString("teams_TeamID1"));
     			String teamname2 = getTeamNameWithTeamID(rs.getString("teams_TeamID2"));
@@ -166,6 +178,22 @@ public class PastMatchSpectator extends Main{
     {	
     	MatchDetailsButton.getScene().getWindow().hide();
         loader.setLocation(getClass().getResource("/arenaViews/PastMatchDetails.fxml"));
+        scene = new Scene(loader.load());
+        stage.setScene(scene);
+        PastMatchDetailsController controller = loader.getController();
+        controller.initData(SpecCurrentTable.getSelectionModel().getSelectedItem());
+        PastMatchDetailsController controller2 = loader.getController();
+        controller2.initalize(SpecCurrentTable.getSelectionModel().getSelectedItem());
+        stage.setResizable(false);
+        stage.getIcons().add(new Image(getClass().getResourceAsStream("/images/arenaIcon.png")));
+        stage.setTitle("Arena");
+        stage.show();
+    }
+    
+    public void goToGuestMatchDetail(ActionEvent event) throws IOException, SQLException
+    {	
+    	MatchDetailsButton.getScene().getWindow().hide();
+        loader.setLocation(getClass().getResource("/arenaViews/GuestPastMatchesDetails.fxml"));
         scene = new Scene(loader.load());
         stage.setScene(scene);
         PastMatchDetailsController controller = loader.getController();

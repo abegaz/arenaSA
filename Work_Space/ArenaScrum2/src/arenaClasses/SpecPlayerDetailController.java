@@ -103,4 +103,15 @@ public class SpecPlayerDetailController extends Main{
         stage.setTitle("Arena");
         stage.show();
 	}
+	@FXML
+	private void goBackToGuestPlayer() throws IOException{
+		DetailsGoBackButton.getScene().getWindow().hide();
+        loader.setLocation(getClass().getResource("/arenaViews/GuestPlayers.fxml"));
+        scene = new Scene(loader.load());
+        stage.setScene(scene);
+        stage.setResizable(false);
+        stage.getIcons().add(new Image(getClass().getResourceAsStream("/images/arenaIcon.png")));
+        stage.setTitle("Arena");
+        stage.show();
+	}
 }
