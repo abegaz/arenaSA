@@ -12,7 +12,7 @@ public class MatchData
 	private SimpleStringProperty team1Name;
 	private SimpleStringProperty team2Name;
 	private SimpleStringProperty matchWinner;
-	private SimpleStringProperty matchLosser;
+	private SimpleStringProperty matchLoser;
 	private SimpleStringProperty matchStatus;
 	private SimpleStringProperty matchDate;
 
@@ -24,7 +24,7 @@ public class MatchData
 			String team1Name,
 			String team2Name,
 			String matchWinner,
-			String matchLosser,
+			String matchLoser,
 			String matchStatus,
 			String matchDate)
 		{
@@ -35,7 +35,7 @@ public class MatchData
 			this.team1Name = new SimpleStringProperty(team1Name);
 			this.team2Name = new SimpleStringProperty(team2Name);
 			this.matchWinner = new SimpleStringProperty(matchWinner);
-			this.matchLosser = new SimpleStringProperty(matchLosser);
+			this.matchLoser = new SimpleStringProperty(matchLoser);
 			this.matchStatus = new SimpleStringProperty(matchStatus);
 			this.matchDate = new SimpleStringProperty(matchDate);
 		}
@@ -131,17 +131,17 @@ public class MatchData
 		return matchWinner;
 	}
 
-	public String getmatchLosser()
+	public String getmatchLoser()
 	{
-		return matchLosser.get();
+		return matchLoser.get();
 	}
-	public void setmatchLosser(String Value)
+	public void setmatchLoser(String Value)
 	{
-		matchLosser.set(Value);
+		matchLoser.set(Value);
 	}
-	public StringProperty matchLosserProperty()
+	public StringProperty matchLoserProperty()
 	{
-		return matchLosser;
+		return matchLoser;
 	}
 
 	public String getmatchStatus()
