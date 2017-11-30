@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="539.0" prefWidth="897.0" style="-fx-background-color: #20120F;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="arenaClasses.AdvertController">
+   <children>
+      <ImageView fitHeight="569.0" fitWidth="928.0" layoutX="-3.0" layoutY="-11.0">
+         <image>
+            <Image url="@../images/domina0.jpg" />
+         </image>
+      </ImageView>
+      <JFXButton fx:id="signUpPageGoBackButton" layoutX="7.0" layoutY="492.0" onAction="#goBackToSignIn" prefHeight="41.0" prefWidth="94.0" style="-fx-background-color: #f4ce42;" text="Go Back" textAlignment="CENTER">
+         <font>
+            <Font name="Book Antiqua" size="18.0" />
+         </font>
+      </JFXButton>
+      <AnchorPane layoutX="286.0" prefHeight="88.0" prefWidth="349.0" style="-fx-border-color: #f4ce42; -fx-border-width: 8; -fx-background-color: BLACK;">
+         <children>
+            <Label layoutX="14.0" layoutY="19.0" text="Welcome Advertiser" textFill="WHITE">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="522.0" layoutY="366.0" prefHeight="157.0" prefWidth="346.0" style="-fx-border-color: #f4ce42; -fx-border-width: 8; -fx-background-color: BLACK;">
+         <children>
+            <Label layoutX="142.0" layoutY="9.0" text="Balance" textFill="WHITE" underline="true">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="14.0" layoutY="76.0" text="Due: $" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="advertAmountDue" layoutX="65.0" layoutY="76.0" text="A_NUMBER" textFill="#ee4d4d" underline="true">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="adPayAmountField" alignment="CENTER" focusColor="#26ae48" layoutX="146.0" layoutY="41.0" prefHeight="25.0" prefWidth="102.0" promptText="000.00" style="-fx-text-inner-color: #FFFFFF; -fx-prompt-text-fill: #FFFFFF; -fx-background-color: #000000;" unFocusColor="#f4ce42">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </JFXTextField>
+            <Label layoutX="15.0" layoutY="42.0" text="Amount to Pay:" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <JFXButton fx:id="advertPayBalance" layoutX="260.0" layoutY="35.0" onAction="#payAdBal" prefHeight="41.0" prefWidth="70.0" style="-fx-background-color: #61c63f;" text="PAY" textAlignment="CENTER">
+               <font>
+                  <Font name="Book Antiqua Bold" size="18.0" />
+               </font>
+            </JFXButton>
+            <Label layoutX="236.0" layoutY="43.0" prefHeight="29.0" prefWidth="26.0" text="⇒" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="22.0" />
+               </font>
+            </Label>
+            <Label fx:id="balSuccess" layoutX="14.0" layoutY="103.0" prefHeight="20.0" prefWidth="304.0" text="success" textFill="#22ff4e" visible="false" />
+            <Label fx:id="balError" layoutX="14.0" layoutY="103.0" prefHeight="35.0" prefWidth="304.0" text="error" textFill="#e13e3e" visible="false" wrapText="true" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="189.0" layoutY="88.0" prefHeight="285.0" prefWidth="663.0" style="-fx-border-color: #f4ce42; -fx-border-width: 8; -fx-background-color: BLACK;">
+         <children>
+            <Label layoutX="14.0" layoutY="13.0" text="Who Will See The Ad:" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="343.0" layoutY="13.0" text="Ad Image:" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <AnchorPane layoutX="-102.0" layoutY="99.0" prefHeight="164.0" prefWidth="427.0" style="-fx-border-color: #f4ce42; -fx-border-width: 8; -fx-background-color: BLACK;">
+               <children>
+                  <JFXButton fx:id="adImageUpload" layoutX="145.0" layoutY="90.0" onAction="#uploadImageToDB" prefHeight="41.0" prefWidth="77.0" style="-fx-background-color: #26ae48;" text="Upload" textAlignment="CENTER">
+                     <font>
+                        <Font name="Book Antiqua" size="16.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="adImageSelect" layoutX="14.0" layoutY="90.0" onAction="#selectImageToUpload" prefHeight="41.0" prefWidth="115.0" style="-fx-background-color: #7da8ed;" text="Select Image" textAlignment="CENTER">
+                     <font>
+                        <Font name="Book Antiqua" size="16.0" />
+                     </font>
+                  </JFXButton>
+                  <Label layoutX="22.0" layoutY="12.0" text="Add New Image:" textFill="WHITE">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="adImageUploadSuccessMessage" layoutX="203.0" layoutY="64.0" text="Upload Success!" textFill="#31e047" visible="false">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="adImageUploadFailMessage" layoutX="209.0" layoutY="64.0" prefHeight="25.0" prefWidth="102.0" text="Upload Failed" textFill="#e13030" visible="false">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="21.0" layoutY="29.0" text="*Must be .jpg, or .jpeg." textFill="#6b6868" underline="true" />
+                  <Label fx:id="adUploadTempName" layoutX="22.0" layoutY="133.0" prefHeight="17.0" prefWidth="196.0" textFill="#fcff4c" visible="false" />
+                  <JFXButton fx:id="adImageRemove" layoutX="315.0" layoutY="64.0" onAction="#removeImageFromDB" prefHeight="41.0" prefWidth="86.0" style="-fx-background-color: #f22409;" text="Remove" textAlignment="CENTER">
+                     <font>
+                        <Font name="Book Antiqua" size="16.0" />
+                     </font>
+                  </JFXButton>
+                  <Label layoutX="275.0" layoutY="11.0" text="Remove Image: ⇓" textFill="WHITE">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <JFXComboBox fx:id="adImageRemoveChoiceBox" focusColor="#26ae48" layoutX="288.0" layoutY="37.0" prefHeight="25.0" prefWidth="123.0" promptText="Select Image" style="-fx-background-color: #FFFFFF;" unFocusColor="#f4ce42" />
+                  <Label fx:id="adRemoveSuccessOne" layoutX="328.0" layoutY="110.0" text="Removal" textFill="#41dd4b" visible="false">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="adRemoveSuccessTwo" layoutX="331.0" layoutY="129.0" text="Success" textFill="#41dd4b" visible="false">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="adRemoveFailOne" layoutX="328.0" layoutY="110.0" text="Removal" textFill="#ff2b2b" visible="false">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="adRemoveFailTwo" layoutX="337.0" layoutY="129.0" text="Failed" textFill="#ff2b2b" visible="false">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="22.0" layoutY="41.0" text="Image Names Must Be Unique" textFill="#6b6868" underline="true" />
+                  <Label layoutX="22.0" layoutY="54.0" text="Image Must Be Smaller Than 1MB" textFill="#6b6868" underline="true" />
+                  <Label fx:id="adImageSizeError" layoutX="240.0" layoutY="98.0" text="Too Large" textFill="#ee2121" visible="false">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <Label layoutX="158.0" layoutY="13.0" text=" Ad Scheme:" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <JFXButton fx:id="adImageSet" layoutX="530.0" layoutY="32.0" onAction="#setButtonFunctionality" prefHeight="29.0" prefWidth="70.0" style="-fx-background-color: #ffbf1e;" text="SET" textAlignment="CENTER">
+               <font>
+                  <Font name="Book Antiqua Bold" size="18.0" />
+               </font>
+            </JFXButton>
+            <JFXComboBox fx:id="adRoleChoiceBox" focusColor="#26ae48" layoutX="13.0" layoutY="37.0" prefHeight="25.0" prefWidth="133.0" promptText="Select Role" style="-fx-background-color: #FFFFFF;" unFocusColor="#f4ce42" />
+            <JFXComboBox fx:id="adImageChoiceBox" focusColor="#26ae48" layoutX="343.0" layoutY="37.0" onContextMenuRequested="#reallySetPrieviewImage" onMouseClicked="#reallySetPrieviewImage" onMouseDragged="#reallySetPrieviewImage" onMouseEntered="#reallySetPrieviewImage" onMouseExited="#reallySetPrieviewImage" onMouseMoved="#reallySetPrieviewImage" onMousePressed="#reallySetPrieviewImage" onMouseReleased="#reallySetPrieviewImage" prefHeight="25.0" prefWidth="157.0" promptText="Select Image to Use" style="-fx-background-color: #FFFFFF;" unFocusColor="#f4ce42" />
+            <JFXComboBox fx:id="adSchemeChoiceBox" focusColor="#26ae48" layoutX="158.0" layoutY="37.0" prefHeight="25.0" prefWidth="167.0" promptText="Select Scheme" style="-fx-background-color: #FFFFFF;" unFocusColor="#f4ce42" />
+            <HBox layoutX="409.0" layoutY="107.0" onMouseEntered="#reallySetPrieviewImage" prefHeight="153.0" prefWidth="242.0" style="-fx-border-image-width: 1; -fx-border-color: #f4ce42;">
+               <children>
+                  <ImageView fx:id="adPreviewImage" fitHeight="149.0" fitWidth="236.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../images/default1.jpg" />
+                     </image>
+                  </ImageView>
+               </children>
+            </HBox>
+            <Label layoutX="430.0" layoutY="82.0" text="⇓Hover For Image Preview ⇓" textFill="WHITE">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="475.0" layoutY="45.0" prefHeight="53.0" prefWidth="13.0" text="⇓" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="22.0" />
+               </font>
+            </Label>
+            <Label fx:id="adSETSuccess" layoutX="521.0" layoutY="13.0" text="SET Successful" textFill="#22ff4e" visible="false">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="adSETFail" layoutX="535.0" layoutY="13.0" text="SET Failed" textFill="#e13e3e" visible="false">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="otherSetErr" layoutX="14.0" layoutY="72.0" prefHeight="20.0" prefWidth="415.0" text="SET Failed" textFill="#e13e3e" visible="false">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="259.0" layoutY="366.0" prefHeight="142.0" prefWidth="272.0" style="-fx-border-color: #f4ce42; -fx-border-width: 8; -fx-background-color: BLACK;">
+         <children>
+            <Label layoutX="14.0" layoutY="37.0" text="Top Banner Price: $" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="12.0" layoutY="57.0" text="Side Banner (Left) Price: $" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="14.0" layoutY="81.0" text="Side Banner (Right) Price: $" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="12.0" layoutY="101.0" text="Bottom Banner Price: $" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="advertTopAdPrice" layoutX="138.0" layoutY="38.0" text="A_NUMBER" textFill="#ff7708" underline="true">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="advertLeftAdPrice" layoutX="171.0" layoutY="58.0" text="A_NUMBER" textFill="#ff7708" underline="true">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="advertRightAdPrice" layoutX="187.0" layoutY="82.0" text="A_NUMBER" textFill="#ff7708" underline="true">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="advertBottomAdPrice" layoutX="154.0" layoutY="102.0" text="A_NUMBER" textFill="#ff7708" underline="true">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Label layoutX="12.0" layoutY="121.0" text="Background Price: $" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="advertBackgroundAdPrice" layoutX="138.0" layoutY="122.0" text="A_NUMBER" textFill="#ff7708" underline="true">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Label layoutX="90.0" layoutY="16.0" text="Available Schemes" textFill="WHITE" underline="true">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="42.0" layoutY="366.0" prefHeight="120.0" prefWidth="209.0" style="-fx-border-color: #f4ce42; -fx-border-width: 8; -fx-background-color: BLACK;">
+         <children>
+            <Label layoutX="17.0" layoutY="23.0" text="• Top Banner Size: 527 • 47" textFill="WHITE" />
+            <Label layoutX="15.0" layoutY="40.0" text="• Side Banner (Left) Size:  96 • 342" textFill="WHITE" />
+            <Label layoutX="17.0" layoutY="57.0" text="• Side Banner (Right) Size: 96 • 342" textFill="WHITE" />
+            <Label layoutX="18.0" layoutY="70.0" text="• Bottom Banner Size: 516 • 69" textFill="WHITE" />
+            <Label layoutX="23.0" layoutY="87.0" text="• Background Size: 890 • 570" textFill="WHITE" />
+            <Label layoutX="46.0" layoutY="6.0" text="All Sizes Given in px" textFill="WHITE" underline="true" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
