@@ -181,7 +181,7 @@ public class AdPriceController {
                 }
             }
             if(back != Integer.parseInt(backPriceField.getText())) {
-                update ="UPDATE advertismentscheme SET AdPrice ="+ bottomPriceField.getText() +" WHERE AdvertismentSchemeID = 5";
+                update ="UPDATE advertismentscheme SET AdPrice ="+ backPriceField.getText() +" WHERE AdvertismentSchemeID = 5";
                 try {
                     PreparedStatement preparedStatementOne = connection.prepareStatement(update);
                     preparedStatementOne.executeUpdate(update);
