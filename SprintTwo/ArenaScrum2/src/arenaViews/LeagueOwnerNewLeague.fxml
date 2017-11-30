@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="484.0" prefWidth="685.0" style="-fx-background-color: #20120F;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="arenaClasses.LeagueOwnerNewLeagueController">
+   <children>
+      <ImageView fitHeight="505.0" fitWidth="709.0">
+         <image>
+            <Image url="@../images/domina0.jpg" />
+         </image>
+      </ImageView>
+      <JFXButton fx:id="LeagueGoBackButton" layoutX="26.0" layoutY="435.0" onAction="#goBackLeagueSplash" prefHeight="30.0" prefWidth="91.0" style="-fx-background-color: #f4ce42;" text="Go Back">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXButton>
+      <AnchorPane layoutX="26.0" layoutY="28.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="397.0" prefWidth="633.0" style="-fx-background-color: #000000; -fx-border-width: 8; -fx-border-color: #f4ce42;">
+         <children>
+            <JFXButton fx:id="CreateLeagueButton" layoutX="350.0" layoutY="348.0" onAction="#CreateLeague" prefHeight="25.0" prefWidth="238.0" style="-fx-background-color: #f4ce42;" text="Create">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </JFXButton>
+            <JFXTextField fx:id="LeagueNameTextField" focusColor="#26ae48" layoutX="49.0" layoutY="108.0" prefHeight="25.0" prefWidth="229.0" promptText="Enter Name" unFocusColor="#f4ce42" />
+            <JFXTextArea fx:id="LeagueDescriptionTextField" focusColor="#26ae48" layoutX="49.0" layoutY="188.0" prefHeight="180.0" prefWidth="229.0" promptText="Description (Max 45)" unFocusColor="#f4ce42" wrapText="true" />
+            <Label fx:id="LeagueDescriptionLabel" layoutX="49.0" layoutY="153.0" text="League Description" textFill="WHITE">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="LeagueNameLabel" layoutX="49.0" layoutY="67.0" text="League Name" textFill="WHITE">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Separator layoutX="311.0" layoutY="66.0" orientation="VERTICAL" prefHeight="312.0" prefWidth="11.0" style="-fx-background-color: #f4ce42;" />
+            <Label fx:id="LeagueRankingFormulaLabel" layoutX="338.0" layoutY="73.0" text="League Ranking Formula" textFill="WHITE">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="NewLeagueLabel" layoutX="220.0" layoutY="14.0" opacity="0.46" text="New League" textFill="WHITE">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Label>
+            <TableView fx:id="ExpertTable" layoutX="369.0" layoutY="108.0" prefHeight="167.0" prefWidth="200.0">
+              <columns>
+                <TableColumn fx:id="columnExpertFormula" prefWidth="197.0" text="Expert Formula" />
+              </columns>
+            </TableView>
+            <JFXButton fx:id="loadTableButton" layoutX="338.0" layoutY="299.0" onAction="#loadTable" prefHeight="30.0" prefWidth="75.0" style="-fx-background-color: #f4ce42;" text="Refresh">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </JFXButton>
+            <Label fx:id="loadMe" layoutX="433.0" layoutY="305.0" text="*Initial Load Requires Refresh" textFill="#b5b4b4">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <Label fx:id="LeagueCreatedLabel" layoutX="234.0" layoutY="439.0" text="League _____________ Created" textFill="#02f20e" visible="false">
+         <font>
+            <Font name="Arial Black" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="NewLeagueError" layoutX="127.0" layoutY="424.0" prefHeight="53.0" prefWidth="462.0" text="League wasn't created.  Make sure that the League Names hasn't already been taken." textFill="RED" visible="false" wrapText="true">
+         <font>
+            <Font name="Arial Black" size="14.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

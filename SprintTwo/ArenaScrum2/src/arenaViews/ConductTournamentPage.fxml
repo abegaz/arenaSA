@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="477.0" prefWidth="1202.0" style="-fx-background-color: #20120F;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="arenaClasses.TournamentConductController">
+   <children>
+      <ImageView fitHeight="514.0" fitWidth="1279.0" layoutX="-69.0" layoutY="-11.0">
+         <image>
+            <Image url="@../images/domina0.jpg" />
+         </image>
+      </ImageView>
+      <AnchorPane layoutX="102.0" layoutY="8.0" opacity="0.9" prefHeight="456.0" prefWidth="1095.0" style="-fx-border-color: #f4ce42; -fx-border-width: 8; -fx-background-color: #303030;">
+         <children>
+            <JFXButton fx:id="makeMatchBeginButton" layoutX="44.0" layoutY="401.0" onAction="#setMatchToActive" prefHeight="38.0" prefWidth="153.0" style="-fx-background-color: #61c63f;" text="Begin Match" textAlignment="CENTER">
+               <font>
+                  <Font name="Book Antiqua" size="18.0" />
+               </font>
+            </JFXButton>
+            <JFXComboBox fx:id="selectLeagueConductTour" focusColor="WHITE" layoutX="42.0" layoutY="53.0" prefHeight="28.0" prefWidth="153.0" promptText="Select League" style="-fx-background-color: #ffffff;" unFocusColor="#a1a1a1" />
+            <JFXComboBox fx:id="selectTournamentConductTour" focusColor="WHITE" layoutX="42.0" layoutY="95.0" prefHeight="28.0" prefWidth="153.0" promptText="Select Tournament " style="-fx-background-color: #ffffff;" />
+            <JFXButton fx:id="addNewScoreButton" layoutX="622.0" layoutY="397.0" onAction="#addNewScore" prefHeight="38.0" prefWidth="162.0" style="-fx-background-color: #61c63f;" text="Add Score" textAlignment="CENTER">
+               <font>
+                  <Font name="Book Antiqua" size="18.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="finalizeScoresButton" layoutX="904.0" layoutY="397.0" onAction="#requestFinializedScores" prefHeight="38.0" prefWidth="162.0" style="-fx-background-color: #61c63f;" text="Finalize Scores" textAlignment="CENTER">
+               <font>
+                  <Font name="Book Antiqua" size="18.0" />
+               </font>
+            </JFXButton>
+            <Label layoutX="48.0" layoutY="14.0" text="Match Selection" textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="team1Label" layoutX="208.0" layoutY="52.0" text="Team 1:" textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="team1ScoreLabel" layoutX="250.0" layoutY="88.0" text="Score:" textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="team2Label" layoutX="208.0" layoutY="130.0" text="Team 2:" textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="team2ScoreLabel" layoutX="250.0" layoutY="165.0" text="Score:" textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="team1LabelValue" layoutX="285.0" layoutY="52.0" text="Team 1 Name Value" textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="team2LabelValue" layoutX="285.0" layoutY="130.0" text="Team 2 Name Value" textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <TextField fx:id="team1ScoreValueTextField" layoutX="314.0" layoutY="91.0" />
+            <TextField fx:id="team2ScoreValueTextField" layoutX="314.0" layoutY="168.0" />
+            <LineChart fx:id="scoresGraph" alternativeColumnFillVisible="true" layoutX="622.0" layoutY="23.0" prefHeight="355.0" prefWidth="444.0" style="-fx-background-color: white;" title="Match Scores Progression">
+              <xAxis>
+                <CategoryAxis side="BOTTOM" />
+              </xAxis>
+              <yAxis>
+                <NumberAxis side="LEFT" />
+              </yAxis>
+            </LineChart>
+            <JFXButton fx:id="makeMatchCanelButton" layoutX="208.0" layoutY="401.0" onAction="#setMatchToCancelled" prefHeight="38.0" prefWidth="153.0" style="-fx-background-color: #c63f3f;" text="Canel Match" textAlignment="CENTER">
+               <font>
+                  <Font name="Book Antiqua" size="18.0" />
+               </font>
+            </JFXButton>
+            <ListView fx:id="matchListView" layoutX="42.0" layoutY="162.0" prefHeight="225.0" prefWidth="153.0" />
+            <Label layoutX="50.0" layoutY="130.0" text="Matches" textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="currentMatchLabel" layoutX="208.0" layoutY="14.0" text="\$Match VS VALUE " textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="declareWinnerLabel" layoutX="209.0" layoutY="228.0" text="Match Winner: " textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <JFXComboBox fx:id="selectMatchWinnerSelectBox" focusColor="WHITE" layoutX="352.0" layoutY="229.0" prefHeight="28.0" prefWidth="153.0" promptText=" Select Match Winner" style="-fx-background-color: #ffffff;" />
+            <Label fx:id="declareTournamnetWinnerLabel" layoutX="231.0" layoutY="286.0" text="Tournament Winner" textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <JFXComboBox fx:id="selectTournamentWinnerSelectBox" focusColor="WHITE" layoutX="421.0" layoutY="287.0" prefHeight="28.0" prefWidth="165.0" promptText=" Select Tournament Winner" style="-fx-background-color: #ffffff;" />
+            <JFXButton fx:id="declareTournamentWinnerButton" layoutX="280.0" layoutY="331.0" onAction="#declareTournamentWinner" prefHeight="38.0" prefWidth="256.0" style="-fx-background-color: #c63f3f;" text="Declare Tournament Winner" textAlignment="CENTER">
+               <font>
+                  <Font name="Book Antiqua" size="18.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+      <JFXButton fx:id="teamsGoBack" layoutX="14.0" layoutY="425.0" onAction="#goToLOLanding" prefHeight="38.0" prefWidth="85.0" style="-fx-background-color: #f4ce42;" text="Back" textAlignment="CENTER">
+         <font>
+            <Font name="Book Antiqua" size="18.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="539.0" prefWidth="897.0" style="-fx-background-color: #20120F;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="arenaClasses.AdPriceController">
+   <children>
+      <ImageView fitHeight="569.0" fitWidth="928.0" layoutX="-3.0" layoutY="-11.0">
+         <image>
+            <Image url="@../images/domina0.jpg" />
+         </image>
+      </ImageView>
+      <JFXButton fx:id="goBackBtn" layoutX="7.0" layoutY="492.0" onAction="#handleGoBackBtn" prefHeight="41.0" prefWidth="94.0" style="-fx-background-color: #f4ce42;" text="Go Back" textAlignment="CENTER">
+         <font>
+            <Font name="Book Antiqua" size="18.0" />
+         </font>
+      </JFXButton>
+      <AnchorPane layoutX="286.0" prefHeight="88.0" prefWidth="349.0" style="-fx-border-color: #f4ce42; -fx-border-width: 8; -fx-background-color: BLACK;">
+         <children>
+            <Label alignment="CENTER" layoutX="14.0" layoutY="19.0" prefHeight="53.0" prefWidth="321.0" text="Set Ad Prices" textAlignment="JUSTIFY" textFill="WHITE">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="101.0" layoutY="88.0" prefHeight="285.0" prefWidth="663.0" style="-fx-border-color: #f4ce42; -fx-border-width: 8; -fx-background-color: BLACK;">
+         <children>
+            <JFXButton fx:id="updatePriceBtn" layoutX="430.0" layoutY="220.0" onAction="#updatePrices" prefHeight="35.0" prefWidth="116.0" style="-fx-background-color: #ffbf1e;" text="UPDATE" textAlignment="CENTER">
+               <font>
+                  <Font name="Book Antiqua Bold" size="18.0" />
+               </font>
+            </JFXButton>
+            <Label layoutX="69.0" layoutY="89.0" text="Top Banner $" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="69.0" layoutY="119.0" text="Left Banner $" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="59.0" layoutY="152.0" text="Right Banner $" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="249.0" layoutY="89.0" text="Bottom Banner $" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="221.0" layoutY="119.0" text="Background Banner $" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="topPriceField" layoutX="156.0" layoutY="86.0" prefHeight="20.0" prefWidth="48.0" />
+            <TextField fx:id="leftPriceField" layoutX="156.0" layoutY="118.0" prefHeight="20.0" prefWidth="48.0" />
+            <TextField fx:id="rightPriceField" layoutX="156.0" layoutY="149.0" prefHeight="20.0" prefWidth="48.0" />
+            <TextField fx:id="bottomPriceField" layoutX="358.0" layoutY="86.0" prefHeight="20.0" prefWidth="48.0" />
+            <TextField fx:id="backPriceField" layoutX="358.0" layoutY="117.0" prefHeight="20.0" prefWidth="48.0" />
+            <Label fx:id="errorMsg" alignment="TOP_LEFT" layoutX="60.0" layoutY="201.0" prefHeight="19.0" prefWidth="241.0" text="Label" textFill="RED" visible="false" wrapText="true" />
+            <Label fx:id="successMsg" alignment="TOP_LEFT" layoutX="60.0" layoutY="201.0" prefHeight="53.0" prefWidth="241.0" text="Label" textFill="#259e00" visible="false" wrapText="true" />
+            <Label layoutX="447.0" layoutY="89.0" text="Max Ad Balance $" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="balPriceField" layoutX="565.0" layoutY="86.0" prefHeight="20.0" prefWidth="48.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

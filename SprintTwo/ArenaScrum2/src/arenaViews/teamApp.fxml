@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="417.0" prefWidth="615.0" style="-fx-background-color: #20120F;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="arenaClasses.TeamsController">
+   <children>
+      <ImageView fitHeight="458.0" fitWidth="665.0" layoutX="-10.0" layoutY="-11.0">
+         <image>
+            <Image url="@../images/domina9.jpg" />
+         </image>
+      </ImageView>
+      <JFXButton fx:id="teamAppGoBack" layoutX="14.0" layoutY="345.0" onAction="#goBacktoPlayerLanding" prefHeight="41.0" prefWidth="94.0" style="-fx-background-color: #f4ce42;" text="Go Back" textAlignment="CENTER">
+         <font>
+            <Font name="Book Antiqua" size="18.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="teamAppRefresh" layoutX="14.0" layoutY="180.0" onAction="#usersToTableView" prefHeight="41.0" prefWidth="94.0" style="-fx-background-color: #e09a0f;" text="Refresh" textAlignment="CENTER">
+         <font>
+            <Font name="Book Antiqua" size="18.0" />
+         </font>
+      </JFXButton>
+      <AnchorPane layoutX="123.0" layoutY="25.0" prefHeight="367.0" prefWidth="464.0" style="-fx-border-color: #f4ce42; -fx-border-width: 8; -fx-background-color: BLACK;">
+         <children>
+            <Label fx:id="loadMe1" layoutX="15.0" layoutY="266.0" text="*Initial Load Requires Refresh" textFill="#656565">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Label layoutX="164.0" layoutY="13.0" text="Current Teams" textFill="WHITE" underline="true">
+               <font>
+                  <Font name="Book Antiqua" size="20.0" />
+               </font>
+            </Label>
+            <JFXButton fx:id="teamAppSendApp" layoutX="33.0" layoutY="305.0" onAction="#sendTeamApp" prefHeight="41.0" prefWidth="78.0" style="-fx-background-color: #61c63f;" text="Apply" textAlignment="CENTER">
+               <font>
+                  <Font name="Book Antiqua" size="18.0" />
+               </font>
+            </JFXButton>
+            <Label fx:id="errorLabelTeamApp" layoutX="139.0" layoutY="316.0" text="You Are Already in That Team" textFill="#ff0f0f" visible="false">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="successLabelTeamApp" layoutX="139.0" layoutY="315.0" text="Application Sent" textFill="#0fff22" visible="false">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <TableView fx:id="teamsTable" layoutX="15.0" layoutY="39.0" prefHeight="246.0" prefWidth="431.0" style="-fx-background-color: #FFFFFF;">
+               <columns>
+                  <TableColumn fx:id="teamsColumnTeamID" prefWidth="78.0" text="ID #" />
+                  <TableColumn fx:id="teamsColumnTeamName" prefWidth="254.0" text="Team Name" />
+                  <TableColumn fx:id="teamsColumnTeamLeagueID" prefWidth="87.0" text="League ID #" />
+               </columns>
+            </TableView>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

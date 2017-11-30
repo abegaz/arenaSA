@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="414.0" prefWidth="839.0" style="-fx-background-color: #20120F;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="arenaPrototypeB.ControllerSupreme">
+   <children>
+      <ImageView fitHeight="414.0" fitWidth="839.0" layoutY="-1.0" opacity="0.11" pickOnBounds="true">
+         <image>
+            <Image url="@../../../Images/domina.gif" />
+         </image>
+      </ImageView>
+      <ImageView id="progress" fx:id="progress" fitHeight="72.0" fitWidth="85.0" layoutX="6.0" layoutY="347.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../Images/loading.gif" />
+         </image>
+      </ImageView>
+      <Label layoutX="268.0" layoutY="28.0" opacity="0.46" text="Welcome League Owner" textFill="#e1dada">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <Label layoutX="820.0" layoutY="1.0" onMouseClicked="#handleClose" text="X" textFill="#d0cccc">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="regGoBackButton" layoutX="97.0" layoutY="358.0" onAction="#goBackAction" prefHeight="25.0" prefWidth="238.0" style="-fx-background-color: #E45652;" text="Go Back">
+         <textFill>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop color="#f5f5f5" />
+                  <Stop color="#dad6d6" offset="1.0" />
+               </stops>
+            </RadialGradient>
+         </textFill> 
+      </JFXButton>
+      <AnchorPane layoutX="68.0" layoutY="90.0" prefHeight="239.0" prefWidth="723.0" style="-fx-background-color: #238EFF;">
+         <children>
+            <JFXButton fx:id="applicationsButton" layoutX="14.0" layoutY="96.0" onAction="#goToAppsPage" prefHeight="25.0" prefWidth="202.0" style="-fx-background-color: #E45652;" text="Manage Member Applications">
+               <textFill>
+                  <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                     <stops>
+                        <Stop color="#f5f5f5" />
+                        <Stop color="#dad6d6" offset="1.0" />
+                     </stops>
+                  </RadialGradient>
+               </textFill>
+            </JFXButton>
+            <JFXButton fx:id="operUsersManageButton" layoutX="261.0" layoutY="96.0" onAction="#goToManageUsersPage" prefHeight="25.0" prefWidth="202.0" style="-fx-background-color: #E45652;" text="Manage Users">
+               <textFill>
+                  <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                     <stops>
+                        <Stop color="#f5f5f5" />
+                        <Stop color="#dad6d6" offset="1.0" />
+                     </stops>
+                  </RadialGradient>
+               </textFill>
+            </JFXButton>
+            <JFXButton layoutX="507.0" layoutY="96.0" prefHeight="25.0" prefWidth="202.0" style="-fx-background-color: #E45652;" text="Manage Leagues" textFill="#ddd3d3" />
+            <JFXButton layoutX="507.0" layoutY="176.0" prefHeight="25.0" prefWidth="202.0" style="-fx-background-color: #E45652;" text="Manage Game Scores" textFill="#ddd3d3" />
+            <JFXButton layoutX="386.0" layoutY="24.0" prefHeight="25.0" prefWidth="202.0" style="-fx-background-color: #E45652;" text="Create New Tournament" textFill="#ddd3d3" />
+            <JFXButton layoutX="137.0" layoutY="24.0" prefHeight="25.0" prefWidth="202.0" style="-fx-background-color: #E45652;" text="Create New League" textFill="#ddd3d3" />
+            <JFXButton layoutX="261.0" layoutY="176.0" prefHeight="25.0" prefWidth="202.0" style="-fx-background-color: #E45652;" text="Manage Tournaments" textFill="#ddd3d3" />
+            <JFXButton fx:id="applicationsButton1" layoutX="14.0" layoutY="176.0" onAction="#goToAppsPage" prefHeight="25.0" prefWidth="202.0" style="-fx-background-color: #E45652;" text="Manage Tournament Applications">
+               <textFill>
+                  <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                     <stops>
+                        <Stop color="#f5f5f5" />
+                        <Stop color="#dad6d6" offset="1.0" />
+                     </stops>
+                  </RadialGradient>
+               </textFill>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+      <ImageView fitHeight="79.0" fitWidth="85.0" layoutX="115.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../Images/leagueOwnerIcon.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="logInErrorText" layoutX="392.0" layoutY="358.0" opacity="0.0" text="Incorrect Username / Password" textFill="#eeff02">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="arenaClasses.Controller">
+   <children>
+      <ImageView fitHeight="416.0" fitWidth="613.0" layoutX="-7.0" layoutY="-8.0">
+         <image>
+            <Image url="@../images/domina10.gif" />
+         </image>
+      </ImageView>
+      <JFXButton fx:id="pendingGoBack" layoutX="14.0" layoutY="358.0" onAction="#goBackToOpLanding" prefHeight="41.0" prefWidth="94.0" style="-fx-background-color: #f4ce42;" text="Go Back" textAlignment="CENTER">
+         <font>
+            <Font name="Book Antiqua" size="18.0" />
+         </font>
+      </JFXButton>
+      <Label fx:id="closeIcon" layoutX="581.0" layoutY="1.0" onMouseClicked="#closeApplication" text="X" textFill="#d0cccc">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <AnchorPane layoutX="128.0" layoutY="12.0" prefHeight="303.0" prefWidth="448.0" style="-fx-border-color: #f4ce42; -fx-border-width: 8; -fx-background-color: BLACK;">
+         <children>
+            <Label fx:id="errorLabel" layoutX="39.0" layoutY="26.0" text="Invalid Username / Password" textFill="#ff0f0f" visible="false">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <TableView fx:id="userPendingTable" layoutX="15.0" layoutY="48.0" prefHeight="217.0" prefWidth="417.0" style="-fx-background-color: #FFFFFF;">
+              <columns>
+                <TableColumn fx:id="pendingColumnUserID" prefWidth="67.0" text="user ID" />
+                <TableColumn fx:id="pendingColumnUserName" prefWidth="113.0" text="User Name" />
+                  <TableColumn fx:id="pendingColumnCurrentRole" prefWidth="126.0" text="Current Role" />
+                  <TableColumn fx:id="pendingColumnDesiredRole" prefWidth="108.0" text="Desired Role" />
+              </columns>
+            </TableView>
+            <Label fx:id="loadMe" layoutX="15.0" layoutY="266.0" text="*Initial Load Requires Refresh" textFill="#656565">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Label layoutX="98.0" layoutY="13.0" text="Users Pending Role Approval" textFill="WHITE" underline="true">
+               <font>
+                  <Font name="Book Antiqua" size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <JFXButton fx:id="pendingApproveButton" layoutX="14.0" layoutY="15.0" onAction="#approveNewUser" prefHeight="46.0" prefWidth="102.0" style="-fx-background-color: #61c63f;" text="Approve" textAlignment="CENTER">
+         <font>
+            <Font name="Book Antiqua" size="18.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="pendingRemoveButton" layoutX="14.0" layoutY="128.0" onAction="#denyNewUser" prefHeight="46.0" prefWidth="102.0" style="-fx-background-color: #c63f3f;" text="Remove" textAlignment="CENTER">
+         <font>
+            <Font name="Book Antiqua" size="18.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="pendingRefreshButton" layoutX="14.0" layoutY="69.0" onAction="#pendingUsersToTableView" prefHeight="46.0" prefWidth="102.0" style="-fx-background-color: #e09a0f;" text="Refresh" textAlignment="CENTER">
+         <font>
+            <Font name="Book Antiqua" size="18.0" />
+         </font>
+      </JFXButton>
+      <AnchorPane layoutX="131.0" layoutY="307.0" prefHeight="79.0" prefWidth="442.0" style="-fx-border-color: #f4ce42; -fx-border-width: 8; -fx-background-color: BLACK;">
+         <children>
+            <Label layoutX="14.0" layoutY="9.0" prefHeight="46.0" prefWidth="70.0" text="Role Key :" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="84.0" layoutY="14.0" text="• 1  -  Spectator" textFill="WHITE">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Label layoutX="84.0" layoutY="37.0" text="• 2 -  Operator" textFill="WHITE">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Label layoutX="184.0" layoutY="13.0" text="• 3  -  League Owner" textFill="WHITE">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Label layoutX="184.0" layoutY="37.0" text="• 4  -  Player" textFill="WHITE">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Label layoutX="322.0" layoutY="14.0" text="• 5  -  Advertiser" textFill="WHITE">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

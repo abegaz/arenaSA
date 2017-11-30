@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="742.0" style="-fx-background-color: #20120F;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="arenaClasses.ArenaController">
+   <children>
+      <ImageView fitHeight="442.0" fitWidth="788.0" layoutX="-5.0" layoutY="-6.0">
+         <image>
+            <Image url="@../images/domina7.jpg" />
+         </image>
+      </ImageView>
+      <AnchorPane layoutX="122.0" layoutY="27.0" prefHeight="303.0" prefWidth="600.0" style="-fx-border-color: #f4ce42; -fx-border-width: 8; -fx-background-color: BLACK;">
+         <children>
+            <Label fx:id="errorLabel" layoutX="39.0" layoutY="26.0" text="Invalid Username / Password" textFill="#ff0f0f" visible="false">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <TableView fx:id="getTArenasTable" layoutX="24.0" layoutY="43.0" prefHeight="217.0" prefWidth="560.0" style="-fx-background-color: #FFFFFF;">
+               <columns>
+                  <TableColumn fx:id="getArenasArenaIDColumn" prefWidth="138.0" text="Arena ID" />
+                  <TableColumn fx:id="getArenasArenaNameColumn" prefWidth="421.0" text="Arena Name" />
+               </columns>
+            </TableView>
+            <Label layoutX="268.0" layoutY="13.0" text="Arenas" textFill="WHITE" underline="true">
+               <font>
+                  <Font name="Book Antiqua" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="loadMe" layoutX="24.0" layoutY="268.0" text="*Initial Load Requires Refresh" textFill="#656565">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <JFXButton fx:id="operatorArenaReturnButton" layoutX="18.0" layoutY="344.0" onAction="#goBackToOpLanding" prefHeight="41.0" prefWidth="94.0" style="-fx-background-color: #f4ce42;" text="Go Back" textAlignment="CENTER">
+         <font>
+            <Font name="Book Antiqua" size="18.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="ArenaRefresh" layoutX="629.0" layoutY="344.0" onAction="#loadArenasFromDatabase" prefHeight="41.0" prefWidth="94.0" style="-fx-background-color: #f4ce42;" text="Refresh" textAlignment="CENTER">
+         <font>
+            <Font name="Book Antiqua" size="18.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="manageArenaRemoveButton" layoutX="14.0" layoutY="27.0" onAction="#removeArena" prefHeight="46.0" prefWidth="102.0" style="-fx-background-color: #c63f3f;" text="Remove" textAlignment="CENTER">
+         <font>
+            <Font name="Book Antiqua" size="18.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>

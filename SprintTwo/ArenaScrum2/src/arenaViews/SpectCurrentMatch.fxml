@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="445.0" prefWidth="824.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="arenaClasses.CurrentMatchSpectator">
+   <children>
+      <ImageView fitHeight="479.0" fitWidth="861.0" layoutY="-7.0">
+         <image>
+            <Image url="@../images/DominaTeams.png" />
+         </image>
+      </ImageView>
+      <Pane opacity="0.77" prefHeight="445.0" prefWidth="824.0" style="-fx-background-color: BLACK;" />
+      <Pane layoutY="3.0" prefHeight="473.0" prefWidth="861.0" style="-fx-background-color: 000000;">
+         <children>
+            <JFXButton fx:id="MatchesRefreshButton" layoutX="370.0" layoutY="374.0" onAction="#LoadCurrentMatches" prefHeight="38.0" prefWidth="85.0" style="-fx-background-color: #e09a0f;" text="Refresh" textAlignment="CENTER">
+               <font>
+                  <Font name="Book Antiqua" size="18.0" />
+               </font>
+            </JFXButton>
+            <Label alignment="CENTER" layoutX="326.0" layoutY="16.0" prefHeight="24.0" prefWidth="172.0" text="Current Matches" textFill="WHITE" underline="true">
+               <font>
+                  <Font name="Bookman Old Style" size="20.0" />
+               </font>
+            </Label>
+            <JFXButton fx:id="GoBackButton" layoutX="14.0" layoutY="393.0" onAction="#goToSpecLanding" prefHeight="38.0" prefWidth="85.0" style="-fx-background-color: #f4ce42;" text="Back" textAlignment="CENTER">
+               <font>
+                  <Font name="Book Antiqua" size="18.0" />
+               </font>
+            </JFXButton>
+            <TableView fx:id="SpecCurrentTable" layoutX="142.0" layoutY="85.0" prefHeight="259.0" prefWidth="541.0" style="-fx-background-color: #bbbbbb;">
+               <columns>
+                  <TableColumn fx:id="matchColumnMatchID" prefWidth="58.0" text="Match ID" />
+                  <TableColumn fx:id="matchColumnGameName" minWidth="0.0" prefWidth="50.0" text="Game" />
+                  <TableColumn fx:id="matchColumnLeagueName" prefWidth="51.0" text="League" />
+                  <TableColumn fx:id="matchColumnTournamentName" prefWidth="77.0" text="Tournament" />
+                  <TableColumn fx:id="matchColumnTeam1" prefWidth="74.0" text="Team 1" />
+                  <TableColumn fx:id="matchColumnTeam2" prefWidth="66.0" text="Team 2" />
+                  <TableColumn fx:id="matchColumnTeam1Score" minWidth="0.0" text="Team 1 Score" />
+                  <TableColumn fx:id="matchColumnTeam2Score" minWidth="0.0" prefWidth="84.0" text="Team 2 Score" />
+               </columns>
+            </TableView>
+            <Label fx:id="loadMe" layoutX="489.0" layoutY="376.0" prefHeight="35.0" prefWidth="265.0" text="*Initial Load Requires Refresh" textFill="#656565">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

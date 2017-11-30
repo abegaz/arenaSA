@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="arenaClasses.MatchController">
+   <children>
+      <ImageView fitHeight="413.0" fitWidth="613.0" layoutX="-7.0" layoutY="-7.0">
+         <image>
+            <Image url="@../images/DominaTeams.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="closeIcon" layoutX="595.0" layoutY="1.0" onMouseClicked="#closeApplication" text="X" textFill="#d0cccc">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="teamsGoBack" layoutX="6.0" layoutY="348.0" onAction="#goToLOLanding" prefHeight="38.0" prefWidth="96.0" style="-fx-background-color: #f4ce42;" text="Go Back" textAlignment="CENTER">
+         <font>
+            <Font name="Book Antiqua" size="18.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="teamsRefreshButton" layoutX="12.0" layoutY="9.0" onAction="#usersToTableView" prefHeight="38.0" prefWidth="85.0" style="-fx-background-color: #e09a0f;" text="Refresh" textAlignment="CENTER">
+         <font>
+            <Font name="Book Antiqua" size="18.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="teamsRemoveButton" layoutX="6.0" layoutY="183.0" onAction="#teamsRemoveUser" prefHeight="38.0" prefWidth="96.0" style="-fx-background-color: #c63f3f;" text="Remove" textAlignment="CENTER">
+         <font>
+            <Font name="Book Antiqua" size="18.0" />
+         </font>
+      </JFXButton>
+      <AnchorPane layoutX="102.0" layoutY="7.0" prefHeight="364.0" prefWidth="489.0" style="-fx-border-color: #f4ce42; -fx-border-width: 8; -fx-background-color: BLACK;">
+         <children>
+            <Label fx:id="loadMe" layoutX="283.0" layoutY="224.0" text="*Initial Load Requires Refresh" textFill="#656565">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <JFXButton fx:id="matchCreateButton" layoutX="191.0" layoutY="323.0" onAction="#addMatch" prefHeight="38.0" prefWidth="85.0" style="-fx-background-color: #61c63f;" text="Create" textAlignment="CENTER">
+               <font>
+                  <Font name="Book Antiqua" size="18.0" />
+               </font>
+            </JFXButton>
+            <Label layoutX="38.0" layoutY="287.0" text="Match Date/Time" textFill="WHITE" underline="true">
+               <font>
+                  <Font name="Book Antiqua" size="20.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="teamID1" layoutX="40.0" layoutY="254.0" prefHeight="25.0" prefWidth="142.0" promptText="Enter Team 1 ID" style="-fx-background-color: #ffffff;" />
+            <JFXTextField fx:id="teamID2" layoutX="297.0" layoutY="254.0" prefHeight="26.0" prefWidth="153.0" promptText="Enter Team 2 ID" style="-fx-background-color: #ffffff;" />
+            <Label layoutX="233.0" layoutY="254.0" text="VS" textFill="WHITE" underline="true">
+               <font>
+                  <Font name="Book Antiqua" size="20.0" />
+               </font>
+            </Label>
+            <TableView fx:id="teamsTable" layoutX="266.0" layoutY="74.0" prefHeight="150.0" prefWidth="184.0" style="-fx-background-color: #FFFFFF;">
+               <columns>
+                  <TableColumn fx:id="teamsColumnTeamID" prefWidth="74.0" text="Team ID" />
+                  <TableColumn fx:id="teamsColumnTeamName" prefWidth="107.0" text="Team Name" />
+               </columns>
+            </TableView>
+            <Label alignment="CENTER" layoutX="266.0" layoutY="39.0" prefHeight="35.0" prefWidth="184.0" style="-fx-background-color: #ffffff;" text="AvailableTeams">
+               <font>
+                  <Font name="Book Antiqua" size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="155.0" layoutY="13.0" text="Match Creator" textFill="WHITE" underline="true">
+               <font>
+                  <Font name="Book Antiqua" size="20.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="gameID" layoutX="40.0" layoutY="221.0" prefHeight="25.0" prefWidth="142.0" promptText="Enter Game ID" style="-fx-background-color: #ffffff;" />
+            <JFXTextField fx:id="dateTime" layoutX="297.0" layoutY="287.0" prefHeight="26.0" prefWidth="153.0" promptText="YYYY-MM-DD HH:MI:SS" style="-fx-background-color: #ffffff;" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
